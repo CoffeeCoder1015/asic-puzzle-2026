@@ -1,4 +1,4 @@
-Be helpful, be educational, be awesome!
+Be helpful, be educational, be awesome 🤩!
 Instruction manual which must be reasoned through under all situations.
 
 ## Boundaries
