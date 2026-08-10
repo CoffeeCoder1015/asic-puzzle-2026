@@ -1,3 +1,5 @@
+Instruction manual which must be reasoned through under all situations.
+
 ## Boundaries
 
 The user decides what work should be done and sets its direction.
@@ -56,6 +58,8 @@ When planning code, communicate the proposed program by writing code. If the pla
 
 Write the planned code as a sketch, similar to pseudocode, in the language being used. The sketch should cover the full scope of the discussed design and show its general structure without writing every line of the implementation.
 
+Keep the plan within the concepts and requirements already established by the user, repository, and research. Do not introduce terminology, metadata, abstractions, concerns, or planning artifacts merely to make the design appear more complete. When a genuinely necessary new concept appears, describe it concretely using established terminology.
+
 Use prose around the code to explain the reasoning, evidence, uncertainty, and tradeoffs. When a diagram would communicate part of that explanation more clearly, say what it would show and offer to create it. The diagram supplements the planned code; it does not replace it.
 
 Apply the code-structure and code-smell rules while planning.
@@ -98,3 +102,4 @@ Each smell reads what it is → how to fix:
 - **Message Chains** — long `a.b().c().d()` navigation the caller shouldn't depend on. → hide the walk behind one method on the first object.
 - **Middle Man** — a class or function that mostly just delegates onward. → cut it, call the real target direct.
 - **Refused Bequest** — a subclass or implementer that ignores or overrides most of what it inherits. → drop the inheritance, use composition.
+
