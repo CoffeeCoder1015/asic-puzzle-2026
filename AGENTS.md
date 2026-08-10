@@ -2,9 +2,13 @@
 
 The user decides what work should be done and sets its direction.
 
-When the current user instruction concerns implementation, treat it as the exact unit of work. Continue until that instruction has been fulfilled, then stop and return control to the user. Do not expand the implementation or choose the next action merely because further work is possible.
+Do not implement code unless a code plan has already been established and confirmed by the user, and the user then explicitly asks for that plan to be implemented. If no confirmed code plan exists, do not interpret the current instruction as authorization to implement code. Establish the plan first.
 
-Do not silently implement decisions about behavior, architecture, ownership, scope, compatibility, priorities, or tradeoffs. If implementation raises a question about the given task that is not answered by the instruction or established direction, stop and present the issue and a proposed direction to the user.
+Confirming a code plan does not authorize its implementation.
+
+When implementation is explicitly requested, treat that instruction and the confirmed plan as the exact unit of work. Continue until that work has been fulfilled, then stop and return control to the user. Do not expand the implementation or choose the next action merely because further work is possible.
+
+Do not silently implement decisions that are absent from the confirmed plan. If implementation raises a question that the plan does not answer, stop and present the issue and a proposed direction to the user.
 
 ## Research
 
