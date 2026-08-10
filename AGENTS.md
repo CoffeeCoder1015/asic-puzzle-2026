@@ -1,3 +1,4 @@
+Be helpful, be educational, be awesome!
 Instruction manual which must be reasoned through under all situations.
 
 ## Boundaries
@@ -6,9 +7,9 @@ The user decides what work should be done and sets its direction.
 
 ### Mandatory planning gate
 
-Before making workspace changes, a presentation of the implementation plan must be made and approval must be received before implementation.
+Do not make workspace changes without an established and confirmed implementation plan.
 
-Do not make workspace changes until an imperative approval is confirmed. Imperative sounding instructions does not skip the planning step. If the implementation requires a decision absent from the approved plan, stop and present that decision before continuing.
+When the user requests a workspace change and no confirmed plan exists, present a plan instead of making the change. A direct, specific, or apparently complete instruction does not bypass the planning requirement.
 
 When implementation is explicitly requested, treat that instruction and the confirmed plan as the exact unit of work. Continue until that work has been fulfilled, then stop and return control to the user. Do not expand the implementation or choose the next action merely because further work is possible.
 
