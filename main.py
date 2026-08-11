@@ -10,42 +10,112 @@ gds_path = Path(GDS_FILE)
 layout = kdb.Layout()
 layout.read(str(gds_path))
 
-print(f"FILE: {gds_path}")
-print(f"DATABASE UNIT: {layout.dbu} microns")
-print("TOP CELLS:", ", ".join(cell.name for cell in layout.top_cells()))
 
-def describe_shape(shape: kdb.Shape) -> str:
-    if shape.is_text():
-        text = shape.text
-        return f"TEXT value={text.string!r} position={text.trans.disp}"
+top_cell = layout.top_cell()
 
-    if shape.is_box():
-        return f"BOX geometry={shape.box}"
+shape_iterator = kdb.RecursiveShapeIterator(layout, top_cell, [])
+layout_to_netlist = kdb.LayoutToNetlist(shape_iterator)
 
-    if shape.is_path():
-        return f"PATH geometry={shape.path}"
 
-    if shape.is_polygon():
-        return f"POLYGON geometry={shape.polygon}"
+# Each tuple describes:
+#   readable name, GDS layer number, extracted polygon region
+#
+# Datatype 20 contains the physical conductor geometry.
+conductive_layers = [
+    ("li1", 67, layout_to_netlist.make_polygon_layer(layout.layer(67, 20), "li1")),
+    ("met1", 68, layout_to_netlist.make_polygon_layer(layout.layer(68, 20), "met1")),
+    ("met2", 69, layout_to_netlist.make_polygon_layer(layout.layer(69, 20), "met2")),
+    ("met3", 70, layout_to_netlist.make_polygon_layer(layout.layer(70, 20), "met3")),
+    ("met4", 71, layout_to_netlist.make_polygon_layer(layout.layer(71, 20), "met4")),
+    ("met5", 72, layout_to_netlist.make_polygon_layer(layout.layer(72, 20), "met5")),
+]
 
-    return f"UNKNOWN geometry={shape}"
+li1 = conductive_layers[0][2]
+met1 = conductive_layers[1][2]
+met2 = conductive_layers[2][2]
+met3 = conductive_layers[3][2]
+met4 = conductive_layers[4][2]
+met5 = conductive_layers[5][2]
 
-for cell in layout.each_cell():
-    print()
-    print(f"CELL: {cell.name}")
-    print(f"BOUNDING BOX: {cell.bbox()}")
 
-    print("  References:",len(list( cell.each_inst() )))
+# Datatype 44 contains cuts connecting consecutive conductor layers.
+mcon = layout_to_netlist.make_polygon_layer(
+    layout.layer(67, 44),
+    "mcon_li1_to_met1",
+)
+via1 = layout_to_netlist.make_polygon_layer(
+    layout.layer(68, 44),
+    "via_met1_to_met2",
+)
+via2 = layout_to_netlist.make_polygon_layer(
+    layout.layer(69, 44),
+    "via_met2_to_met3",
+)
+via3 = layout_to_netlist.make_polygon_layer(
+    layout.layer(70, 44),
+    "via_met3_to_met4",
+)
+via4 = layout_to_netlist.make_polygon_layer(
+    layout.layer(71, 44),
+    "via_met4_to_met5",
+)
 
-    for layer_index in layout.layer_indexes():
-        shapes = cell.shapes(layer_index)
 
-        if shapes.is_empty():
-            continue
+# Merge touching shapes within each physical layer.
+#
+# KLayout converts BOX, PATH, and POLYGON objects into occupied polygon
+# regions before calculating connectivity.
+for layer in (
+    li1,
+    mcon,
+    met1,
+    via1,
+    met2,
+    via2,
+    met3,
+    via3,
+    met4,
+    via4,
+    met5,
+):
+    layout_to_netlist.connect(layer)
 
-        layer = layout.get_info(layer_index)
-        shapes_list = list( shapes.each() )
-        print("     layer",layer,"instances:",len(shapes_list))
-        for shape in shapes_list:
-            if shape.is_text():
-                print("     ",describe_shape(shape))
+
+# Join conductor layers only through the appropriate vertical cut layer.
+layout_to_netlist.connect(li1, mcon)
+layout_to_netlist.connect(mcon, met1)
+
+layout_to_netlist.connect(met1, via1)
+layout_to_netlist.connect(via1, met2)
+
+layout_to_netlist.connect(met2, via2)
+layout_to_netlist.connect(via2, met3)
+
+layout_to_netlist.connect(met3, via3)
+layout_to_netlist.connect(via3, met4)
+
+layout_to_netlist.connect(met4, via4)
+layout_to_netlist.connect(via4, met5)
+
+
+# Datatype 5 contains textual net/pin labels. Connecting each text layer
+# to its corresponding conductor lets KLayout produce names such as
+# A, B, Y, VPWR, and VGND instead of anonymous numeric identifiers.
+for conductor_name, gds_layer_number, conductor_region in conductive_layers:
+    text_layer_index = layout.find_layer(gds_layer_number, 5)
+
+    if text_layer_index is None:
+        continue
+
+    text_layer = layout_to_netlist.make_text_layer(
+        text_layer_index,
+        f"{conductor_name}_labels",
+    )
+    layout_to_netlist.connect(conductor_region, text_layer)
+
+
+layout_to_netlist.extract_netlist()
+
+print()
+print("EXTRACTED PHYSICAL NETLIST")
+print(layout_to_netlist.netlist())
