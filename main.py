@@ -47,5 +47,5 @@ for cell in layout.each_cell():
         shapes_list = list( shapes.each() )
         print("     layer",layer,"instances:",len(shapes_list))
         for shape in shapes_list:
-            if shape.is_text() or shape.is_path():
+            if shape.is_text():
                 print("     ",describe_shape(shape))
