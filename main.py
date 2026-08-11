@@ -119,3 +119,38 @@ layout_to_netlist.extract_netlist()
 print()
 print("EXTRACTED PHYSICAL NETLIST")
 print(layout_to_netlist.netlist())
+
+
+extracted_netlist = layout_to_netlist.netlist()
+top_circuit = extracted_netlist.circuit_by_name(top_cell.name)
+
+instances = []
+
+for subcircuit in top_circuit.each_subcircuit():
+    referenced_circuit = subcircuit.circuit_ref()
+    cell_type = referenced_circuit.name
+
+    # Vias have already contributed to physical connectivity.
+    # Only retain actual SKY130 standard-cell instances.
+    if not cell_type.startswith("sky130_fd_sc_"):
+        continue
+
+    pins = {}
+
+    for pin in referenced_circuit.each_pin():
+        connected_net = subcircuit.net_for_pin(pin.id())
+
+        if connected_net is not None:
+            pins[pin.name()] = connected_net.cluster_id
+
+    instances.append({
+        "cell_type": cell_type,
+        "pins": pins,
+    })
+
+
+print()
+print("STANDARD-CELL INSTANCES")
+
+for instance in instances:
+    print(instance)
