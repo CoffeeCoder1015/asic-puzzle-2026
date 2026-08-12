@@ -278,6 +278,23 @@ for key in module_ports:
         drop_keys.add(key)
 
 module_ports = dict(filter(lambda x: x[0] not in drop_keys, module_ports.items()))
-print(module_ports)
-print(busses)
-print(drop_keys)
+
+port_declarations = []
+
+for pin_name, direction in module_ports.items():
+    port_declarations.append(
+        f"    {direction} wire {pin_name}"
+    )
+
+for bus_name, (low, high, direction) in busses.items():
+    port_declarations.append(
+        f"    {direction} wire [{high}:{low}] {bus_name}"
+    )
+
+# declaring top of module
+verilog = f"""module {top_cell.name} (
+{",\n".join(port_declarations)}
+);
+"""
+
+print(verilog)
