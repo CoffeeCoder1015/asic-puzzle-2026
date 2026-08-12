@@ -347,4 +347,6 @@ for instance_index, instance in enumerate(instances):
 
 """
 
-print(verilog)
+output_path = Path(f"reversed_{gds_path.stem}.v")
+with open(output_path,"w+",encoding="utf-8") as fio:
+    fio.write(verilog)
