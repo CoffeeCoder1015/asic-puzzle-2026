@@ -1,7 +1,16 @@
 from pathlib import Path
+import json
 import sys
 
 import klayout.db as kdb
+
+
+PIN_DEFINITIONS_FILE = Path(__file__).with_name(
+    "sky130_pin_definitions.json"
+)
+
+with PIN_DEFINITIONS_FILE.open(encoding="utf-8") as file:
+    pin_definitions = json.load(file)["cells"]
 
 
 GDS_FILE = "warmup/04_final.gds" 
@@ -183,6 +192,11 @@ for subcircuit in top_circuit.each_subcircuit():
     if not cell_type.startswith("sky130_fd_sc_"):
         continue
 
+    # The final suffix selects physical drive strength, such as _1 or _2.
+    # Every strength variant of a cell family uses the same logical pin interface.
+    cell_family = cell_type.rsplit("_", 1)[0]
+    cell_pin_definitions = pin_definitions[cell_family]
+
     pins = {}
 
     for pin in referenced_circuit.each_pin():
@@ -212,7 +226,14 @@ for subcircuit in top_circuit.each_subcircuit():
                 break
 
         if connects_to_top_level or connects_to_another_standard_cell:
-            pins[pin.name()] = connected_net.cluster_id
+            pin_definition = cell_pin_definitions[pin.name()]
+
+            pins[pin.name()] = {
+                "net_id": connected_net.cluster_id,
+                "direction": pin_definition["direction"],
+                "kind": pin_definition["kind"],
+                "supply": pin_definition["supply"],
+            }
 
     instances.append({
         "cell_type": cell_type,
