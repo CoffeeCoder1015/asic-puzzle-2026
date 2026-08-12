@@ -280,21 +280,30 @@ for key in module_ports:
 module_ports = dict(filter(lambda x: x[0] not in drop_keys, module_ports.items()))
 
 port_declarations = []
+port_names = []
 
 for pin_name, direction in module_ports.items():
+    port_names.append(pin_name)
     port_declarations.append(
-        f"    {direction} wire {pin_name}"
+        f"    {direction} {pin_name}"
     )
 
 for bus_name, (low, high, direction) in busses.items():
+    port_names.append(bus_name)
     port_declarations.append(
-        f"    {direction} wire [{high}:{low}] {bus_name}"
+        f"    {direction} [{high}:{low}] {bus_name}"
     )
 
-# declaring top of module
+# HAL's gate-level Verilog parser expects the traditional non-ANSI form:
+# list port names in the header, then declare their directions below it.
+port_list = ",\n".join(f"    {pin_name}" for pin_name in port_names)
+declaration_block = ";\n".join(port_declarations)
+
 verilog = f"""module {top_cell.name} (
-{",\n".join(port_declarations)}
+{port_list}
 );
+
+{declaration_block};
 """
 
 net_ids = set()
@@ -312,8 +321,6 @@ for net_id in sorted(internal_net_ids):
 verilog += "\n"
 
 for instance_index, instance in enumerate(instances):
-    cell_family = instance["cell_type"].rsplit("_", 1)[0]
-
     # Physical-only cells such as decaps have no signal pins and no model
     # in our functional catalog.
     has_signal_pin = any(
@@ -341,7 +348,9 @@ for instance_index, instance in enumerate(instances):
             f"        .{pin_name}({signal_name})"
         )
 
-    verilog += f"""    {cell_family} cell_{instance_index} (
+    # Preserve the exact GDS cell variant.  HAL can then match names such as
+    # nand2_2 directly to the corresponding SKY130 Liberty definition.
+    verilog += f"""    {instance["cell_type"]} cell_{instance_index} (
 {",\n".join(pin_connections)}
 );
 
