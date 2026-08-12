@@ -324,9 +324,27 @@ for instance_index, instance in enumerate(instances):
     if not has_signal_pin:
         continue
 
-    verilog += (
-        f"    {cell_family} cell_{instance_index} (\n"
-        f"    );\n\n"
-    )
+    pin_connections = []
+
+    for pin_name, pin_info in instance["pins"].items():
+        if pin_info["kind"] == "power":
+            continue
+
+        net_id = pin_info["net_id"]
+
+        if net_id in top_pins:
+            signal_name = top_pins[net_id]
+        else:
+            signal_name = f"net_{net_id}"
+
+        pin_connections.append(
+            f"        .{pin_name}({signal_name})"
+        )
+
+    verilog += f"""    {cell_family} cell_{instance_index} (
+{",\n".join(pin_connections)}
+);
+
+"""
 
 print(verilog)
