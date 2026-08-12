@@ -12,6 +12,7 @@
       devShells.${system}.default = pkgs.mkShell {
         packages = with pkgs; [
           iverilog
+          hal-hardware-analyzer
           # verilator
 
           # Required when Verilator compiles generated C++.
