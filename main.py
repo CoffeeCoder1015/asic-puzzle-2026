@@ -250,8 +250,34 @@ for subcircuit in top_circuit.each_subcircuit():
         "pins": pins,
     })
 
-
-print("STANDARD-CELL INSTANCES")
-
+module_ports = {}
 for instance in instances:
-    print(instance)
+    for inst_pin_name, pin_info in instance["pins"].items():
+        pin_name = top_pins.get(pin_info["net_id"])
+        if pin_name:
+            if pin_info["kind"] == "power":
+                continue # skip power
+            
+            # overwrite `input` pins when `output` exists because 
+            # this is from the perspective of cells connected to the same net
+            if module_ports.get(pin_name,"input")  == "input":
+                module_ports[pin_name] = pin_info["direction"]
+
+busses = {}
+drop_keys = set()
+for key in module_ports:
+    if "[" in key and key.endswith("]"):
+        index_start = key.index("[")
+        bus_name = key[:index_start]
+        bus_idx = int(key[index_start+1:-1])
+
+        low,high, _ = busses.get(bus_name,(0,0,""))
+        low = min(low,bus_idx)
+        high = max(high,bus_idx)
+        busses[bus_name] = (low,high,module_ports[key])
+        drop_keys.add(key)
+
+module_ports = dict(filter(lambda x: x[0] not in drop_keys, module_ports.items()))
+print(module_ports)
+print(busses)
+print(drop_keys)
