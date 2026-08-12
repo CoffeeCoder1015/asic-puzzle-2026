@@ -21,6 +21,14 @@ shape_iterator = kdb.RecursiveShapeIterator(layout, top_cell, [])
 layout_to_netlist = kdb.LayoutToNetlist(shape_iterator)
 
 
+# Polysilicon is the conductor used for transistor gates. A licon1 cut
+# connects poly to li1 only where the non-conductive NPC marker overlaps it.
+poly = layout_to_netlist.make_polygon_layer(layout.layer(66, 20), "poly")
+licon1 = layout_to_netlist.make_polygon_layer(layout.layer(66, 44), "licon1")
+npc = layout_to_netlist.make_polygon_layer(layout.layer(95, 20), "npc")
+poly_contact = licon1 & npc
+
+
 # Each tuple describes:
 #   readable name, GDS layer number, extracted polygon region
 #
@@ -70,6 +78,8 @@ via4 = layout_to_netlist.make_polygon_layer(
 # KLayout converts BOX, PATH, and POLYGON objects into occupied polygon
 # regions before calculating connectivity.
 for layer in (
+    poly,
+    poly_contact,
     li1,
     mcon,
     met1,
@@ -86,6 +96,9 @@ for layer in (
 
 
 # Join conductor layers only through the appropriate vertical cut layer.
+layout_to_netlist.connect(poly, poly_contact)
+layout_to_netlist.connect(poly_contact, li1)
+
 layout_to_netlist.connect(li1, mcon)
 layout_to_netlist.connect(mcon, met1)
 
