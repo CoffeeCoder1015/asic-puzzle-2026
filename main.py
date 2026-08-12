@@ -311,4 +311,22 @@ for net_id in sorted(internal_net_ids):
 
 verilog += "\n"
 
+for instance_index, instance in enumerate(instances):
+    cell_family = instance["cell_type"].rsplit("_", 1)[0]
+
+    # Physical-only cells such as decaps have no signal pins and no model
+    # in our functional catalog.
+    has_signal_pin = any(
+        pin_info["kind"] == "signal"
+        for pin_info in instance["pins"].values()
+    )
+
+    if not has_signal_pin:
+        continue
+
+    verilog += (
+        f"    {cell_family} cell_{instance_index} (\n"
+        f"    );\n\n"
+    )
+
 print(verilog)
