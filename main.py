@@ -297,4 +297,18 @@ verilog = f"""module {top_cell.name} (
 );
 """
 
+net_ids = set()
+
+for instance in instances:
+    for pin_info in instance["pins"].values():
+        if pin_info["kind"] == "signal":
+            net_ids.add(pin_info["net_id"])
+
+internal_net_ids = net_ids - top_pins.keys()
+
+for net_id in sorted(internal_net_ids):
+    verilog += f"    wire net_{net_id};\n"
+
+verilog += "\n"
+
 print(verilog)
