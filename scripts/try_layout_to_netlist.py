@@ -4,7 +4,7 @@ import klayout.db as kdb
 
 
 GDS_FILE = "../warmup/04_final.gds"
-GDS_FILE = "../puzzle.gds"
+GDS_FILE = "../puzzle/puzzle.gds"
 
 
 gds_path = Path(GDS_FILE)

@@ -9,7 +9,7 @@ import networkx as nx
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_CATALOG = ROOT / "sky130_cell_models.v"
+DEFAULT_CATALOG = ROOT / "sky130" / "cell_models.v"
 
 CATALOG_MODULE_PATTERN = re.compile(
     r"^module\s+(sky130_fd_sc_hd__\w+)\s*\(",

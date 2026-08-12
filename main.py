@@ -5,8 +5,8 @@ import sys
 import klayout.db as kdb
 
 
-PIN_DEFINITIONS_FILE = Path(__file__).with_name(
-    "sky130_pin_definitions.json"
+PIN_DEFINITIONS_FILE = (
+    Path(__file__).parent / "sky130" / "pin_definitions.json"
 )
 
 with PIN_DEFINITIONS_FILE.open(encoding="utf-8") as file:

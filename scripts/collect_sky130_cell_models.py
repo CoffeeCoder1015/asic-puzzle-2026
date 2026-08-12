@@ -10,10 +10,10 @@ import klayout.db as kdb
 ROOT = Path(__file__).resolve().parents[1]
 GDS_PATHS = (
     ROOT / "warmup" / "04_final.gds",
-    ROOT / "puzzle.gds",
+    ROOT / "puzzle" / "puzzle.gds",
 )
-PIN_DEFINITIONS_PATH = ROOT / "sky130_pin_definitions.json"
-OUTPUT_PATH = ROOT / "sky130_cell_models.v"
+PIN_DEFINITIONS_PATH = ROOT / "sky130" / "pin_definitions.json"
+OUTPUT_PATH = ROOT / "sky130" / "cell_models.v"
 
 CELL_PREFIX = "sky130_fd_sc_hd__"
 EXPECTED_LOGICAL_VARIANTS = 67
