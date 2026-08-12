@@ -181,6 +181,16 @@ extracted_netlist.make_top_level_pins()
 
 top_circuit = extracted_netlist.circuit_by_name(top_cell.name)
 
+# Map each top-level physical net to the chip pin attached to it.
+# Later, cell pins using the same net ID can use this port name
+# instead of receiving an internal wire name such as net_282.
+top_pins = {}
+
+for top_pin in top_circuit.each_pin():
+    connected_net = top_circuit.net_for_pin(top_pin)
+    top_pins[connected_net.cluster_id] = top_pin.name()
+
+
 instances = []
 
 for subcircuit in top_circuit.each_subcircuit():
