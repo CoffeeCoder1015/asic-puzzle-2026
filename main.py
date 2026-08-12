@@ -116,9 +116,9 @@ for conductor_name, gds_layer_number, conductor_region in conductive_layers:
 
 layout_to_netlist.extract_netlist()
 
-print()
-print("EXTRACTED PHYSICAL NETLIST")
-print(layout_to_netlist.netlist())
+# print()
+# print("EXTRACTED PHYSICAL NETLIST")
+# print(layout_to_netlist.netlist())
 
 
 extracted_netlist = layout_to_netlist.netlist()
@@ -149,7 +149,6 @@ for subcircuit in top_circuit.each_subcircuit():
     })
 
 
-print()
 print("STANDARD-CELL INSTANCES")
 
 for instance in instances:
