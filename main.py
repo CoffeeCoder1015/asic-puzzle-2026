@@ -1,9 +1,13 @@
 from pathlib import Path
+import sys
 
 import klayout.db as kdb
 
 
-GDS_FILE = "warmup/04_final.gds"
+GDS_FILE = "warmup/04_final.gds" 
+if len(sys.argv) > 1:
+    GDS_FILE = sys.argv[1]
+
 
 
 gds_path = Path(GDS_FILE)
