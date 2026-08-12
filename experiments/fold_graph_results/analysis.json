@@ -1,0 +1,3562 @@
+{
+  "statistics": {
+    "cells": 738,
+    "flip_flops": 92,
+    "combinational_cells": 646,
+    "primary_inputs": 4,
+    "primary_outputs": 9,
+    "pin_graph_nodes": 1468,
+    "pin_graph_edges": 2769,
+    "collapsed_graph_nodes": 751,
+    "collapsed_graph_edges": 2052,
+    "register_dependency_nodes": 103,
+    "register_dependency_edges": 1073,
+    "functional_connected_components": 2,
+    "register_communities": 12,
+    "functional_communities": 12,
+    "undriven_loaded_nets": 0,
+    "multi_driver_nets": 0
+  },
+  "output_cones": [
+    {
+      "label": "O[0]",
+      "boundary": "port:O[0]",
+      "direct_sources": {
+        "ff": 16
+      },
+      "source_names": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_156",
+        "cell:cell_165",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_334",
+        "cell:cell_4",
+        "cell:cell_478",
+        "cell:cell_5"
+      ],
+      "combinational_cell_count": 50,
+      "net_count": 66,
+      "logic_depth_upper_bound": 7,
+      "top_cell_families": [
+        [
+          "a21oi",
+          5
+        ],
+        [
+          "nor3b",
+          4
+        ],
+        [
+          "nor2",
+          4
+        ],
+        [
+          "and2b",
+          4
+        ],
+        [
+          "inv",
+          4
+        ],
+        [
+          "and3",
+          3
+        ],
+        [
+          "nor3",
+          2
+        ],
+        [
+          "nand2",
+          2
+        ]
+      ],
+      "cells": [
+        "cell_100",
+        "cell_106",
+        "cell_119",
+        "cell_12",
+        "cell_13",
+        "cell_14",
+        "cell_1515",
+        "cell_1526",
+        "cell_1568",
+        "cell_1581",
+        "cell_16",
+        "cell_1602",
+        "cell_1605",
+        "cell_1609",
+        "cell_218",
+        "cell_231",
+        "cell_234",
+        "cell_236",
+        "cell_258",
+        "cell_270",
+        "cell_284",
+        "cell_29",
+        "cell_30",
+        "cell_301",
+        "cell_310",
+        "cell_311",
+        "cell_312",
+        "cell_321",
+        "cell_361",
+        "cell_364",
+        "cell_386",
+        "cell_398",
+        "cell_456",
+        "cell_460",
+        "cell_464",
+        "cell_469",
+        "cell_471",
+        "cell_496",
+        "cell_502",
+        "cell_507",
+        "cell_511",
+        "cell_532",
+        "cell_768",
+        "cell_775",
+        "cell_78",
+        "cell_782",
+        "cell_784",
+        "cell_786",
+        "cell_801",
+        "cell_806"
+      ]
+    },
+    {
+      "label": "O[1]",
+      "boundary": "port:O[1]",
+      "direct_sources": {
+        "ff": 16
+      },
+      "source_names": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_156",
+        "cell:cell_165",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_195",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_334",
+        "cell:cell_4",
+        "cell:cell_478"
+      ],
+      "combinational_cell_count": 52,
+      "net_count": 68,
+      "logic_depth_upper_bound": 7,
+      "top_cell_families": [
+        [
+          "nor2",
+          7
+        ],
+        [
+          "inv",
+          5
+        ],
+        [
+          "nor3",
+          3
+        ],
+        [
+          "nor3b",
+          3
+        ],
+        [
+          "and2b",
+          3
+        ],
+        [
+          "or3",
+          3
+        ],
+        [
+          "and3",
+          3
+        ],
+        [
+          "nor4b",
+          2
+        ]
+      ],
+      "cells": [
+        "cell_100",
+        "cell_106",
+        "cell_108",
+        "cell_114",
+        "cell_119",
+        "cell_12",
+        "cell_13",
+        "cell_14",
+        "cell_1565",
+        "cell_1581",
+        "cell_1586",
+        "cell_1587",
+        "cell_1592",
+        "cell_16",
+        "cell_1602",
+        "cell_1605",
+        "cell_1609",
+        "cell_219",
+        "cell_22",
+        "cell_226",
+        "cell_231",
+        "cell_234",
+        "cell_24",
+        "cell_270",
+        "cell_273",
+        "cell_277",
+        "cell_291",
+        "cell_292",
+        "cell_311",
+        "cell_331",
+        "cell_335",
+        "cell_357",
+        "cell_386",
+        "cell_387",
+        "cell_390",
+        "cell_406",
+        "cell_456",
+        "cell_471",
+        "cell_493",
+        "cell_496",
+        "cell_502",
+        "cell_507",
+        "cell_767",
+        "cell_775",
+        "cell_777",
+        "cell_78",
+        "cell_782",
+        "cell_784",
+        "cell_786",
+        "cell_802",
+        "cell_806",
+        "cell_812"
+      ]
+    },
+    {
+      "label": "O[2]",
+      "boundary": "port:O[2]",
+      "direct_sources": {
+        "ff": 16
+      },
+      "source_names": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_156",
+        "cell:cell_165",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_334",
+        "cell:cell_4",
+        "cell:cell_478",
+        "cell:cell_7"
+      ],
+      "combinational_cell_count": 48,
+      "net_count": 64,
+      "logic_depth_upper_bound": 7,
+      "top_cell_families": [
+        [
+          "inv",
+          6
+        ],
+        [
+          "nand2",
+          4
+        ],
+        [
+          "nor3",
+          3
+        ],
+        [
+          "nor3b",
+          3
+        ],
+        [
+          "nor2",
+          3
+        ],
+        [
+          "and2b",
+          3
+        ],
+        [
+          "and3",
+          3
+        ],
+        [
+          "or2",
+          2
+        ]
+      ],
+      "cells": [
+        "cell_100",
+        "cell_104",
+        "cell_106",
+        "cell_107",
+        "cell_119",
+        "cell_12",
+        "cell_13",
+        "cell_14",
+        "cell_1514",
+        "cell_1515",
+        "cell_1532",
+        "cell_1537",
+        "cell_1565",
+        "cell_1568",
+        "cell_1592",
+        "cell_16",
+        "cell_1605",
+        "cell_1609",
+        "cell_209",
+        "cell_231",
+        "cell_234",
+        "cell_271",
+        "cell_282",
+        "cell_288",
+        "cell_310",
+        "cell_311",
+        "cell_32",
+        "cell_324",
+        "cell_346",
+        "cell_358",
+        "cell_386",
+        "cell_393",
+        "cell_428",
+        "cell_456",
+        "cell_474",
+        "cell_491",
+        "cell_496",
+        "cell_502",
+        "cell_512",
+        "cell_775",
+        "cell_777",
+        "cell_779",
+        "cell_78",
+        "cell_782",
+        "cell_784",
+        "cell_786",
+        "cell_806",
+        "cell_819"
+      ]
+    },
+    {
+      "label": "O[3]",
+      "boundary": "port:O[3]",
+      "direct_sources": {
+        "ff": 16
+      },
+      "source_names": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_156",
+        "cell:cell_162",
+        "cell:cell_165",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_334",
+        "cell:cell_4",
+        "cell:cell_478"
+      ],
+      "combinational_cell_count": 58,
+      "net_count": 74,
+      "logic_depth_upper_bound": 7,
+      "top_cell_families": [
+        [
+          "nor2",
+          7
+        ],
+        [
+          "and2b",
+          5
+        ],
+        [
+          "nor3b",
+          3
+        ],
+        [
+          "nand2",
+          3
+        ],
+        [
+          "nand2b",
+          3
+        ],
+        [
+          "a21oi",
+          3
+        ],
+        [
+          "and3",
+          3
+        ],
+        [
+          "inv",
+          3
+        ]
+      ],
+      "cells": [
+        "cell_100",
+        "cell_106",
+        "cell_114",
+        "cell_115",
+        "cell_119",
+        "cell_12",
+        "cell_13",
+        "cell_14",
+        "cell_1515",
+        "cell_1525",
+        "cell_1537",
+        "cell_1565",
+        "cell_1568",
+        "cell_1583",
+        "cell_1587",
+        "cell_16",
+        "cell_1602",
+        "cell_1605",
+        "cell_1609",
+        "cell_1613",
+        "cell_1615",
+        "cell_206",
+        "cell_217",
+        "cell_218",
+        "cell_231",
+        "cell_234",
+        "cell_236",
+        "cell_237",
+        "cell_25",
+        "cell_258",
+        "cell_271",
+        "cell_272",
+        "cell_286",
+        "cell_287",
+        "cell_310",
+        "cell_311",
+        "cell_313",
+        "cell_321",
+        "cell_326",
+        "cell_346",
+        "cell_363",
+        "cell_386",
+        "cell_388",
+        "cell_418",
+        "cell_425",
+        "cell_456",
+        "cell_470",
+        "cell_471",
+        "cell_491",
+        "cell_496",
+        "cell_497",
+        "cell_502",
+        "cell_508",
+        "cell_775",
+        "cell_779",
+        "cell_78",
+        "cell_784",
+        "cell_806"
+      ]
+    },
+    {
+      "label": "O[4]",
+      "boundary": "port:O[4]",
+      "direct_sources": {
+        "ff": 16
+      },
+      "source_names": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_138",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_156",
+        "cell:cell_165",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_334",
+        "cell:cell_4",
+        "cell:cell_478"
+      ],
+      "combinational_cell_count": 46,
+      "net_count": 62,
+      "logic_depth_upper_bound": 7,
+      "top_cell_families": [
+        [
+          "nor3b",
+          3
+        ],
+        [
+          "nor2",
+          3
+        ],
+        [
+          "nand2b",
+          3
+        ],
+        [
+          "and2b",
+          3
+        ],
+        [
+          "inv",
+          3
+        ],
+        [
+          "and2",
+          3
+        ],
+        [
+          "nor3",
+          2
+        ],
+        [
+          "nand2",
+          2
+        ]
+      ],
+      "cells": [
+        "cell_100",
+        "cell_101",
+        "cell_106",
+        "cell_119",
+        "cell_12",
+        "cell_13",
+        "cell_14",
+        "cell_1520",
+        "cell_1526",
+        "cell_1568",
+        "cell_1581",
+        "cell_16",
+        "cell_1605",
+        "cell_1609",
+        "cell_219",
+        "cell_231",
+        "cell_234",
+        "cell_237",
+        "cell_258",
+        "cell_270",
+        "cell_277",
+        "cell_28",
+        "cell_290",
+        "cell_293",
+        "cell_31",
+        "cell_310",
+        "cell_311",
+        "cell_332",
+        "cell_335",
+        "cell_37",
+        "cell_386",
+        "cell_392",
+        "cell_412",
+        "cell_456",
+        "cell_471",
+        "cell_480",
+        "cell_494",
+        "cell_496",
+        "cell_502",
+        "cell_775",
+        "cell_78",
+        "cell_782",
+        "cell_784",
+        "cell_806",
+        "cell_812",
+        "cell_820"
+      ]
+    },
+    {
+      "label": "O[5]",
+      "boundary": "port:O[5]",
+      "direct_sources": {
+        "ff": 16
+      },
+      "source_names": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_156",
+        "cell:cell_165",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_334",
+        "cell:cell_4",
+        "cell:cell_478",
+        "cell:cell_6"
+      ],
+      "combinational_cell_count": 43,
+      "net_count": 59,
+      "logic_depth_upper_bound": 7,
+      "top_cell_families": [
+        [
+          "nor2",
+          4
+        ],
+        [
+          "and3",
+          4
+        ],
+        [
+          "inv",
+          4
+        ],
+        [
+          "nor3b",
+          3
+        ],
+        [
+          "a22o",
+          3
+        ],
+        [
+          "and2b",
+          3
+        ],
+        [
+          "nor3",
+          2
+        ],
+        [
+          "nand2",
+          2
+        ]
+      ],
+      "cells": [
+        "cell_100",
+        "cell_106",
+        "cell_119",
+        "cell_12",
+        "cell_13",
+        "cell_14",
+        "cell_1513",
+        "cell_1532",
+        "cell_1565",
+        "cell_1576",
+        "cell_1581",
+        "cell_16",
+        "cell_1605",
+        "cell_1609",
+        "cell_21",
+        "cell_231",
+        "cell_234",
+        "cell_235",
+        "cell_26",
+        "cell_275",
+        "cell_295",
+        "cell_298",
+        "cell_299",
+        "cell_311",
+        "cell_321",
+        "cell_326",
+        "cell_346",
+        "cell_386",
+        "cell_396",
+        "cell_421",
+        "cell_456",
+        "cell_487",
+        "cell_491",
+        "cell_495",
+        "cell_496",
+        "cell_502",
+        "cell_53",
+        "cell_775",
+        "cell_78",
+        "cell_782",
+        "cell_784",
+        "cell_786",
+        "cell_806"
+      ]
+    },
+    {
+      "label": "O[6]",
+      "boundary": "port:O[6]",
+      "direct_sources": {
+        "ff": 16
+      },
+      "source_names": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_148",
+        "cell:cell_156",
+        "cell:cell_165",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_334",
+        "cell:cell_4",
+        "cell:cell_478"
+      ],
+      "combinational_cell_count": 43,
+      "net_count": 59,
+      "logic_depth_upper_bound": 7,
+      "top_cell_families": [
+        [
+          "nor2",
+          4
+        ],
+        [
+          "nor3b",
+          3
+        ],
+        [
+          "nand2",
+          3
+        ],
+        [
+          "a22o",
+          3
+        ],
+        [
+          "or3",
+          3
+        ],
+        [
+          "a21oi",
+          3
+        ],
+        [
+          "nor3",
+          2
+        ],
+        [
+          "nor4b",
+          2
+        ]
+      ],
+      "cells": [
+        "cell_100",
+        "cell_101",
+        "cell_106",
+        "cell_114",
+        "cell_119",
+        "cell_12",
+        "cell_13",
+        "cell_14",
+        "cell_1514",
+        "cell_1520",
+        "cell_1532",
+        "cell_1568",
+        "cell_1586",
+        "cell_16",
+        "cell_1602",
+        "cell_1605",
+        "cell_1609",
+        "cell_231",
+        "cell_234",
+        "cell_236",
+        "cell_275",
+        "cell_283",
+        "cell_296",
+        "cell_297",
+        "cell_311",
+        "cell_326",
+        "cell_33",
+        "cell_349",
+        "cell_386",
+        "cell_389",
+        "cell_394",
+        "cell_456",
+        "cell_460",
+        "cell_461",
+        "cell_496",
+        "cell_498",
+        "cell_502",
+        "cell_745",
+        "cell_775",
+        "cell_78",
+        "cell_784",
+        "cell_800",
+        "cell_806"
+      ]
+    },
+    {
+      "label": "O[7]",
+      "boundary": "port:O[7]",
+      "direct_sources": {
+        "ff": 16
+      },
+      "source_names": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_156",
+        "cell:cell_165",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_334",
+        "cell:cell_343",
+        "cell:cell_4",
+        "cell:cell_478"
+      ],
+      "combinational_cell_count": 35,
+      "net_count": 51,
+      "logic_depth_upper_bound": 7,
+      "top_cell_families": [
+        [
+          "conb",
+          4
+        ],
+        [
+          "nor3b",
+          3
+        ],
+        [
+          "inv",
+          3
+        ],
+        [
+          "nor3",
+          2
+        ],
+        [
+          "nor2",
+          2
+        ],
+        [
+          "a22o",
+          2
+        ],
+        [
+          "or3",
+          2
+        ],
+        [
+          "and3",
+          2
+        ]
+      ],
+      "cells": [
+        "cell_100",
+        "cell_106",
+        "cell_119",
+        "cell_12",
+        "cell_13",
+        "cell_14",
+        "cell_1525",
+        "cell_1565",
+        "cell_16",
+        "cell_1605",
+        "cell_1609",
+        "cell_231",
+        "cell_234",
+        "cell_27",
+        "cell_289",
+        "cell_300",
+        "cell_311",
+        "cell_34",
+        "cell_345",
+        "cell_35",
+        "cell_350",
+        "cell_36",
+        "cell_386",
+        "cell_403",
+        "cell_448",
+        "cell_456",
+        "cell_496",
+        "cell_502",
+        "cell_513",
+        "cell_775",
+        "cell_78",
+        "cell_782",
+        "cell_784",
+        "cell_806",
+        "cell_813"
+      ]
+    },
+    {
+      "label": "success",
+      "boundary": "port:success",
+      "direct_sources": {
+        "ff": 1
+      },
+      "source_names": [
+        "cell:cell_144"
+      ],
+      "combinational_cell_count": 0,
+      "net_count": 1,
+      "logic_depth_upper_bound": 0,
+      "top_cell_families": [],
+      "cells": []
+    }
+  ],
+  "output_boundary_overlap": {
+    "O[0]|O[1]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[0]|O[2]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[0]|O[3]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[0]|O[4]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[0]|O[5]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[0]|O[6]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[0]|O[7]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[0]|success": [
+      "cell:cell_144"
+    ],
+    "O[1]|O[2]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[1]|O[3]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[1]|O[4]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[1]|O[5]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[1]|O[6]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[1]|O[7]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[1]|success": [
+      "cell:cell_144"
+    ],
+    "O[2]|O[3]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[2]|O[4]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[2]|O[5]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[2]|O[6]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[2]|O[7]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[2]|success": [
+      "cell:cell_144"
+    ],
+    "O[3]|O[4]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[3]|O[5]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[3]|O[6]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[3]|O[7]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[3]|success": [
+      "cell:cell_144"
+    ],
+    "O[4]|O[5]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[4]|O[6]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[4]|O[7]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[4]|success": [
+      "cell:cell_144"
+    ],
+    "O[5]|O[6]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[5]|O[7]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[5]|success": [
+      "cell:cell_144"
+    ],
+    "O[6]|O[7]": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "O[6]|success": [
+      "cell:cell_144"
+    ],
+    "O[7]|success": [
+      "cell:cell_144"
+    ]
+  },
+  "success_checker": {
+    "register": "cell:cell_144",
+    "combinational_cell_count": 47,
+    "net_count": 104,
+    "logic_depth_upper_bound": 6,
+    "source_registers": [
+      "cell:cell_118",
+      "cell:cell_120",
+      "cell:cell_122",
+      "cell:cell_124",
+      "cell:cell_125",
+      "cell:cell_126",
+      "cell:cell_129",
+      "cell:cell_131",
+      "cell:cell_132",
+      "cell:cell_133",
+      "cell:cell_134",
+      "cell:cell_135",
+      "cell:cell_136",
+      "cell:cell_137",
+      "cell:cell_139",
+      "cell:cell_142",
+      "cell:cell_143",
+      "cell:cell_144",
+      "cell:cell_145",
+      "cell:cell_146",
+      "cell:cell_147",
+      "cell:cell_149",
+      "cell:cell_151",
+      "cell:cell_152",
+      "cell:cell_153",
+      "cell:cell_154",
+      "cell:cell_155",
+      "cell:cell_156",
+      "cell:cell_158",
+      "cell:cell_160",
+      "cell:cell_161",
+      "cell:cell_163",
+      "cell:cell_164",
+      "cell:cell_165",
+      "cell:cell_168",
+      "cell:cell_169",
+      "cell:cell_172",
+      "cell:cell_173",
+      "cell:cell_174",
+      "cell:cell_178",
+      "cell:cell_180",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_186",
+      "cell:cell_187",
+      "cell:cell_190",
+      "cell:cell_191",
+      "cell:cell_192",
+      "cell:cell_194",
+      "cell:cell_196",
+      "cell:cell_197",
+      "cell:cell_198",
+      "cell:cell_199",
+      "cell:cell_200",
+      "cell:cell_201",
+      "cell:cell_203",
+      "cell:cell_334"
+    ],
+    "self_feedback": true,
+    "cell_families": [
+      [
+        "and2b",
+        14
+      ],
+      [
+        "inv",
+        10
+      ],
+      [
+        "and2",
+        9
+      ],
+      [
+        "and4",
+        5
+      ],
+      [
+        "and3",
+        4
+      ],
+      [
+        "and4b",
+        1
+      ],
+      [
+        "nand2b",
+        1
+      ],
+      [
+        "a32o",
+        1
+      ],
+      [
+        "or3",
+        1
+      ],
+      [
+        "nor3",
+        1
+      ]
+    ],
+    "cells": [
+      "cell_18",
+      "cell_248",
+      "cell_252",
+      "cell_253",
+      "cell_255",
+      "cell_274",
+      "cell_304",
+      "cell_305",
+      "cell_306",
+      "cell_308",
+      "cell_309",
+      "cell_319",
+      "cell_320",
+      "cell_322",
+      "cell_323",
+      "cell_325",
+      "cell_327",
+      "cell_328",
+      "cell_329",
+      "cell_330",
+      "cell_336",
+      "cell_386",
+      "cell_490",
+      "cell_500",
+      "cell_502",
+      "cell_503",
+      "cell_504",
+      "cell_505",
+      "cell_776",
+      "cell_778",
+      "cell_781",
+      "cell_785",
+      "cell_787",
+      "cell_788",
+      "cell_789",
+      "cell_791",
+      "cell_792",
+      "cell_794",
+      "cell_803",
+      "cell_804",
+      "cell_805",
+      "cell_807",
+      "cell_808",
+      "cell_815",
+      "cell_816",
+      "cell_817",
+      "cell_818"
+    ]
+  },
+  "output_generator": {
+    "unique_combinational_cells": 166,
+    "source_registers": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_138",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_148",
+      "cell:cell_156",
+      "cell:cell_162",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_195",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_343",
+      "cell:cell_4",
+      "cell:cell_478",
+      "cell:cell_5",
+      "cell:cell_6",
+      "cell:cell_7"
+    ],
+    "common_source_registers": [
+      "cell:cell_118",
+      "cell:cell_122",
+      "cell:cell_144",
+      "cell:cell_146",
+      "cell:cell_156",
+      "cell:cell_165",
+      "cell:cell_179",
+      "cell:cell_181",
+      "cell:cell_183",
+      "cell:cell_2",
+      "cell:cell_200",
+      "cell:cell_3",
+      "cell:cell_334",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    "common_combinational_cells": 20,
+    "exclusive_source_by_bit": {
+      "O[0]": [
+        "cell:cell_5"
+      ],
+      "O[1]": [
+        "cell:cell_195"
+      ],
+      "O[2]": [
+        "cell:cell_7"
+      ],
+      "O[3]": [
+        "cell:cell_162"
+      ],
+      "O[4]": [
+        "cell:cell_138"
+      ],
+      "O[5]": [
+        "cell:cell_6"
+      ],
+      "O[6]": [
+        "cell:cell_148"
+      ],
+      "O[7]": [
+        "cell:cell_343"
+      ]
+    },
+    "source_register_scc_sizes": [
+      8,
+      4,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "source_register_sccs": [
+      [
+        "cell:cell_138",
+        "cell:cell_148",
+        "cell:cell_162",
+        "cell:cell_195",
+        "cell:cell_343",
+        "cell:cell_5",
+        "cell:cell_6",
+        "cell:cell_7"
+      ],
+      [
+        "cell:cell_2",
+        "cell:cell_3",
+        "cell:cell_4",
+        "cell:cell_478"
+      ],
+      [
+        "cell:cell_144"
+      ],
+      [
+        "cell:cell_179"
+      ],
+      [
+        "cell:cell_200"
+      ],
+      [
+        "cell:cell_165"
+      ],
+      [
+        "cell:cell_146"
+      ],
+      [
+        "cell:cell_156"
+      ],
+      [
+        "cell:cell_334"
+      ],
+      [
+        "cell:cell_181"
+      ],
+      [
+        "cell:cell_183"
+      ],
+      [
+        "cell:cell_118"
+      ],
+      [
+        "cell:cell_122"
+      ]
+    ],
+    "cells": [
+      "cell_100",
+      "cell_101",
+      "cell_104",
+      "cell_106",
+      "cell_107",
+      "cell_108",
+      "cell_114",
+      "cell_115",
+      "cell_119",
+      "cell_12",
+      "cell_13",
+      "cell_14",
+      "cell_1513",
+      "cell_1514",
+      "cell_1515",
+      "cell_1520",
+      "cell_1525",
+      "cell_1526",
+      "cell_1532",
+      "cell_1537",
+      "cell_1565",
+      "cell_1568",
+      "cell_1576",
+      "cell_1581",
+      "cell_1583",
+      "cell_1586",
+      "cell_1587",
+      "cell_1592",
+      "cell_16",
+      "cell_1602",
+      "cell_1605",
+      "cell_1609",
+      "cell_1613",
+      "cell_1615",
+      "cell_206",
+      "cell_209",
+      "cell_21",
+      "cell_217",
+      "cell_218",
+      "cell_219",
+      "cell_22",
+      "cell_226",
+      "cell_231",
+      "cell_234",
+      "cell_235",
+      "cell_236",
+      "cell_237",
+      "cell_24",
+      "cell_25",
+      "cell_258",
+      "cell_26",
+      "cell_27",
+      "cell_270",
+      "cell_271",
+      "cell_272",
+      "cell_273",
+      "cell_275",
+      "cell_277",
+      "cell_28",
+      "cell_282",
+      "cell_283",
+      "cell_284",
+      "cell_286",
+      "cell_287",
+      "cell_288",
+      "cell_289",
+      "cell_29",
+      "cell_290",
+      "cell_291",
+      "cell_292",
+      "cell_293",
+      "cell_295",
+      "cell_296",
+      "cell_297",
+      "cell_298",
+      "cell_299",
+      "cell_30",
+      "cell_300",
+      "cell_301",
+      "cell_31",
+      "cell_310",
+      "cell_311",
+      "cell_312",
+      "cell_313",
+      "cell_32",
+      "cell_321",
+      "cell_324",
+      "cell_326",
+      "cell_33",
+      "cell_331",
+      "cell_332",
+      "cell_335",
+      "cell_34",
+      "cell_345",
+      "cell_346",
+      "cell_349",
+      "cell_35",
+      "cell_350",
+      "cell_357",
+      "cell_358",
+      "cell_36",
+      "cell_361",
+      "cell_363",
+      "cell_364",
+      "cell_37",
+      "cell_386",
+      "cell_387",
+      "cell_388",
+      "cell_389",
+      "cell_390",
+      "cell_392",
+      "cell_393",
+      "cell_394",
+      "cell_396",
+      "cell_398",
+      "cell_403",
+      "cell_406",
+      "cell_412",
+      "cell_418",
+      "cell_421",
+      "cell_425",
+      "cell_428",
+      "cell_448",
+      "cell_456",
+      "cell_460",
+      "cell_461",
+      "cell_464",
+      "cell_469",
+      "cell_470",
+      "cell_471",
+      "cell_474",
+      "cell_480",
+      "cell_487",
+      "cell_491",
+      "cell_493",
+      "cell_494",
+      "cell_495",
+      "cell_496",
+      "cell_497",
+      "cell_498",
+      "cell_502",
+      "cell_507",
+      "cell_508",
+      "cell_511",
+      "cell_512",
+      "cell_513",
+      "cell_53",
+      "cell_532",
+      "cell_745",
+      "cell_767",
+      "cell_768",
+      "cell_775",
+      "cell_777",
+      "cell_779",
+      "cell_78",
+      "cell_782",
+      "cell_784",
+      "cell_786",
+      "cell_800",
+      "cell_801",
+      "cell_802",
+      "cell_806",
+      "cell_812",
+      "cell_813",
+      "cell_819",
+      "cell_820"
+    ]
+  },
+  "detected_shift_banks": [
+    {
+      "size": 12,
+      "ordered_members": [
+        "cell:cell_130",
+        "cell:cell_141",
+        "cell:cell_189",
+        "cell:cell_167",
+        "cell:cell_140",
+        "cell:cell_166",
+        "cell:cell_127",
+        "cell:cell_159",
+        "cell:cell_123",
+        "cell:cell_188",
+        "cell:cell_182",
+        "cell:cell_171"
+      ],
+      "common_boundaries": [
+        "cell:cell_125",
+        "port:enable"
+      ],
+      "serial_input_boundaries": [
+        "port:I"
+      ]
+    }
+  ],
+  "register_shapes": {
+    "cell:cell_118": "state/counter-like",
+    "cell:cell_120": "wide-state-dependent",
+    "cell:cell_121": "wide-state-dependent",
+    "cell:cell_122": "state/counter-like",
+    "cell:cell_123": "state/counter-like",
+    "cell:cell_124": "wide-state-dependent",
+    "cell:cell_125": "wide-state-dependent",
+    "cell:cell_126": "mixed",
+    "cell:cell_127": "state/counter-like",
+    "cell:cell_128": "wide-state-dependent",
+    "cell:cell_129": "mixed",
+    "cell:cell_130": "shift-like",
+    "cell:cell_131": "wide-state-dependent",
+    "cell:cell_132": "mixed",
+    "cell:cell_133": "mixed",
+    "cell:cell_134": "wide-state-dependent",
+    "cell:cell_135": "wide-state-dependent",
+    "cell:cell_136": "mixed",
+    "cell:cell_137": "wide-state-dependent",
+    "cell:cell_138": "wide-state-dependent",
+    "cell:cell_139": "mixed",
+    "cell:cell_140": "state/counter-like",
+    "cell:cell_141": "state/counter-like",
+    "cell:cell_142": "wide-state-dependent",
+    "cell:cell_143": "wide-state-dependent",
+    "cell:cell_144": "wide-state-dependent",
+    "cell:cell_145": "wide-state-dependent",
+    "cell:cell_146": "wide-state-dependent",
+    "cell:cell_147": "mixed",
+    "cell:cell_148": "wide-state-dependent",
+    "cell:cell_149": "mixed",
+    "cell:cell_150": "mixed",
+    "cell:cell_151": "mixed",
+    "cell:cell_152": "mixed",
+    "cell:cell_153": "wide-state-dependent",
+    "cell:cell_154": "wide-state-dependent",
+    "cell:cell_155": "mixed",
+    "cell:cell_156": "mixed",
+    "cell:cell_157": "mixed",
+    "cell:cell_158": "wide-state-dependent",
+    "cell:cell_159": "state/counter-like",
+    "cell:cell_160": "wide-state-dependent",
+    "cell:cell_161": "wide-state-dependent",
+    "cell:cell_162": "wide-state-dependent",
+    "cell:cell_163": "wide-state-dependent",
+    "cell:cell_164": "wide-state-dependent",
+    "cell:cell_165": "wide-state-dependent",
+    "cell:cell_166": "state/counter-like",
+    "cell:cell_167": "state/counter-like",
+    "cell:cell_168": "mixed",
+    "cell:cell_169": "mixed",
+    "cell:cell_170": "wide-state-dependent",
+    "cell:cell_171": "state/counter-like",
+    "cell:cell_172": "wide-state-dependent",
+    "cell:cell_173": "wide-state-dependent",
+    "cell:cell_174": "wide-state-dependent",
+    "cell:cell_176": "mixed",
+    "cell:cell_177": "mixed",
+    "cell:cell_178": "wide-state-dependent",
+    "cell:cell_179": "wide-state-dependent",
+    "cell:cell_180": "wide-state-dependent",
+    "cell:cell_181": "mixed",
+    "cell:cell_182": "state/counter-like",
+    "cell:cell_183": "mixed",
+    "cell:cell_184": "mixed",
+    "cell:cell_186": "mixed",
+    "cell:cell_187": "mixed",
+    "cell:cell_188": "state/counter-like",
+    "cell:cell_189": "state/counter-like",
+    "cell:cell_190": "mixed",
+    "cell:cell_191": "mixed",
+    "cell:cell_192": "mixed",
+    "cell:cell_193": "mixed",
+    "cell:cell_194": "wide-state-dependent",
+    "cell:cell_195": "wide-state-dependent",
+    "cell:cell_196": "mixed",
+    "cell:cell_197": "mixed",
+    "cell:cell_198": "mixed",
+    "cell:cell_199": "mixed",
+    "cell:cell_2": "mixed",
+    "cell:cell_200": "shift-like",
+    "cell:cell_201": "wide-state-dependent",
+    "cell:cell_202": "wide-state-dependent",
+    "cell:cell_203": "wide-state-dependent",
+    "cell:cell_3": "mixed",
+    "cell:cell_334": "mixed",
+    "cell:cell_343": "wide-state-dependent",
+    "cell:cell_4": "mixed",
+    "cell:cell_478": "mixed",
+    "cell:cell_5": "wide-state-dependent",
+    "cell:cell_6": "wide-state-dependent",
+    "cell:cell_7": "wide-state-dependent"
+  },
+  "register_communities": [
+    {
+      "id": 0,
+      "size": 30,
+      "members": [
+        "cell:cell_120",
+        "cell:cell_121",
+        "cell:cell_124",
+        "cell:cell_128",
+        "cell:cell_131",
+        "cell:cell_134",
+        "cell:cell_135",
+        "cell:cell_137",
+        "cell:cell_142",
+        "cell:cell_143",
+        "cell:cell_150",
+        "cell:cell_153",
+        "cell:cell_154",
+        "cell:cell_157",
+        "cell:cell_158",
+        "cell:cell_160",
+        "cell:cell_161",
+        "cell:cell_163",
+        "cell:cell_164",
+        "cell:cell_170",
+        "cell:cell_173",
+        "cell:cell_174",
+        "cell:cell_178",
+        "cell:cell_180",
+        "cell:cell_184",
+        "cell:cell_193",
+        "cell:cell_194",
+        "cell:cell_201",
+        "cell:cell_202",
+        "cell:cell_203"
+      ],
+      "shape_counts": {
+        "wide-state-dependent": 26,
+        "mixed": 4
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 1,
+      "size": 18,
+      "members": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_129",
+        "cell:cell_132",
+        "cell:cell_144",
+        "cell:cell_146",
+        "cell:cell_147",
+        "cell:cell_152",
+        "cell:cell_155",
+        "cell:cell_156",
+        "cell:cell_165",
+        "cell:cell_168",
+        "cell:cell_179",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_187",
+        "cell:cell_192",
+        "cell:cell_334"
+      ],
+      "shape_counts": {
+        "state/counter-like": 2,
+        "mixed": 12,
+        "wide-state-dependent": 4
+      },
+      "direct_outputs": [
+        "O[0]",
+        "O[1]",
+        "O[2]",
+        "O[3]",
+        "O[4]",
+        "O[5]",
+        "O[6]",
+        "O[7]",
+        "success"
+      ]
+    },
+    {
+      "id": 2,
+      "size": 14,
+      "members": [
+        "cell:cell_123",
+        "cell:cell_125",
+        "cell:cell_127",
+        "cell:cell_130",
+        "cell:cell_140",
+        "cell:cell_141",
+        "cell:cell_145",
+        "cell:cell_159",
+        "cell:cell_166",
+        "cell:cell_167",
+        "cell:cell_171",
+        "cell:cell_182",
+        "cell:cell_188",
+        "cell:cell_189"
+      ],
+      "shape_counts": {
+        "state/counter-like": 11,
+        "wide-state-dependent": 2,
+        "shift-like": 1
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 3,
+      "size": 13,
+      "members": [
+        "cell:cell_138",
+        "cell:cell_148",
+        "cell:cell_162",
+        "cell:cell_195",
+        "cell:cell_2",
+        "cell:cell_200",
+        "cell:cell_3",
+        "cell:cell_343",
+        "cell:cell_4",
+        "cell:cell_478",
+        "cell:cell_5",
+        "cell:cell_6",
+        "cell:cell_7"
+      ],
+      "shape_counts": {
+        "wide-state-dependent": 8,
+        "mixed": 4,
+        "shift-like": 1
+      },
+      "direct_outputs": [
+        "O[0]",
+        "O[1]",
+        "O[2]",
+        "O[3]",
+        "O[4]",
+        "O[5]",
+        "O[6]",
+        "O[7]"
+      ]
+    },
+    {
+      "id": 4,
+      "size": 3,
+      "members": [
+        "cell:cell_172",
+        "cell:cell_176",
+        "cell:cell_177"
+      ],
+      "shape_counts": {
+        "wide-state-dependent": 1,
+        "mixed": 2
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 5,
+      "size": 2,
+      "members": [
+        "cell:cell_133",
+        "cell:cell_191"
+      ],
+      "shape_counts": {
+        "mixed": 2
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 6,
+      "size": 2,
+      "members": [
+        "cell:cell_126",
+        "cell:cell_136"
+      ],
+      "shape_counts": {
+        "mixed": 2
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 7,
+      "size": 2,
+      "members": [
+        "cell:cell_149",
+        "cell:cell_196"
+      ],
+      "shape_counts": {
+        "mixed": 2
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 8,
+      "size": 2,
+      "members": [
+        "cell:cell_169",
+        "cell:cell_197"
+      ],
+      "shape_counts": {
+        "mixed": 2
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 9,
+      "size": 2,
+      "members": [
+        "cell:cell_186",
+        "cell:cell_198"
+      ],
+      "shape_counts": {
+        "mixed": 2
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 10,
+      "size": 2,
+      "members": [
+        "cell:cell_139",
+        "cell:cell_190"
+      ],
+      "shape_counts": {
+        "mixed": 2
+      },
+      "direct_outputs": []
+    },
+    {
+      "id": 11,
+      "size": 2,
+      "members": [
+        "cell:cell_151",
+        "cell:cell_199"
+      ],
+      "shape_counts": {
+        "mixed": 2
+      },
+      "direct_outputs": []
+    }
+  ],
+  "functional_communities": [
+    {
+      "id": 0,
+      "size": 118,
+      "ff_count": 22,
+      "ports": [
+        "I"
+      ],
+      "top_families": [
+        [
+          "dfrtp",
+          22
+        ],
+        [
+          "o21a",
+          11
+        ],
+        [
+          "a31o",
+          8
+        ],
+        [
+          "and2b",
+          7
+        ],
+        [
+          "nand2b",
+          7
+        ],
+        [
+          "nand4",
+          7
+        ]
+      ],
+      "members": [
+        "cell:cell_103",
+        "cell:cell_105",
+        "cell:cell_120",
+        "cell:cell_124",
+        "cell:cell_131",
+        "cell:cell_134",
+        "cell:cell_135",
+        "cell:cell_137",
+        "cell:cell_142",
+        "cell:cell_143",
+        "cell:cell_1511",
+        "cell:cell_1523",
+        "cell:cell_1528",
+        "cell:cell_153",
+        "cell:cell_1533",
+        "cell:cell_154",
+        "cell:cell_1542",
+        "cell:cell_1572",
+        "cell:cell_158",
+        "cell:cell_1599",
+        "cell:cell_160",
+        "cell:cell_1603",
+        "cell:cell_161",
+        "cell:cell_1614",
+        "cell:cell_1616",
+        "cell:cell_163",
+        "cell:cell_164",
+        "cell:cell_173",
+        "cell:cell_174",
+        "cell:cell_175",
+        "cell:cell_178",
+        "cell:cell_180",
+        "cell:cell_19",
+        "cell:cell_194",
+        "cell:cell_201",
+        "cell:cell_203",
+        "cell:cell_211",
+        "cell:cell_213",
+        "cell:cell_221",
+        "cell:cell_229",
+        "cell:cell_238",
+        "cell:cell_240",
+        "cell:cell_243",
+        "cell:cell_244",
+        "cell:cell_245",
+        "cell:cell_252",
+        "cell:cell_257",
+        "cell:cell_260",
+        "cell:cell_261",
+        "cell:cell_265",
+        "cell:cell_267",
+        "cell:cell_268",
+        "cell:cell_269",
+        "cell:cell_305",
+        "cell:cell_308",
+        "cell:cell_314",
+        "cell:cell_319",
+        "cell:cell_323",
+        "cell:cell_325",
+        "cell:cell_327",
+        "cell:cell_330",
+        "cell:cell_367",
+        "cell:cell_377",
+        "cell:cell_378",
+        "cell:cell_379",
+        "cell:cell_381",
+        "cell:cell_382",
+        "cell:cell_383",
+        "cell:cell_407",
+        "cell:cell_429",
+        "cell:cell_435",
+        "cell:cell_441",
+        "cell:cell_445",
+        "cell:cell_447",
+        "cell:cell_449",
+        "cell:cell_450",
+        "cell:cell_452",
+        "cell:cell_453",
+        "cell:cell_475",
+        "cell:cell_476",
+        "cell:cell_482",
+        "cell:cell_483",
+        "cell:cell_500",
+        "cell:cell_503",
+        "cell:cell_504",
+        "cell:cell_70",
+        "cell:cell_72",
+        "cell:cell_73",
+        "cell:cell_742",
+        "cell:cell_743",
+        "cell:cell_754",
+        "cell:cell_758",
+        "cell:cell_76",
+        "cell:cell_760",
+        "cell:cell_763",
+        "cell:cell_766",
+        "cell:cell_770",
+        "cell:cell_771",
+        "cell:cell_773",
+        "cell:cell_774",
+        "cell:cell_785",
+        "cell:cell_789",
+        "cell:cell_792",
+        "cell:cell_794",
+        "cell:cell_80",
+        "cell:cell_804",
+        "cell:cell_805",
+        "cell:cell_815",
+        "cell:cell_816",
+        "cell:cell_83",
+        "cell:cell_85",
+        "cell:cell_88",
+        "cell:cell_92",
+        "cell:cell_93",
+        "cell:cell_94",
+        "cell:cell_96",
+        "cell:cell_98",
+        "port:I"
+      ]
+    },
+    {
+      "id": 1,
+      "size": 111,
+      "ff_count": 4,
+      "ports": [],
+      "top_families": [
+        [
+          "nor2",
+          9
+        ],
+        [
+          "nand2",
+          8
+        ],
+        [
+          "and2b",
+          8
+        ],
+        [
+          "xnor2",
+          7
+        ],
+        [
+          "a21oi",
+          6
+        ],
+        [
+          "nand2b",
+          6
+        ]
+      ],
+      "members": [
+        "cell:cell_10",
+        "cell:cell_100",
+        "cell:cell_101",
+        "cell:cell_104",
+        "cell:cell_107",
+        "cell:cell_108",
+        "cell:cell_114",
+        "cell:cell_115",
+        "cell:cell_1513",
+        "cell:cell_1514",
+        "cell:cell_1515",
+        "cell:cell_1520",
+        "cell:cell_1525",
+        "cell:cell_1526",
+        "cell:cell_1532",
+        "cell:cell_1537",
+        "cell:cell_1565",
+        "cell:cell_1568",
+        "cell:cell_1576",
+        "cell:cell_1581",
+        "cell:cell_1583",
+        "cell:cell_1586",
+        "cell:cell_1587",
+        "cell:cell_1592",
+        "cell:cell_1602",
+        "cell:cell_1613",
+        "cell:cell_1615",
+        "cell:cell_2",
+        "cell:cell_20",
+        "cell:cell_206",
+        "cell:cell_209",
+        "cell:cell_21",
+        "cell:cell_217",
+        "cell:cell_218",
+        "cell:cell_219",
+        "cell:cell_22",
+        "cell:cell_226",
+        "cell:cell_230",
+        "cell:cell_235",
+        "cell:cell_236",
+        "cell:cell_237",
+        "cell:cell_258",
+        "cell:cell_270",
+        "cell:cell_271",
+        "cell:cell_272",
+        "cell:cell_273",
+        "cell:cell_275",
+        "cell:cell_277",
+        "cell:cell_28",
+        "cell:cell_283",
+        "cell:cell_295",
+        "cell:cell_3",
+        "cell:cell_30",
+        "cell:cell_310",
+        "cell:cell_312",
+        "cell:cell_313",
+        "cell:cell_321",
+        "cell:cell_324",
+        "cell:cell_326",
+        "cell:cell_331",
+        "cell:cell_332",
+        "cell:cell_335",
+        "cell:cell_345",
+        "cell:cell_346",
+        "cell:cell_349",
+        "cell:cell_357",
+        "cell:cell_358",
+        "cell:cell_361",
+        "cell:cell_362",
+        "cell:cell_363",
+        "cell:cell_364",
+        "cell:cell_390",
+        "cell:cell_394",
+        "cell:cell_4",
+        "cell:cell_406",
+        "cell:cell_412",
+        "cell:cell_421",
+        "cell:cell_425",
+        "cell:cell_428",
+        "cell:cell_448",
+        "cell:cell_460",
+        "cell:cell_461",
+        "cell:cell_464",
+        "cell:cell_469",
+        "cell:cell_470",
+        "cell:cell_471",
+        "cell:cell_474",
+        "cell:cell_477",
+        "cell:cell_478",
+        "cell:cell_480",
+        "cell:cell_487",
+        "cell:cell_491",
+        "cell:cell_507",
+        "cell:cell_508",
+        "cell:cell_53",
+        "cell:cell_532",
+        "cell:cell_745",
+        "cell:cell_767",
+        "cell:cell_768",
+        "cell:cell_777",
+        "cell:cell_779",
+        "cell:cell_782",
+        "cell:cell_786",
+        "cell:cell_798",
+        "cell:cell_8",
+        "cell:cell_800",
+        "cell:cell_801",
+        "cell:cell_802",
+        "cell:cell_812",
+        "cell:cell_819",
+        "cell:cell_820"
+      ]
+    },
+    {
+      "id": 2,
+      "size": 102,
+      "ff_count": 0,
+      "ports": [],
+      "top_families": [
+        [
+          "nor2",
+          16
+        ],
+        [
+          "nand2",
+          11
+        ],
+        [
+          "or2",
+          7
+        ],
+        [
+          "xor2",
+          6
+        ],
+        [
+          "xnor2",
+          6
+        ],
+        [
+          "or3",
+          6
+        ]
+      ],
+      "members": [
+        "cell:cell_0",
+        "cell:cell_1",
+        "cell:cell_102",
+        "cell:cell_1155",
+        "cell:cell_116",
+        "cell:cell_1328",
+        "cell:cell_1396",
+        "cell:cell_1452",
+        "cell:cell_1455",
+        "cell:cell_1456",
+        "cell:cell_1459",
+        "cell:cell_1501",
+        "cell:cell_1508",
+        "cell:cell_1509",
+        "cell:cell_1519",
+        "cell:cell_1521",
+        "cell:cell_1527",
+        "cell:cell_1534",
+        "cell:cell_1536",
+        "cell:cell_1539",
+        "cell:cell_1540",
+        "cell:cell_1543",
+        "cell:cell_1545",
+        "cell:cell_1546",
+        "cell:cell_1547",
+        "cell:cell_1549",
+        "cell:cell_1550",
+        "cell:cell_1551",
+        "cell:cell_1552",
+        "cell:cell_1553",
+        "cell:cell_1554",
+        "cell:cell_1555",
+        "cell:cell_1556",
+        "cell:cell_1558",
+        "cell:cell_1559",
+        "cell:cell_1562",
+        "cell:cell_1563",
+        "cell:cell_1566",
+        "cell:cell_1567",
+        "cell:cell_1569",
+        "cell:cell_1573",
+        "cell:cell_1577",
+        "cell:cell_1578",
+        "cell:cell_1582",
+        "cell:cell_1585",
+        "cell:cell_1588",
+        "cell:cell_1591",
+        "cell:cell_1595",
+        "cell:cell_1600",
+        "cell:cell_1606",
+        "cell:cell_1608",
+        "cell:cell_1611",
+        "cell:cell_1612",
+        "cell:cell_1617",
+        "cell:cell_207",
+        "cell:cell_208",
+        "cell:cell_227",
+        "cell:cell_280",
+        "cell:cell_339",
+        "cell:cell_352",
+        "cell:cell_353",
+        "cell:cell_354",
+        "cell:cell_355",
+        "cell:cell_356",
+        "cell:cell_359",
+        "cell:cell_360",
+        "cell:cell_366",
+        "cell:cell_385",
+        "cell:cell_391",
+        "cell:cell_395",
+        "cell:cell_397",
+        "cell:cell_399",
+        "cell:cell_400",
+        "cell:cell_402",
+        "cell:cell_404",
+        "cell:cell_409",
+        "cell:cell_411",
+        "cell:cell_414",
+        "cell:cell_417",
+        "cell:cell_431",
+        "cell:cell_463",
+        "cell:cell_467",
+        "cell:cell_473",
+        "cell:cell_481",
+        "cell:cell_506",
+        "cell:cell_509",
+        "cell:cell_517",
+        "cell:cell_518",
+        "cell:cell_527",
+        "cell:cell_528",
+        "cell:cell_534",
+        "cell:cell_536",
+        "cell:cell_749",
+        "cell:cell_750",
+        "cell:cell_751",
+        "cell:cell_752",
+        "cell:cell_753",
+        "cell:cell_762",
+        "cell:cell_797",
+        "cell:cell_809",
+        "cell:cell_810",
+        "cell:cell_811"
+      ]
+    },
+    {
+      "id": 3,
+      "size": 85,
+      "ff_count": 5,
+      "ports": [
+        "O[0]",
+        "O[1]",
+        "O[2]",
+        "O[3]",
+        "O[4]",
+        "O[5]",
+        "O[6]",
+        "O[7]",
+        "success"
+      ],
+      "top_families": [
+        [
+          "a22o",
+          16
+        ],
+        [
+          "and3",
+          9
+        ],
+        [
+          "o31a",
+          8
+        ],
+        [
+          "or3",
+          8
+        ],
+        [
+          "conb",
+          5
+        ],
+        [
+          "dfrtp",
+          5
+        ]
+      ],
+      "members": [
+        "cell:cell_106",
+        "cell:cell_119",
+        "cell:cell_12",
+        "cell:cell_125",
+        "cell:cell_13",
+        "cell:cell_14",
+        "cell:cell_144",
+        "cell:cell_145",
+        "cell:cell_1560",
+        "cell:cell_16",
+        "cell:cell_1605",
+        "cell:cell_1609",
+        "cell:cell_179",
+        "cell:cell_18",
+        "cell:cell_200",
+        "cell:cell_231",
+        "cell:cell_24",
+        "cell:cell_25",
+        "cell:cell_26",
+        "cell:cell_27",
+        "cell:cell_274",
+        "cell:cell_282",
+        "cell:cell_284",
+        "cell:cell_286",
+        "cell:cell_287",
+        "cell:cell_288",
+        "cell:cell_289",
+        "cell:cell_29",
+        "cell:cell_290",
+        "cell:cell_291",
+        "cell:cell_292",
+        "cell:cell_293",
+        "cell:cell_296",
+        "cell:cell_297",
+        "cell:cell_298",
+        "cell:cell_299",
+        "cell:cell_300",
+        "cell:cell_301",
+        "cell:cell_31",
+        "cell:cell_32",
+        "cell:cell_33",
+        "cell:cell_336",
+        "cell:cell_337",
+        "cell:cell_34",
+        "cell:cell_35",
+        "cell:cell_36",
+        "cell:cell_37",
+        "cell:cell_387",
+        "cell:cell_388",
+        "cell:cell_389",
+        "cell:cell_392",
+        "cell:cell_393",
+        "cell:cell_396",
+        "cell:cell_398",
+        "cell:cell_403",
+        "cell:cell_439",
+        "cell:cell_442",
+        "cell:cell_456",
+        "cell:cell_493",
+        "cell:cell_494",
+        "cell:cell_495",
+        "cell:cell_496",
+        "cell:cell_497",
+        "cell:cell_498",
+        "cell:cell_511",
+        "cell:cell_512",
+        "cell:cell_513",
+        "cell:cell_77",
+        "cell:cell_775",
+        "cell:cell_78",
+        "cell:cell_781",
+        "cell:cell_783",
+        "cell:cell_784",
+        "cell:cell_808",
+        "cell:cell_813",
+        "cell:cell_9",
+        "port:O[0]",
+        "port:O[1]",
+        "port:O[2]",
+        "port:O[3]",
+        "port:O[4]",
+        "port:O[5]",
+        "port:O[6]",
+        "port:O[7]",
+        "port:success"
+      ]
+    },
+    {
+      "id": 4,
+      "size": 72,
+      "ff_count": 17,
+      "ports": [
+        "enable"
+      ],
+      "top_families": [
+        [
+          "dfrtp",
+          13
+        ],
+        [
+          "mux2",
+          10
+        ],
+        [
+          "xnor2",
+          9
+        ],
+        [
+          "xor2",
+          6
+        ],
+        [
+          "a221o",
+          4
+        ],
+        [
+          "dfstp",
+          4
+        ]
+      ],
+      "members": [
+        "cell:cell_109",
+        "cell:cell_11",
+        "cell:cell_111",
+        "cell:cell_112",
+        "cell:cell_113",
+        "cell:cell_117",
+        "cell:cell_123",
+        "cell:cell_127",
+        "cell:cell_130",
+        "cell:cell_138",
+        "cell:cell_140",
+        "cell:cell_141",
+        "cell:cell_148",
+        "cell:cell_1517",
+        "cell:cell_1557",
+        "cell:cell_1564",
+        "cell:cell_1584",
+        "cell:cell_159",
+        "cell:cell_1590",
+        "cell:cell_1597",
+        "cell:cell_1604",
+        "cell:cell_162",
+        "cell:cell_166",
+        "cell:cell_167",
+        "cell:cell_189",
+        "cell:cell_195",
+        "cell:cell_214",
+        "cell:cell_220",
+        "cell:cell_23",
+        "cell:cell_266",
+        "cell:cell_281",
+        "cell:cell_285",
+        "cell:cell_307",
+        "cell:cell_315",
+        "cell:cell_318",
+        "cell:cell_341",
+        "cell:cell_342",
+        "cell:cell_343",
+        "cell:cell_344",
+        "cell:cell_348",
+        "cell:cell_350",
+        "cell:cell_365",
+        "cell:cell_370",
+        "cell:cell_371",
+        "cell:cell_373",
+        "cell:cell_410",
+        "cell:cell_413",
+        "cell:cell_415",
+        "cell:cell_418",
+        "cell:cell_420",
+        "cell:cell_423",
+        "cell:cell_426",
+        "cell:cell_446",
+        "cell:cell_459",
+        "cell:cell_5",
+        "cell:cell_514",
+        "cell:cell_515",
+        "cell:cell_516",
+        "cell:cell_520",
+        "cell:cell_521",
+        "cell:cell_526",
+        "cell:cell_530",
+        "cell:cell_531",
+        "cell:cell_533",
+        "cell:cell_535",
+        "cell:cell_6",
+        "cell:cell_7",
+        "cell:cell_748",
+        "cell:cell_75",
+        "cell:cell_799",
+        "cell:cell_814",
+        "port:enable"
+      ]
+    },
+    {
+      "id": 5,
+      "size": 67,
+      "ff_count": 15,
+      "ports": [],
+      "top_families": [
+        [
+          "dfrtp",
+          15
+        ],
+        [
+          "and4bb",
+          6
+        ],
+        [
+          "or4b",
+          4
+        ],
+        [
+          "o21a",
+          4
+        ],
+        [
+          "and2b",
+          3
+        ],
+        [
+          "nand4",
+          3
+        ]
+      ],
+      "members": [
+        "cell:cell_110",
+        "cell:cell_129",
+        "cell:cell_132",
+        "cell:cell_133",
+        "cell:cell_15",
+        "cell:cell_150",
+        "cell:cell_1507",
+        "cell:cell_151",
+        "cell:cell_152",
+        "cell:cell_157",
+        "cell:cell_1570",
+        "cell:cell_1579",
+        "cell:cell_17",
+        "cell:cell_171",
+        "cell:cell_182",
+        "cell:cell_184",
+        "cell:cell_185",
+        "cell:cell_188",
+        "cell:cell_191",
+        "cell:cell_192",
+        "cell:cell_193",
+        "cell:cell_199",
+        "cell:cell_223",
+        "cell:cell_232",
+        "cell:cell_233",
+        "cell:cell_239",
+        "cell:cell_241",
+        "cell:cell_242",
+        "cell:cell_246",
+        "cell:cell_247",
+        "cell:cell_248",
+        "cell:cell_254",
+        "cell:cell_262",
+        "cell:cell_264",
+        "cell:cell_278",
+        "cell:cell_294",
+        "cell:cell_303",
+        "cell:cell_306",
+        "cell:cell_320",
+        "cell:cell_329",
+        "cell:cell_340",
+        "cell:cell_375",
+        "cell:cell_376",
+        "cell:cell_38",
+        "cell:cell_422",
+        "cell:cell_433",
+        "cell:cell_440",
+        "cell:cell_451",
+        "cell:cell_465",
+        "cell:cell_488",
+        "cell:cell_519",
+        "cell:cell_523",
+        "cell:cell_525",
+        "cell:cell_741",
+        "cell:cell_747",
+        "cell:cell_764",
+        "cell:cell_769",
+        "cell:cell_776",
+        "cell:cell_79",
+        "cell:cell_81",
+        "cell:cell_818",
+        "cell:cell_82",
+        "cell:cell_84",
+        "cell:cell_86",
+        "cell:cell_87",
+        "cell:cell_91",
+        "cell:cell_99"
+      ]
+    },
+    {
+      "id": 6,
+      "size": 53,
+      "ff_count": 4,
+      "ports": [],
+      "top_families": [
+        [
+          "nor2",
+          7
+        ],
+        [
+          "nand2",
+          7
+        ],
+        [
+          "a21oi",
+          5
+        ],
+        [
+          "dfrtp",
+          4
+        ],
+        [
+          "xnor2",
+          4
+        ],
+        [
+          "a21o",
+          4
+        ]
+      ],
+      "members": [
+        "cell:cell_121",
+        "cell:cell_128",
+        "cell:cell_1510",
+        "cell:cell_1516",
+        "cell:cell_1518",
+        "cell:cell_1522",
+        "cell:cell_1524",
+        "cell:cell_1531",
+        "cell:cell_1541",
+        "cell:cell_1571",
+        "cell:cell_1574",
+        "cell:cell_1575",
+        "cell:cell_1580",
+        "cell:cell_1589",
+        "cell:cell_1593",
+        "cell:cell_1598",
+        "cell:cell_1601",
+        "cell:cell_170",
+        "cell:cell_202",
+        "cell:cell_204",
+        "cell:cell_205",
+        "cell:cell_215",
+        "cell:cell_216",
+        "cell:cell_224",
+        "cell:cell_228",
+        "cell:cell_249",
+        "cell:cell_250",
+        "cell:cell_276",
+        "cell:cell_317",
+        "cell:cell_347",
+        "cell:cell_351",
+        "cell:cell_368",
+        "cell:cell_369",
+        "cell:cell_401",
+        "cell:cell_405",
+        "cell:cell_416",
+        "cell:cell_419",
+        "cell:cell_424",
+        "cell:cell_430",
+        "cell:cell_432",
+        "cell:cell_434",
+        "cell:cell_455",
+        "cell:cell_462",
+        "cell:cell_466",
+        "cell:cell_468",
+        "cell:cell_472",
+        "cell:cell_479",
+        "cell:cell_485",
+        "cell:cell_492",
+        "cell:cell_499",
+        "cell:cell_510",
+        "cell:cell_529",
+        "cell:cell_780"
+      ]
+    },
+    {
+      "id": 7,
+      "size": 36,
+      "ff_count": 8,
+      "ports": [],
+      "top_families": [
+        [
+          "dfrtp",
+          8
+        ],
+        [
+          "and3",
+          3
+        ],
+        [
+          "and2b",
+          3
+        ],
+        [
+          "diode",
+          3
+        ],
+        [
+          "nand2",
+          2
+        ],
+        [
+          "o21a",
+          2
+        ]
+      ],
+      "members": [
+        "cell:cell_118",
+        "cell:cell_122",
+        "cell:cell_146",
+        "cell:cell_1530",
+        "cell:cell_1538",
+        "cell:cell_156",
+        "cell:cell_1610",
+        "cell:cell_165",
+        "cell:cell_181",
+        "cell:cell_183",
+        "cell:cell_225",
+        "cell:cell_234",
+        "cell:cell_251",
+        "cell:cell_255",
+        "cell:cell_311",
+        "cell:cell_316",
+        "cell:cell_333",
+        "cell:cell_334",
+        "cell:cell_338",
+        "cell:cell_372",
+        "cell:cell_386",
+        "cell:cell_408",
+        "cell:cell_427",
+        "cell:cell_438",
+        "cell:cell_457",
+        "cell:cell_486",
+        "cell:cell_489",
+        "cell:cell_501",
+        "cell:cell_502",
+        "cell:cell_69",
+        "cell:cell_71",
+        "cell:cell_74",
+        "cell:cell_757",
+        "cell:cell_772",
+        "cell:cell_795",
+        "cell:cell_806"
+      ]
+    },
+    {
+      "id": 8,
+      "size": 33,
+      "ff_count": 0,
+      "ports": [
+        "clk"
+      ],
+      "top_families": [
+        [
+          "clkbuf",
+          32
+        ]
+      ],
+      "members": [
+        "cell:cell_1435",
+        "cell:cell_1436",
+        "cell:cell_39",
+        "cell:cell_40",
+        "cell:cell_41",
+        "cell:cell_42",
+        "cell:cell_43",
+        "cell:cell_44",
+        "cell:cell_45",
+        "cell:cell_46",
+        "cell:cell_47",
+        "cell:cell_48",
+        "cell:cell_49",
+        "cell:cell_50",
+        "cell:cell_51",
+        "cell:cell_52",
+        "cell:cell_54",
+        "cell:cell_55",
+        "cell:cell_56",
+        "cell:cell_57",
+        "cell:cell_58",
+        "cell:cell_59",
+        "cell:cell_60",
+        "cell:cell_61",
+        "cell:cell_62",
+        "cell:cell_63",
+        "cell:cell_64",
+        "cell:cell_65",
+        "cell:cell_66",
+        "cell:cell_67",
+        "cell:cell_68",
+        "cell:cell_982",
+        "port:clk"
+      ]
+    },
+    {
+      "id": 9,
+      "size": 33,
+      "ff_count": 8,
+      "ports": [],
+      "top_families": [
+        [
+          "dfrtp",
+          8
+        ],
+        [
+          "o21a",
+          4
+        ],
+        [
+          "a31o",
+          2
+        ],
+        [
+          "a21o",
+          2
+        ],
+        [
+          "inv",
+          2
+        ],
+        [
+          "nor2",
+          2
+        ]
+      ],
+      "members": [
+        "cell:cell_126",
+        "cell:cell_136",
+        "cell:cell_139",
+        "cell:cell_149",
+        "cell:cell_1529",
+        "cell:cell_1535",
+        "cell:cell_155",
+        "cell:cell_1594",
+        "cell:cell_1596",
+        "cell:cell_187",
+        "cell:cell_190",
+        "cell:cell_196",
+        "cell:cell_210",
+        "cell:cell_212",
+        "cell:cell_253",
+        "cell:cell_256",
+        "cell:cell_263",
+        "cell:cell_304",
+        "cell:cell_322",
+        "cell:cell_380",
+        "cell:cell_384",
+        "cell:cell_437",
+        "cell:cell_454",
+        "cell:cell_744",
+        "cell:cell_746",
+        "cell:cell_756",
+        "cell:cell_761",
+        "cell:cell_787",
+        "cell:cell_788",
+        "cell:cell_803",
+        "cell:cell_817",
+        "cell:cell_90",
+        "cell:cell_97"
+      ]
+    },
+    {
+      "id": 10,
+      "size": 25,
+      "ff_count": 6,
+      "ports": [],
+      "top_families": [
+        [
+          "dfrtp",
+          6
+        ],
+        [
+          "o21a",
+          3
+        ],
+        [
+          "nand4",
+          2
+        ],
+        [
+          "and3",
+          2
+        ],
+        [
+          "and2b",
+          2
+        ],
+        [
+          "a31o",
+          2
+        ]
+      ],
+      "members": [
+        "cell:cell_147",
+        "cell:cell_1512",
+        "cell:cell_1607",
+        "cell:cell_168",
+        "cell:cell_169",
+        "cell:cell_186",
+        "cell:cell_197",
+        "cell:cell_198",
+        "cell:cell_222",
+        "cell:cell_259",
+        "cell:cell_279",
+        "cell:cell_309",
+        "cell:cell_328",
+        "cell:cell_374",
+        "cell:cell_436",
+        "cell:cell_443",
+        "cell:cell_490",
+        "cell:cell_505",
+        "cell:cell_755",
+        "cell:cell_759",
+        "cell:cell_765",
+        "cell:cell_791",
+        "cell:cell_807",
+        "cell:cell_89",
+        "cell:cell_95"
+      ]
+    },
+    {
+      "id": 11,
+      "size": 15,
+      "ff_count": 3,
+      "ports": [],
+      "top_families": [
+        [
+          "inv",
+          4
+        ],
+        [
+          "dfrtp",
+          3
+        ],
+        [
+          "mux2",
+          2
+        ],
+        [
+          "a21oi",
+          1
+        ],
+        [
+          "or2",
+          1
+        ],
+        [
+          "o211a",
+          1
+        ]
+      ],
+      "members": [
+        "cell:cell_1544",
+        "cell:cell_1561",
+        "cell:cell_172",
+        "cell:cell_176",
+        "cell:cell_177",
+        "cell:cell_302",
+        "cell:cell_444",
+        "cell:cell_458",
+        "cell:cell_484",
+        "cell:cell_522",
+        "cell:cell_524",
+        "cell:cell_778",
+        "cell:cell_790",
+        "cell:cell_793",
+        "cell:cell_796"
+      ]
+    }
+  ],
+  "largest_register_scc_sizes": [
+    9,
+    8,
+    4,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "largest_register_sccs": [
+    [
+      "cell:cell_121",
+      "cell:cell_125",
+      "cell:cell_128",
+      "cell:cell_150",
+      "cell:cell_157",
+      "cell:cell_170",
+      "cell:cell_184",
+      "cell:cell_193",
+      "cell:cell_202"
+    ],
+    [
+      "cell:cell_138",
+      "cell:cell_148",
+      "cell:cell_162",
+      "cell:cell_195",
+      "cell:cell_343",
+      "cell:cell_5",
+      "cell:cell_6",
+      "cell:cell_7"
+    ],
+    [
+      "cell:cell_2",
+      "cell:cell_3",
+      "cell:cell_4",
+      "cell:cell_478"
+    ],
+    [
+      "cell:cell_120",
+      "cell:cell_134"
+    ],
+    [
+      "cell:cell_124",
+      "cell:cell_163"
+    ],
+    [
+      "cell:cell_131",
+      "cell:cell_161"
+    ],
+    [
+      "cell:cell_135",
+      "cell:cell_194"
+    ],
+    [
+      "cell:cell_137",
+      "cell:cell_173"
+    ],
+    [
+      "cell:cell_142",
+      "cell:cell_201"
+    ],
+    [
+      "cell:cell_143",
+      "cell:cell_174"
+    ],
+    [
+      "cell:cell_153",
+      "cell:cell_203"
+    ],
+    [
+      "cell:cell_154",
+      "cell:cell_180"
+    ],
+    [
+      "cell:cell_158",
+      "cell:cell_164"
+    ],
+    [
+      "cell:cell_160",
+      "cell:cell_178"
+    ],
+    [
+      "cell:cell_126",
+      "cell:cell_136"
+    ],
+    [
+      "cell:cell_129",
+      "cell:cell_132"
+    ],
+    [
+      "cell:cell_133",
+      "cell:cell_191"
+    ],
+    [
+      "cell:cell_139",
+      "cell:cell_190"
+    ],
+    [
+      "cell:cell_147",
+      "cell:cell_168"
+    ],
+    [
+      "cell:cell_149",
+      "cell:cell_196"
+    ],
+    [
+      "cell:cell_151",
+      "cell:cell_199"
+    ],
+    [
+      "cell:cell_152",
+      "cell:cell_192"
+    ],
+    [
+      "cell:cell_155",
+      "cell:cell_187"
+    ],
+    [
+      "cell:cell_169",
+      "cell:cell_197"
+    ],
+    [
+      "cell:cell_176",
+      "cell:cell_177"
+    ]
+  ],
+  "undriven_loaded_nets": [],
+  "multi_driver_nets": [],
+  "findings": [
+    "The success pin is the Q output of cell:cell_144; its next-state/predicate cone is 47 cells with 57 direct FF inputs and an AND-heavy signature [('and2b', 14), ('inv', 10), ('and2', 9), ('and4', 5), ('and3', 4), ('and4b', 1)].",
+    "The eight O cones together contain 166 unique combinational cells driven by 23 FFs. Every bit shares 15 FF inputs and 20 logic cells, then has a bit-specific branch.",
+    "The success predicate and O generator share 2 combinational cells and 10 direct FF sources.",
+    "A 12-bit mux/hold chain was recovered from I through cell:cell_130 -> cell:cell_141 -> cell:cell_189 -> cell:cell_167 -> cell:cell_140 -> cell:cell_166 -> cell:cell_127 -> cell:cell_159 -> cell:cell_123 -> cell:cell_188 -> cell:cell_182 -> cell:cell_171; every stage shares control boundaries ['cell:cell_125', 'port:enable'].",
+    "The largest mutually coupled state island has 9 FFs ['cell:cell_121', 'cell:cell_125', 'cell:cell_128', 'cell:cell_150', 'cell:cell_157', 'cell:cell_170', 'cell:cell_184', 'cell:cell_193', 'cell:cell_202']; its 3-to-8-cell next-state cones, XOR/XNOR use, enable dependence, and connection through cell:cell_125 to the shift bank make it the strongest controller/counter candidate, but topology alone cannot distinguish those roles.",
+    "Register shapes by the deliberately simple dependency heuristic: {'state/counter-like': 13, 'wide-state-dependent': 41, 'mixed': 36, 'shift-like': 2}.",
+    "The register-only dependency graph has 801 directed edges and SCC sizes [9, 8, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2]; large SCCs indicate mutually coupled state banks, while chains of singleton SCCs are compatible with shifts/pipelines.",
+    "Raw connectivity anomalies: 0 loaded nets have no recovered driver and 0 nets have multiple recovered drivers."
+  ]
+}
