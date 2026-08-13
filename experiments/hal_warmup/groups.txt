@@ -1,0 +1,26 @@
+State:
+
+ID:0, Size:8, CLK: {84}, EN: {}, R: {}, S: {}
+  Successors:   {0}
+  Predecessors: {0}
+cell_19, type: sky130_fd_sc_hd__dfrtp_2, id: 20, RS: 
+cell_20, type: sky130_fd_sc_hd__dfrtp_2, id: 21, RS: 
+cell_23, type: sky130_fd_sc_hd__dfrtp_2, id: 24, RS: 
+cell_25, type: sky130_fd_sc_hd__dfrtp_2, id: 26, RS: 
+cell_26, type: sky130_fd_sc_hd__dfrtp_2, id: 27, RS: 
+cell_29, type: sky130_fd_sc_hd__dfrtp_2, id: 30, RS: 
+cell_30, type: sky130_fd_sc_hd__dfrtp_2, id: 31, RS: 
+cell_31, type: sky130_fd_sc_hd__dfrtp_2, id: 32, RS: 
+
+ID:1, Size:8, CLK: {43}, EN: {}, R: {}, S: {}
+  Successors:   {1}
+  Predecessors: {1}
+cell_21,  type: sky130_fd_sc_hd__dfrtp_2, id: 22, RS: 
+cell_22,  type: sky130_fd_sc_hd__dfrtp_2, id: 23, RS: 
+cell_24,  type: sky130_fd_sc_hd__dfrtp_2, id: 25, RS: 
+cell_27,  type: sky130_fd_sc_hd__dfrtp_2, id: 28, RS: 
+cell_32,  type: sky130_fd_sc_hd__dfrtp_2, id: 33, RS: 
+cell_33,  type: sky130_fd_sc_hd__dfrtp_2, id: 34, RS: 
+cell_34,  type: sky130_fd_sc_hd__dfrtp_2, id: 35, RS: 
+cell_171, type: sky130_fd_sc_hd__dfrtp_2, id: 79, RS: 
+
