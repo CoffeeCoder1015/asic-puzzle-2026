@@ -13,6 +13,8 @@ with cell_classifications.open() as file:
 
 top_pins = gds_breakdown["top_pins"]
 ports = gds_breakdown["ports"]
+port_map = {p["name"]:p["direction"] for p in ports}
+
 instances = gds_breakdown["instances"]
 sequential_cells = set( cell_classes["sequential"] )
 
@@ -55,7 +57,26 @@ for instance in instances:
             "pin": pin_name,
         }
 
-print(ports)
 for pin in top_pins:
-    print(pin)
-    
+    net_id = pin["net_id"]
+    pin_name = pin["name"]
+    pin_canonical = pin_name.rsplit("[",1)[0]
+    direction = port_map.get(pin_canonical)
+
+    pin_category = None
+    match direction:
+        case "input":
+            pin_category = "sources"
+        case "output":
+            pin_category = "sinks"
+
+    if pin_category is not None:
+        nets.setdefault(net_id,{})
+        nets[net_id].setdefault(pin_category,{})
+        nets[net_id][pin_category]["top"] = {
+            "kind": "combinational",
+            "type": "top",
+            "pin": pin_name,
+        }
+
+print(json.dumps(nets,indent=2))
