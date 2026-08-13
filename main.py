@@ -4,6 +4,8 @@ import sys
 
 import klayout.db as kdb
 
+from verilog_fragments import render_instance, render_module_preamble
+
 
 PIN_DEFINITIONS_FILE = (
     Path(__file__).parent / "sky130" / "pin_definitions.json"
@@ -246,6 +248,7 @@ for subcircuit in top_circuit.each_subcircuit():
             }
 
     instances.append({
+        "name": f"cell_{len(instances)}",
         "cell_type": cell_type,
         "pins": pins,
     })
@@ -279,48 +282,35 @@ for key in module_ports:
 
 module_ports = dict(filter(lambda x: x[0] not in drop_keys, module_ports.items()))
 
-port_declarations = []
-port_names = []
+ports = [
+    {"name": pin_name, "direction": direction}
+    for pin_name, direction in module_ports.items()
+]
 
-for pin_name, direction in module_ports.items():
-    port_names.append(pin_name)
-    port_declarations.append(
-        f"    {direction} {pin_name}"
-    )
+ports.extend(
+    {
+        "name": bus_name,
+        "direction": direction,
+        "low": low,
+        "high": high,
+    }
+    for bus_name, (low, high, direction) in busses.items()
+)
 
-for bus_name, (low, high, direction) in busses.items():
-    port_names.append(bus_name)
-    port_declarations.append(
-        f"    {direction} [{high}:{low}] {bus_name}"
-    )
+reconstruction = {
+    "design_name": top_cell.name,
+    "source_gds": str(gds_path),
+    "ports": ports,
+    "top_pins": [
+        {"net_id": net_id, "name": pin_name}
+        for net_id, pin_name in sorted(top_pins.items())
+    ],
+    "instances": instances,
+}
 
-# HAL's gate-level Verilog parser expects the traditional non-ANSI form:
-# list port names in the header, then declare their directions below it.
-port_list = ",\n".join(f"    {pin_name}" for pin_name in port_names)
-declaration_block = ";\n".join(port_declarations)
-
-verilog = f"""module {top_cell.name} (
-{port_list}
-);
-
-{declaration_block};
-"""
-
-net_ids = set()
+verilog = render_module_preamble(reconstruction)
 
 for instance in instances:
-    for pin_info in instance["pins"].values():
-        if pin_info["kind"] == "signal":
-            net_ids.add(pin_info["net_id"])
-
-internal_net_ids = net_ids - top_pins.keys()
-
-for net_id in sorted(internal_net_ids):
-    verilog += f"    wire net_{net_id};\n"
-
-verilog += "\n"
-
-for instance_index, instance in enumerate(instances):
     # Physical-only cells such as decaps have no signal pins and no model
     # in our functional catalog.
     has_signal_pin = any(
@@ -331,32 +321,14 @@ for instance_index, instance in enumerate(instances):
     if not has_signal_pin:
         continue
 
-    pin_connections = []
-
-    for pin_name, pin_info in instance["pins"].items():
-        if pin_info["kind"] == "power":
-            continue
-
-        net_id = pin_info["net_id"]
-
-        if net_id in top_pins:
-            signal_name = top_pins[net_id]
-        else:
-            signal_name = f"net_{net_id}"
-
-        pin_connections.append(
-            f"        .{pin_name}({signal_name})"
-        )
-
-    # Preserve the exact GDS cell variant.  HAL can then match names such as
-    # nand2_2 directly to the corresponding SKY130 Liberty definition.
-    verilog += f"""    {instance["cell_type"]} cell_{instance_index} (
-{",\n".join(pin_connections)}
-);
-
-"""
+    verilog += render_instance(instance, top_pins)
 
 verilog += "endmodule\n" # close off the file
-output_path = Path(f"reversed_{gds_path.stem}.v")
-with open(output_path,"w+",encoding="utf-8") as fio:
-    fio.write(verilog)
+output_path = gds_path.parent / f"reversed_{gds_path.stem}.v"
+reconstruction_path = output_path.with_suffix(".json")
+
+output_path.write_text(verilog, encoding="utf-8")
+reconstruction_path.write_text(
+    json.dumps(reconstruction, indent=2) + "\n",
+    encoding="utf-8",
+)
