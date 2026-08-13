@@ -4,11 +4,9 @@ import sys
 
 import klayout.db as kdb
 
-from verilog_fragments import render_instance, render_module_preamble
-
-
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
 PIN_DEFINITIONS_FILE = (
-    Path(__file__).parent / "sky130" / "pin_definitions.json"
+    PROJECT_ROOT / "sky130" / "pin_definitions.json"
 )
 
 with PIN_DEFINITIONS_FILE.open(encoding="utf-8") as file:
@@ -193,7 +191,7 @@ for top_pin in top_circuit.each_pin():
     top_pins[connected_net.cluster_id] = top_pin.name()
 
 
-instances = []
+instances: list[dict] = []
 
 for subcircuit in top_circuit.each_subcircuit():
     referenced_circuit = subcircuit.circuit_ref()
@@ -308,7 +306,40 @@ reconstruction = {
     "instances": instances,
 }
 
-verilog = render_module_preamble(reconstruction)
+port_names = [port["name"] for port in ports]
+port_list = ",\n".join(f"    {name}" for name in port_names)
+port_declarations = []
+
+for port in ports:
+    width = ""
+
+    if "high" in port:
+        width = f" [{port['high']}:{port['low']}]"
+
+    port_declarations.append(
+        f"    {port['direction']}{width} {port['name']}"
+    )
+
+declaration_block = ";\n".join(port_declarations)
+signal_net_ids = {
+    pin["net_id"]
+    for instance in instances
+    for pin in instance["pins"].values()
+    if pin["kind"] == "signal"
+}
+internal_net_ids = signal_net_ids - top_pins.keys()
+wire_block = "\n".join(
+    f"    wire net_{net_id};" for net_id in sorted(internal_net_ids)
+)
+
+verilog = f"""module {top_cell.name} (
+{port_list}
+);
+
+{declaration_block};
+{wire_block}
+
+"""
 
 for instance in instances:
     # Physical-only cells such as decaps have no signal pins and no model
@@ -321,7 +352,20 @@ for instance in instances:
     if not has_signal_pin:
         continue
 
-    verilog += render_instance(instance, top_pins)
+    pin_connections = []
+
+    for pin_name, pin in instance["pins"].items():
+        if pin["kind"] == "power":
+            continue
+
+        signal_name = top_pins.get(pin["net_id"], f"net_{pin['net_id']}")
+        pin_connections.append(f"        .{pin_name}({signal_name})")
+
+    verilog += f"""    {instance["cell_type"]} {instance["name"]} (
+{",\n".join(pin_connections)}
+);
+
+"""
 
 verilog += "endmodule\n" # close off the file
 output_path = gds_path.parent / f"reversed_{gds_path.stem}.v"
