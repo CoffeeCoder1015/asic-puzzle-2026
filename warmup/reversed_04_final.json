@@ -1,0 +1,5916 @@
+{
+  "design_name": "adder_demo",
+  "source_gds": "warmup\\04_final.gds",
+  "ports": [
+    {
+      "name": "clk",
+      "direction": "input"
+    },
+    {
+      "name": "A",
+      "direction": "input"
+    },
+    {
+      "name": "en",
+      "direction": "input"
+    },
+    {
+      "name": "B",
+      "direction": "input"
+    },
+    {
+      "name": "rst_n",
+      "direction": "input"
+    },
+    {
+      "name": "S",
+      "direction": "output"
+    }
+  ],
+  "top_pins": [
+    {
+      "net_id": 1,
+      "name": "VPWR"
+    },
+    {
+      "net_id": 2,
+      "name": "VGND"
+    },
+    {
+      "net_id": 16,
+      "name": "S"
+    },
+    {
+      "net_id": 28,
+      "name": "en"
+    },
+    {
+      "net_id": 82,
+      "name": "rst_n"
+    },
+    {
+      "net_id": 141,
+      "name": "B"
+    },
+    {
+      "net_id": 282,
+      "name": "A"
+    },
+    {
+      "net_id": 435,
+      "name": "clk"
+    }
+  ],
+  "instances": [
+    {
+      "name": "cell_0",
+      "cell_type": "sky130_fd_sc_hd__and4bb_2",
+      "pins": {
+        "A_N": {
+          "net_id": 335,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B_N": {
+          "net_id": 177,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "C": {
+          "net_id": 62,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 281,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "X": {
+          "net_id": 332,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_1",
+      "cell_type": "sky130_fd_sc_hd__and3_2",
+      "pins": {
+        "A": {
+          "net_id": 351,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 333,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "C": {
+          "net_id": 173,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "X": {
+          "net_id": 329,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_2",
+      "cell_type": "sky130_fd_sc_hd__clkbuf_16",
+      "pins": {
+        "A": {
+          "net_id": 315,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 371,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_3",
+      "cell_type": "sky130_fd_sc_hd__clkbuf_16",
+      "pins": {
+        "A": {
+          "net_id": 435,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 315,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_4",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 282,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 11,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 422,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_5",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 18,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 123,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 247,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_6",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 141,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 18,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 115,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_7",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 122,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 91,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 471,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_8",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 11,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 122,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 383,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_9",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 33,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 65,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 100,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_10",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 35,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 14,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 67,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_11",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 37,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 233,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 419,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_12",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 46,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 35,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 30,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_13",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 123,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 46,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 164,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_14",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 233,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 22,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 385,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_15",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 65,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 113,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 292,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_16",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 91,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 34,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 400,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_17",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 34,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 15,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 465,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_18",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 15,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 37,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 415,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_19",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 15,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 371,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 465,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_20",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 37,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 371,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 415,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_21",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 46,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 66,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 164,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_22",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 113,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 66,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 292,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_23",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 34,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 371,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 400,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_24",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 35,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 66,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 30,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_25",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 233,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 371,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 419,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_26",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 91,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 371,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 471,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_27",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 14,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 66,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 67,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_28",
+      "cell_type": "sky130_fd_sc_hd__mux2_1",
+      "pins": {
+        "A1": {
+          "net_id": 14,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A0": {
+          "net_id": 33,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 151,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "S": {
+          "net_id": 28,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_29",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 22,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 371,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 385,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_30",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 11,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 371,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 422,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_31",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 122,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 371,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 383,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_32",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 123,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 66,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 247,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_33",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 18,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 66,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 115,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_34",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 33,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 66,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 151,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_35",
+      "cell_type": "sky130_fd_sc_hd__nand2_2",
+      "pins": {
+        "A": {
+          "net_id": 46,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 91,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 61,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_36",
+      "cell_type": "sky130_fd_sc_hd__nand2_2",
+      "pins": {
+        "A": {
+          "net_id": 53,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 87,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 109,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_37",
+      "cell_type": "sky130_fd_sc_hd__nand2_2",
+      "pins": {
+        "A": {
+          "net_id": 18,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 11,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 188,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_38",
+      "cell_type": "sky130_fd_sc_hd__xor2_2",
+      "pins": {
+        "B": {
+          "net_id": 42,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A": {
+          "net_id": 57,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 177,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_39",
+      "cell_type": "sky130_fd_sc_hd__xor2_2",
+      "pins": {
+        "B": {
+          "net_id": 128,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A": {
+          "net_id": 36,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 335,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_40",
+      "cell_type": "sky130_fd_sc_hd__xor2_2",
+      "pins": {
+        "B": {
+          "net_id": 122,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A": {
+          "net_id": 123,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 98,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_41",
+      "cell_type": "sky130_fd_sc_hd__xor2_2",
+      "pins": {
+        "B": {
+          "net_id": 227,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A": {
+          "net_id": 209,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 281,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_42",
+      "cell_type": "sky130_fd_sc_hd__a31o_2",
+      "pins": {
+        "B1": {
+          "net_id": 106,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A1": {
+          "net_id": 14,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 15,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A3": {
+          "net_id": 107,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 206,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_43",
+      "cell_type": "sky130_fd_sc_hd__a21boi_2",
+      "pins": {
+        "B1_N": {
+          "net_id": 53,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 125,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A1": {
+          "net_id": 87,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 45,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_44",
+      "cell_type": "sky130_fd_sc_hd__a31o_2",
+      "pins": {
+        "B1": {
+          "net_id": 145,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A1": {
+          "net_id": 18,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 11,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A3": {
+          "net_id": 98,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 57,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_45",
+      "cell_type": "sky130_fd_sc_hd__a31o_2",
+      "pins": {
+        "B1": {
+          "net_id": 192,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A1": {
+          "net_id": 46,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 91,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A3": {
+          "net_id": 64,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 38,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_46",
+      "cell_type": "sky130_fd_sc_hd__a31o_2",
+      "pins": {
+        "B1": {
+          "net_id": 206,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A1": {
+          "net_id": 55,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 52,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A3": {
+          "net_id": 209,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 125,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_47",
+      "cell_type": "sky130_fd_sc_hd__xnor2_2",
+      "pins": {
+        "B": {
+          "net_id": 98,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A": {
+          "net_id": 188,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Y": {
+          "net_id": 153,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_48",
+      "cell_type": "sky130_fd_sc_hd__xnor2_2",
+      "pins": {
+        "B": {
+          "net_id": 125,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A": {
+          "net_id": 109,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Y": {
+          "net_id": 351,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_49",
+      "cell_type": "sky130_fd_sc_hd__o21bai_2",
+      "pins": {
+        "A1": {
+          "net_id": 132,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 45,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B1_N": {
+          "net_id": 29,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 173,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_50",
+      "cell_type": "sky130_fd_sc_hd__or2_2",
+      "pins": {
+        "A": {
+          "net_id": 46,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 91,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 268,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_51",
+      "cell_type": "sky130_fd_sc_hd__or2_2",
+      "pins": {
+        "A": {
+          "net_id": 18,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 11,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 21,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_52",
+      "cell_type": "sky130_fd_sc_hd__or2_2",
+      "pins": {
+        "A": {
+          "net_id": 35,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 34,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 64,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_53",
+      "cell_type": "sky130_fd_sc_hd__a31o_2",
+      "pins": {
+        "B1": {
+          "net_id": 38,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A1": {
+          "net_id": 57,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 42,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A3": {
+          "net_id": 36,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 52,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_54",
+      "cell_type": "sky130_fd_sc_hd__xor2_2",
+      "pins": {
+        "B": {
+          "net_id": 52,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A": {
+          "net_id": 55,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 62,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_55",
+      "cell_type": "sky130_fd_sc_hd__or2_2",
+      "pins": {
+        "A": {
+          "net_id": 65,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 233,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 87,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_56",
+      "cell_type": "sky130_fd_sc_hd__and2_2",
+      "pins": {
+        "A": {
+          "net_id": 14,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 15,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 24,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_57",
+      "cell_type": "sky130_fd_sc_hd__nor2_2",
+      "pins": {
+        "A": {
+          "net_id": 24,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 31,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 55,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_58",
+      "cell_type": "sky130_fd_sc_hd__nor2_2",
+      "pins": {
+        "A": {
+          "net_id": 126,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 192,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 36,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_59",
+      "cell_type": "sky130_fd_sc_hd__a21o_2",
+      "pins": {
+        "B1": {
+          "net_id": 24,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A1": {
+          "net_id": 55,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 52,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "X": {
+          "net_id": 227,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_60",
+      "cell_type": "sky130_fd_sc_hd__nor2_2",
+      "pins": {
+        "A": {
+          "net_id": 33,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 37,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 311,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_61",
+      "cell_type": "sky130_fd_sc_hd__nor2_2",
+      "pins": {
+        "A": {
+          "net_id": 113,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 22,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 132,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_62",
+      "cell_type": "sky130_fd_sc_hd__nor2_2",
+      "pins": {
+        "A": {
+          "net_id": 35,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 34,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 126,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_63",
+      "cell_type": "sky130_fd_sc_hd__nor2_2",
+      "pins": {
+        "A": {
+          "net_id": 311,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 106,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 209,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_64",
+      "cell_type": "sky130_fd_sc_hd__nor2_2",
+      "pins": {
+        "A": {
+          "net_id": 29,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 132,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 41,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_65",
+      "cell_type": "sky130_fd_sc_hd__nor2_2",
+      "pins": {
+        "A": {
+          "net_id": 14,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 15,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 31,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_66",
+      "cell_type": "sky130_fd_sc_hd__and2_2",
+      "pins": {
+        "A": {
+          "net_id": 35,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 34,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 192,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_67",
+      "cell_type": "sky130_fd_sc_hd__and2_2",
+      "pins": {
+        "A": {
+          "net_id": 113,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 22,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 29,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_68",
+      "cell_type": "sky130_fd_sc_hd__or2_2",
+      "pins": {
+        "A": {
+          "net_id": 33,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 37,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 107,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_69",
+      "cell_type": "sky130_fd_sc_hd__xnor2_2",
+      "pins": {
+        "B": {
+          "net_id": 45,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A": {
+          "net_id": 41,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Y": {
+          "net_id": 333,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_70",
+      "cell_type": "sky130_fd_sc_hd__and2_2",
+      "pins": {
+        "A": {
+          "net_id": 188,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 21,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 306,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_71",
+      "cell_type": "sky130_fd_sc_hd__a21bo_2",
+      "pins": {
+        "B1_N": {
+          "net_id": 61,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A1": {
+          "net_id": 57,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "A2": {
+          "net_id": 42,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 128,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_72",
+      "cell_type": "sky130_fd_sc_hd__and2_2",
+      "pins": {
+        "A": {
+          "net_id": 33,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 37,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 106,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_73",
+      "cell_type": "sky130_fd_sc_hd__and2_2",
+      "pins": {
+        "A": {
+          "net_id": 268,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 61,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 42,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_74",
+      "cell_type": "sky130_fd_sc_hd__nand2_2",
+      "pins": {
+        "A": {
+          "net_id": 65,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 233,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "Y": {
+          "net_id": 53,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        }
+      }
+    },
+    {
+      "name": "cell_75",
+      "cell_type": "sky130_fd_sc_hd__and2_2",
+      "pins": {
+        "A": {
+          "net_id": 123,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B": {
+          "net_id": 122,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "X": {
+          "net_id": 145,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_76",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_77",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_78",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_79",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_80",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_81",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_82",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_83",
+      "cell_type": "sky130_fd_sc_hd__clkbuf_16",
+      "pins": {
+        "A": {
+          "net_id": 315,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "X": {
+          "net_id": 66,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_84",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_85",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_86",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_87",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_88",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_89",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_90",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_91",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_92",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_93",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_94",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_95",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_96",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_97",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_98",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_99",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_100",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_101",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_102",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_103",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_104",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_105",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_106",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_107",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_108",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_109",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_110",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_111",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_112",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_113",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_114",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_115",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_116",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_117",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_118",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_119",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_120",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_121",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_122",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_123",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_124",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_125",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_126",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_127",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_128",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_129",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_130",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_131",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_132",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_133",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_134",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_135",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_136",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_137",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_138",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_139",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_140",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_141",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_142",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_143",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_144",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_145",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_146",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_147",
+      "cell_type": "sky130_fd_sc_hd__and4bb_2",
+      "pins": {
+        "A_N": {
+          "net_id": 153,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "B_N": {
+          "net_id": 306,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "C": {
+          "net_id": 329,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 332,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "X": {
+          "net_id": 16,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_148",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_149",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_150",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_151",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_152",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_153",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_154",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_155",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_156",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_157",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_158",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_159",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_160",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_161",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_162",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_163",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_164",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_165",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_166",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_167",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_168",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_169",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_170",
+      "cell_type": "sky130_fd_sc_hd__tapvpwrvgnd_1",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_171",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "pins": {
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        },
+        "RESET_B": {
+          "net_id": 82,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "Q": {
+          "net_id": 65,
+          "direction": "output",
+          "kind": "signal",
+          "supply": null
+        },
+        "CLK": {
+          "net_id": 66,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "D": {
+          "net_id": 100,
+          "direction": "input",
+          "kind": "signal",
+          "supply": null
+        },
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        }
+      }
+    },
+    {
+      "name": "cell_172",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_173",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_174",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_175",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_176",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_177",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_178",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_179",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_180",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_181",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_182",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_183",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_184",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_185",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_186",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_187",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_188",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_189",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_190",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_191",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_192",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_193",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_194",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_195",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_196",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_197",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_198",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_199",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_200",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_201",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_202",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_203",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_204",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_205",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_206",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_207",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_208",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_209",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_210",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_211",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_212",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_213",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_214",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_215",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_216",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_217",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_218",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_219",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_220",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_221",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_222",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_223",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_224",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_225",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_226",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_227",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_228",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    },
+    {
+      "name": "cell_229",
+      "cell_type": "sky130_fd_sc_hd__decap_3",
+      "pins": {
+        "VPWR": {
+          "net_id": 1,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply1"
+        },
+        "VGND": {
+          "net_id": 2,
+          "direction": "input",
+          "kind": "power",
+          "supply": "supply0"
+        }
+      }
+    }
+  ]
+}

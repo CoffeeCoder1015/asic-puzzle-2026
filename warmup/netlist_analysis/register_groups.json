@@ -1,0 +1,31 @@
+{
+  "source_netlist": "warmup/reversed_04_final.v",
+  "registers": [
+    {
+      "id": 0,
+      "members": [
+        "cell_19",
+        "cell_20",
+        "cell_23",
+        "cell_25",
+        "cell_26",
+        "cell_29",
+        "cell_30",
+        "cell_31"
+      ]
+    },
+    {
+      "id": 1,
+      "members": [
+        "cell_171",
+        "cell_21",
+        "cell_22",
+        "cell_24",
+        "cell_27",
+        "cell_32",
+        "cell_33",
+        "cell_34"
+      ]
+    }
+  ]
+}
