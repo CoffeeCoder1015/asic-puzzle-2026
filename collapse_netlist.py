@@ -15,7 +15,10 @@ top_pins = gds_breakdown["top_pins"]
 ports = gds_breakdown["ports"]
 port_map = {p["name"]:p["direction"] for p in ports}
 
-instances = gds_breakdown["instances"]
+instances = {
+    instance["name"]: instance
+    for instance in gds_breakdown["instances"]
+}
 sequential_cells = set( cell_classes["sequential"] )
 
 def get_cell_family_name(cell_type:str):
@@ -26,7 +29,10 @@ def tag_cell_class(cell:dict):
     cell["kind"] = "combinational" if is_comb else "sequential"
     return cell
 
-instances = list(map(tag_cell_class,instances))
+instances = {
+    name: tag_cell_class(instance)
+    for name, instance in instances.items()
+}
 
 def distinguish_cell_IO(cell_instance:dict):
     pins = cell_instance["pins"]
@@ -36,7 +42,7 @@ def distinguish_cell_IO(cell_instance:dict):
     return ( input_pins,output_pins )
 
 nets = {}
-for instance in instances:
+for instance in instances.values():
     inputs,outputs = distinguish_cell_IO(instance)
     for pin_name, pin_info in inputs.items():
         net_id = pin_info["net_id"]
@@ -79,4 +85,4 @@ for pin in top_pins:
             "pin": pin_name,
         }
 
-print(json.dumps(nets,indent=2))
+print(list( nets.items() )[0])
