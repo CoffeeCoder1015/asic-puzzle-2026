@@ -1,0 +1,4276 @@
+{
+  "design_name": "adder_demo",
+  "source_reconstruction": "warmup\\reversed_04_final.json",
+  "top_pins": [
+    {
+      "net_id": 1,
+      "name": "VPWR"
+    },
+    {
+      "net_id": 2,
+      "name": "VGND"
+    },
+    {
+      "net_id": 16,
+      "name": "S"
+    },
+    {
+      "net_id": 28,
+      "name": "en"
+    },
+    {
+      "net_id": 82,
+      "name": "rst_n"
+    },
+    {
+      "net_id": 141,
+      "name": "B"
+    },
+    {
+      "net_id": 282,
+      "name": "A"
+    },
+    {
+      "net_id": 435,
+      "name": "clk"
+    }
+  ],
+  "sequential_instances": [
+    {
+      "name": "cell_171",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 65,
+        "CLK": 66,
+        "D": 100
+      }
+    },
+    {
+      "name": "cell_19",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 15,
+        "CLK": 371,
+        "D": 465
+      }
+    },
+    {
+      "name": "cell_20",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 37,
+        "CLK": 371,
+        "D": 415
+      }
+    },
+    {
+      "name": "cell_21",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 46,
+        "CLK": 66,
+        "D": 164
+      }
+    },
+    {
+      "name": "cell_22",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 113,
+        "CLK": 66,
+        "D": 292
+      }
+    },
+    {
+      "name": "cell_23",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 34,
+        "CLK": 371,
+        "D": 400
+      }
+    },
+    {
+      "name": "cell_24",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 35,
+        "CLK": 66,
+        "D": 30
+      }
+    },
+    {
+      "name": "cell_25",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 233,
+        "CLK": 371,
+        "D": 419
+      }
+    },
+    {
+      "name": "cell_26",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 91,
+        "CLK": 371,
+        "D": 471
+      }
+    },
+    {
+      "name": "cell_27",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 14,
+        "CLK": 66,
+        "D": 67
+      }
+    },
+    {
+      "name": "cell_29",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 22,
+        "CLK": 371,
+        "D": 385
+      }
+    },
+    {
+      "name": "cell_30",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 11,
+        "CLK": 371,
+        "D": 422
+      }
+    },
+    {
+      "name": "cell_31",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 122,
+        "CLK": 371,
+        "D": 383
+      }
+    },
+    {
+      "name": "cell_32",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 123,
+        "CLK": 66,
+        "D": 247
+      }
+    },
+    {
+      "name": "cell_33",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 18,
+        "CLK": 66,
+        "D": 115
+      }
+    },
+    {
+      "name": "cell_34",
+      "cell_type": "sky130_fd_sc_hd__dfrtp_2",
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "pins": {
+        "RESET_B": 82,
+        "Q": 33,
+        "CLK": 66,
+        "D": 151
+      }
+    }
+  ],
+  "combinational_blocks": [
+    {
+      "name": "comb_0",
+      "inputs": {
+        "cell_171.Q": 65,
+        "cell_19.Q": 15,
+        "cell_20.Q": 37,
+        "cell_21.Q": 46,
+        "cell_22.Q": 113,
+        "cell_23.Q": 34,
+        "cell_24.Q": 35,
+        "cell_25.Q": 233,
+        "cell_26.Q": 91,
+        "cell_27.Q": 14,
+        "cell_29.Q": 22,
+        "cell_30.Q": 11,
+        "cell_31.Q": 122,
+        "cell_32.Q": 123,
+        "cell_33.Q": 18,
+        "cell_34.Q": 33
+      },
+      "outputs": {
+        "16": {
+          "destinations": [
+            "S"
+          ],
+          "source": {
+            "instance": "cell_147",
+            "pin": "X"
+          },
+          "expression": "expr_137"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_33.Q",
+          "net_id": 18
+        },
+        {
+          "id": "expr_1",
+          "operation": "not",
+          "arguments": [
+            "expr_0"
+          ],
+          "instances": [
+            "cell_37"
+          ]
+        },
+        {
+          "id": "expr_2",
+          "operation": "boundary",
+          "name": "cell_30.Q",
+          "net_id": 11
+        },
+        {
+          "id": "expr_3",
+          "operation": "not",
+          "arguments": [
+            "expr_2"
+          ],
+          "instances": [
+            "cell_37"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "or",
+          "arguments": [
+            "expr_1",
+            "expr_3"
+          ],
+          "instances": [
+            "cell_37"
+          ]
+        },
+        {
+          "id": "expr_5",
+          "operation": "not",
+          "arguments": [
+            "expr_4"
+          ],
+          "instances": [
+            "cell_47"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "boundary",
+          "name": "cell_32.Q",
+          "net_id": 123
+        },
+        {
+          "id": "expr_7",
+          "operation": "boundary",
+          "name": "cell_31.Q",
+          "net_id": 122
+        },
+        {
+          "id": "expr_8",
+          "operation": "not",
+          "arguments": [
+            "expr_7"
+          ],
+          "instances": [
+            "cell_40"
+          ]
+        },
+        {
+          "id": "expr_9",
+          "operation": "and",
+          "arguments": [
+            "expr_6",
+            "expr_8"
+          ],
+          "instances": [
+            "cell_40"
+          ]
+        },
+        {
+          "id": "expr_10",
+          "operation": "not",
+          "arguments": [
+            "expr_6"
+          ],
+          "instances": [
+            "cell_40"
+          ]
+        },
+        {
+          "id": "expr_11",
+          "operation": "and",
+          "arguments": [
+            "expr_10",
+            "expr_7"
+          ],
+          "instances": [
+            "cell_40"
+          ]
+        },
+        {
+          "id": "expr_12",
+          "operation": "or",
+          "arguments": [
+            "expr_9",
+            "expr_11"
+          ],
+          "instances": [
+            "cell_40"
+          ]
+        },
+        {
+          "id": "expr_13",
+          "operation": "not",
+          "arguments": [
+            "expr_12"
+          ],
+          "instances": [
+            "cell_47"
+          ]
+        },
+        {
+          "id": "expr_14",
+          "operation": "and",
+          "arguments": [
+            "expr_5",
+            "expr_13"
+          ],
+          "instances": [
+            "cell_47"
+          ]
+        },
+        {
+          "id": "expr_15",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_12"
+          ],
+          "instances": [
+            "cell_47"
+          ]
+        },
+        {
+          "id": "expr_16",
+          "operation": "or",
+          "arguments": [
+            "expr_14",
+            "expr_15"
+          ],
+          "instances": [
+            "cell_47"
+          ]
+        },
+        {
+          "id": "expr_17",
+          "operation": "not",
+          "arguments": [
+            "expr_16"
+          ],
+          "instances": [
+            "cell_147"
+          ]
+        },
+        {
+          "id": "expr_18",
+          "operation": "or",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_51"
+          ]
+        },
+        {
+          "id": "expr_19",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_18"
+          ],
+          "instances": [
+            "cell_70"
+          ]
+        },
+        {
+          "id": "expr_20",
+          "operation": "not",
+          "arguments": [
+            "expr_19"
+          ],
+          "instances": [
+            "cell_147"
+          ]
+        },
+        {
+          "id": "expr_21",
+          "operation": "and",
+          "arguments": [
+            "expr_17",
+            "expr_20"
+          ],
+          "instances": [
+            "cell_147"
+          ]
+        },
+        {
+          "id": "expr_22",
+          "operation": "boundary",
+          "name": "cell_171.Q",
+          "net_id": 65
+        },
+        {
+          "id": "expr_23",
+          "operation": "not",
+          "arguments": [
+            "expr_22"
+          ],
+          "instances": [
+            "cell_74"
+          ]
+        },
+        {
+          "id": "expr_24",
+          "operation": "boundary",
+          "name": "cell_25.Q",
+          "net_id": 233
+        },
+        {
+          "id": "expr_25",
+          "operation": "not",
+          "arguments": [
+            "expr_24"
+          ],
+          "instances": [
+            "cell_74"
+          ]
+        },
+        {
+          "id": "expr_26",
+          "operation": "or",
+          "arguments": [
+            "expr_23",
+            "expr_25"
+          ],
+          "instances": [
+            "cell_74"
+          ]
+        },
+        {
+          "id": "expr_27",
+          "operation": "not",
+          "arguments": [
+            "expr_26"
+          ],
+          "instances": [
+            "cell_36"
+          ]
+        },
+        {
+          "id": "expr_28",
+          "operation": "or",
+          "arguments": [
+            "expr_22",
+            "expr_24"
+          ],
+          "instances": [
+            "cell_55"
+          ]
+        },
+        {
+          "id": "expr_29",
+          "operation": "not",
+          "arguments": [
+            "expr_28"
+          ],
+          "instances": [
+            "cell_36",
+            "cell_43"
+          ]
+        },
+        {
+          "id": "expr_30",
+          "operation": "or",
+          "arguments": [
+            "expr_27",
+            "expr_29"
+          ],
+          "instances": [
+            "cell_36"
+          ]
+        },
+        {
+          "id": "expr_31",
+          "operation": "not",
+          "arguments": [
+            "expr_30"
+          ],
+          "instances": [
+            "cell_48"
+          ]
+        },
+        {
+          "id": "expr_32",
+          "operation": "boundary",
+          "name": "cell_27.Q",
+          "net_id": 14
+        },
+        {
+          "id": "expr_33",
+          "operation": "boundary",
+          "name": "cell_19.Q",
+          "net_id": 15
+        },
+        {
+          "id": "expr_34",
+          "operation": "and",
+          "arguments": [
+            "expr_32",
+            "expr_33"
+          ],
+          "instances": [
+            "cell_42",
+            "cell_56"
+          ]
+        },
+        {
+          "id": "expr_35",
+          "operation": "not",
+          "arguments": [
+            "expr_34"
+          ],
+          "instances": [
+            "cell_57"
+          ]
+        },
+        {
+          "id": "expr_36",
+          "operation": "not",
+          "arguments": [
+            "expr_32"
+          ],
+          "instances": [
+            "cell_65"
+          ]
+        },
+        {
+          "id": "expr_37",
+          "operation": "not",
+          "arguments": [
+            "expr_33"
+          ],
+          "instances": [
+            "cell_65"
+          ]
+        },
+        {
+          "id": "expr_38",
+          "operation": "and",
+          "arguments": [
+            "expr_36",
+            "expr_37"
+          ],
+          "instances": [
+            "cell_65"
+          ]
+        },
+        {
+          "id": "expr_39",
+          "operation": "not",
+          "arguments": [
+            "expr_38"
+          ],
+          "instances": [
+            "cell_57"
+          ]
+        },
+        {
+          "id": "expr_40",
+          "operation": "and",
+          "arguments": [
+            "expr_35",
+            "expr_39"
+          ],
+          "instances": [
+            "cell_57"
+          ]
+        },
+        {
+          "id": "expr_41",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_44"
+          ]
+        },
+        {
+          "id": "expr_42",
+          "operation": "and",
+          "arguments": [
+            "expr_41",
+            "expr_12"
+          ],
+          "instances": [
+            "cell_44"
+          ]
+        },
+        {
+          "id": "expr_43",
+          "operation": "and",
+          "arguments": [
+            "expr_6",
+            "expr_7"
+          ],
+          "instances": [
+            "cell_75"
+          ]
+        },
+        {
+          "id": "expr_44",
+          "operation": "or",
+          "arguments": [
+            "expr_42",
+            "expr_43"
+          ],
+          "instances": [
+            "cell_44"
+          ]
+        },
+        {
+          "id": "expr_45",
+          "operation": "boundary",
+          "name": "cell_21.Q",
+          "net_id": 46
+        },
+        {
+          "id": "expr_46",
+          "operation": "boundary",
+          "name": "cell_26.Q",
+          "net_id": 91
+        },
+        {
+          "id": "expr_47",
+          "operation": "or",
+          "arguments": [
+            "expr_45",
+            "expr_46"
+          ],
+          "instances": [
+            "cell_50"
+          ]
+        },
+        {
+          "id": "expr_48",
+          "operation": "not",
+          "arguments": [
+            "expr_45"
+          ],
+          "instances": [
+            "cell_35"
+          ]
+        },
+        {
+          "id": "expr_49",
+          "operation": "not",
+          "arguments": [
+            "expr_46"
+          ],
+          "instances": [
+            "cell_35"
+          ]
+        },
+        {
+          "id": "expr_50",
+          "operation": "or",
+          "arguments": [
+            "expr_48",
+            "expr_49"
+          ],
+          "instances": [
+            "cell_35"
+          ]
+        },
+        {
+          "id": "expr_51",
+          "operation": "and",
+          "arguments": [
+            "expr_47",
+            "expr_50"
+          ],
+          "instances": [
+            "cell_73"
+          ]
+        },
+        {
+          "id": "expr_52",
+          "operation": "and",
+          "arguments": [
+            "expr_44",
+            "expr_51"
+          ],
+          "instances": [
+            "cell_53",
+            "cell_71"
+          ]
+        },
+        {
+          "id": "expr_53",
+          "operation": "boundary",
+          "name": "cell_24.Q",
+          "net_id": 35
+        },
+        {
+          "id": "expr_54",
+          "operation": "not",
+          "arguments": [
+            "expr_53"
+          ],
+          "instances": [
+            "cell_62"
+          ]
+        },
+        {
+          "id": "expr_55",
+          "operation": "boundary",
+          "name": "cell_23.Q",
+          "net_id": 34
+        },
+        {
+          "id": "expr_56",
+          "operation": "not",
+          "arguments": [
+            "expr_55"
+          ],
+          "instances": [
+            "cell_62"
+          ]
+        },
+        {
+          "id": "expr_57",
+          "operation": "and",
+          "arguments": [
+            "expr_54",
+            "expr_56"
+          ],
+          "instances": [
+            "cell_62"
+          ]
+        },
+        {
+          "id": "expr_58",
+          "operation": "not",
+          "arguments": [
+            "expr_57"
+          ],
+          "instances": [
+            "cell_58"
+          ]
+        },
+        {
+          "id": "expr_59",
+          "operation": "and",
+          "arguments": [
+            "expr_53",
+            "expr_55"
+          ],
+          "instances": [
+            "cell_66"
+          ]
+        },
+        {
+          "id": "expr_60",
+          "operation": "not",
+          "arguments": [
+            "expr_59"
+          ],
+          "instances": [
+            "cell_58"
+          ]
+        },
+        {
+          "id": "expr_61",
+          "operation": "and",
+          "arguments": [
+            "expr_58",
+            "expr_60"
+          ],
+          "instances": [
+            "cell_58"
+          ]
+        },
+        {
+          "id": "expr_62",
+          "operation": "and",
+          "arguments": [
+            "expr_52",
+            "expr_61"
+          ],
+          "instances": [
+            "cell_53"
+          ]
+        },
+        {
+          "id": "expr_63",
+          "operation": "and",
+          "arguments": [
+            "expr_45",
+            "expr_46"
+          ],
+          "instances": [
+            "cell_45"
+          ]
+        },
+        {
+          "id": "expr_64",
+          "operation": "or",
+          "arguments": [
+            "expr_53",
+            "expr_55"
+          ],
+          "instances": [
+            "cell_52"
+          ]
+        },
+        {
+          "id": "expr_65",
+          "operation": "and",
+          "arguments": [
+            "expr_63",
+            "expr_64"
+          ],
+          "instances": [
+            "cell_45"
+          ]
+        },
+        {
+          "id": "expr_66",
+          "operation": "or",
+          "arguments": [
+            "expr_65",
+            "expr_59"
+          ],
+          "instances": [
+            "cell_45"
+          ]
+        },
+        {
+          "id": "expr_67",
+          "operation": "or",
+          "arguments": [
+            "expr_62",
+            "expr_66"
+          ],
+          "instances": [
+            "cell_53"
+          ]
+        },
+        {
+          "id": "expr_68",
+          "operation": "and",
+          "arguments": [
+            "expr_40",
+            "expr_67"
+          ],
+          "instances": [
+            "cell_46",
+            "cell_59"
+          ]
+        },
+        {
+          "id": "expr_69",
+          "operation": "boundary",
+          "name": "cell_34.Q",
+          "net_id": 33
+        },
+        {
+          "id": "expr_70",
+          "operation": "not",
+          "arguments": [
+            "expr_69"
+          ],
+          "instances": [
+            "cell_60"
+          ]
+        },
+        {
+          "id": "expr_71",
+          "operation": "boundary",
+          "name": "cell_20.Q",
+          "net_id": 37
+        },
+        {
+          "id": "expr_72",
+          "operation": "not",
+          "arguments": [
+            "expr_71"
+          ],
+          "instances": [
+            "cell_60"
+          ]
+        },
+        {
+          "id": "expr_73",
+          "operation": "and",
+          "arguments": [
+            "expr_70",
+            "expr_72"
+          ],
+          "instances": [
+            "cell_60"
+          ]
+        },
+        {
+          "id": "expr_74",
+          "operation": "not",
+          "arguments": [
+            "expr_73"
+          ],
+          "instances": [
+            "cell_63"
+          ]
+        },
+        {
+          "id": "expr_75",
+          "operation": "and",
+          "arguments": [
+            "expr_69",
+            "expr_71"
+          ],
+          "instances": [
+            "cell_72"
+          ]
+        },
+        {
+          "id": "expr_76",
+          "operation": "not",
+          "arguments": [
+            "expr_75"
+          ],
+          "instances": [
+            "cell_63"
+          ]
+        },
+        {
+          "id": "expr_77",
+          "operation": "and",
+          "arguments": [
+            "expr_74",
+            "expr_76"
+          ],
+          "instances": [
+            "cell_63"
+          ]
+        },
+        {
+          "id": "expr_78",
+          "operation": "and",
+          "arguments": [
+            "expr_68",
+            "expr_77"
+          ],
+          "instances": [
+            "cell_46"
+          ]
+        },
+        {
+          "id": "expr_79",
+          "operation": "or",
+          "arguments": [
+            "expr_69",
+            "expr_71"
+          ],
+          "instances": [
+            "cell_68"
+          ]
+        },
+        {
+          "id": "expr_80",
+          "operation": "and",
+          "arguments": [
+            "expr_34",
+            "expr_79"
+          ],
+          "instances": [
+            "cell_42"
+          ]
+        },
+        {
+          "id": "expr_81",
+          "operation": "or",
+          "arguments": [
+            "expr_80",
+            "expr_75"
+          ],
+          "instances": [
+            "cell_42"
+          ]
+        },
+        {
+          "id": "expr_82",
+          "operation": "or",
+          "arguments": [
+            "expr_78",
+            "expr_81"
+          ],
+          "instances": [
+            "cell_46"
+          ]
+        },
+        {
+          "id": "expr_83",
+          "operation": "not",
+          "arguments": [
+            "expr_82"
+          ],
+          "instances": [
+            "cell_43",
+            "cell_48"
+          ]
+        },
+        {
+          "id": "expr_84",
+          "operation": "and",
+          "arguments": [
+            "expr_31",
+            "expr_83"
+          ],
+          "instances": [
+            "cell_48"
+          ]
+        },
+        {
+          "id": "expr_85",
+          "operation": "and",
+          "arguments": [
+            "expr_30",
+            "expr_82"
+          ],
+          "instances": [
+            "cell_48"
+          ]
+        },
+        {
+          "id": "expr_86",
+          "operation": "or",
+          "arguments": [
+            "expr_84",
+            "expr_85"
+          ],
+          "instances": [
+            "cell_48"
+          ]
+        },
+        {
+          "id": "expr_87",
+          "operation": "boundary",
+          "name": "cell_22.Q",
+          "net_id": 113
+        },
+        {
+          "id": "expr_88",
+          "operation": "boundary",
+          "name": "cell_29.Q",
+          "net_id": 22
+        },
+        {
+          "id": "expr_89",
+          "operation": "and",
+          "arguments": [
+            "expr_87",
+            "expr_88"
+          ],
+          "instances": [
+            "cell_67"
+          ]
+        },
+        {
+          "id": "expr_90",
+          "operation": "not",
+          "arguments": [
+            "expr_89"
+          ],
+          "instances": [
+            "cell_64"
+          ]
+        },
+        {
+          "id": "expr_91",
+          "operation": "not",
+          "arguments": [
+            "expr_87"
+          ],
+          "instances": [
+            "cell_61"
+          ]
+        },
+        {
+          "id": "expr_92",
+          "operation": "not",
+          "arguments": [
+            "expr_88"
+          ],
+          "instances": [
+            "cell_61"
+          ]
+        },
+        {
+          "id": "expr_93",
+          "operation": "and",
+          "arguments": [
+            "expr_91",
+            "expr_92"
+          ],
+          "instances": [
+            "cell_61"
+          ]
+        },
+        {
+          "id": "expr_94",
+          "operation": "not",
+          "arguments": [
+            "expr_93"
+          ],
+          "instances": [
+            "cell_49",
+            "cell_64"
+          ]
+        },
+        {
+          "id": "expr_95",
+          "operation": "and",
+          "arguments": [
+            "expr_90",
+            "expr_94"
+          ],
+          "instances": [
+            "cell_64"
+          ]
+        },
+        {
+          "id": "expr_96",
+          "operation": "not",
+          "arguments": [
+            "expr_95"
+          ],
+          "instances": [
+            "cell_69"
+          ]
+        },
+        {
+          "id": "expr_97",
+          "operation": "and",
+          "arguments": [
+            "expr_29",
+            "expr_26"
+          ],
+          "instances": [
+            "cell_43"
+          ]
+        },
+        {
+          "id": "expr_98",
+          "operation": "and",
+          "arguments": [
+            "expr_83",
+            "expr_26"
+          ],
+          "instances": [
+            "cell_43"
+          ]
+        },
+        {
+          "id": "expr_99",
+          "operation": "or",
+          "arguments": [
+            "expr_97",
+            "expr_98"
+          ],
+          "instances": [
+            "cell_43"
+          ]
+        },
+        {
+          "id": "expr_100",
+          "operation": "not",
+          "arguments": [
+            "expr_99"
+          ],
+          "instances": [
+            "cell_49",
+            "cell_69"
+          ]
+        },
+        {
+          "id": "expr_101",
+          "operation": "and",
+          "arguments": [
+            "expr_96",
+            "expr_100"
+          ],
+          "instances": [
+            "cell_69"
+          ]
+        },
+        {
+          "id": "expr_102",
+          "operation": "and",
+          "arguments": [
+            "expr_95",
+            "expr_99"
+          ],
+          "instances": [
+            "cell_69"
+          ]
+        },
+        {
+          "id": "expr_103",
+          "operation": "or",
+          "arguments": [
+            "expr_101",
+            "expr_102"
+          ],
+          "instances": [
+            "cell_69"
+          ]
+        },
+        {
+          "id": "expr_104",
+          "operation": "and",
+          "arguments": [
+            "expr_86",
+            "expr_103"
+          ],
+          "instances": [
+            "cell_1"
+          ]
+        },
+        {
+          "id": "expr_105",
+          "operation": "and",
+          "arguments": [
+            "expr_94",
+            "expr_100"
+          ],
+          "instances": [
+            "cell_49"
+          ]
+        },
+        {
+          "id": "expr_106",
+          "operation": "or",
+          "arguments": [
+            "expr_105",
+            "expr_89"
+          ],
+          "instances": [
+            "cell_49"
+          ]
+        },
+        {
+          "id": "expr_107",
+          "operation": "and",
+          "arguments": [
+            "expr_104",
+            "expr_106"
+          ],
+          "instances": [
+            "cell_1"
+          ]
+        },
+        {
+          "id": "expr_108",
+          "operation": "and",
+          "arguments": [
+            "expr_21",
+            "expr_107"
+          ],
+          "instances": [
+            "cell_147"
+          ]
+        },
+        {
+          "id": "expr_109",
+          "operation": "not",
+          "arguments": [
+            "expr_50"
+          ],
+          "instances": [
+            "cell_71"
+          ]
+        },
+        {
+          "id": "expr_110",
+          "operation": "or",
+          "arguments": [
+            "expr_52",
+            "expr_109"
+          ],
+          "instances": [
+            "cell_71"
+          ]
+        },
+        {
+          "id": "expr_111",
+          "operation": "not",
+          "arguments": [
+            "expr_110"
+          ],
+          "instances": [
+            "cell_39"
+          ]
+        },
+        {
+          "id": "expr_112",
+          "operation": "and",
+          "arguments": [
+            "expr_61",
+            "expr_111"
+          ],
+          "instances": [
+            "cell_39"
+          ]
+        },
+        {
+          "id": "expr_113",
+          "operation": "not",
+          "arguments": [
+            "expr_61"
+          ],
+          "instances": [
+            "cell_39"
+          ]
+        },
+        {
+          "id": "expr_114",
+          "operation": "and",
+          "arguments": [
+            "expr_113",
+            "expr_110"
+          ],
+          "instances": [
+            "cell_39"
+          ]
+        },
+        {
+          "id": "expr_115",
+          "operation": "or",
+          "arguments": [
+            "expr_112",
+            "expr_114"
+          ],
+          "instances": [
+            "cell_39"
+          ]
+        },
+        {
+          "id": "expr_116",
+          "operation": "not",
+          "arguments": [
+            "expr_115"
+          ],
+          "instances": [
+            "cell_0"
+          ]
+        },
+        {
+          "id": "expr_117",
+          "operation": "not",
+          "arguments": [
+            "expr_51"
+          ],
+          "instances": [
+            "cell_38"
+          ]
+        },
+        {
+          "id": "expr_118",
+          "operation": "and",
+          "arguments": [
+            "expr_44",
+            "expr_117"
+          ],
+          "instances": [
+            "cell_38"
+          ]
+        },
+        {
+          "id": "expr_119",
+          "operation": "not",
+          "arguments": [
+            "expr_44"
+          ],
+          "instances": [
+            "cell_38"
+          ]
+        },
+        {
+          "id": "expr_120",
+          "operation": "and",
+          "arguments": [
+            "expr_119",
+            "expr_51"
+          ],
+          "instances": [
+            "cell_38"
+          ]
+        },
+        {
+          "id": "expr_121",
+          "operation": "or",
+          "arguments": [
+            "expr_118",
+            "expr_120"
+          ],
+          "instances": [
+            "cell_38"
+          ]
+        },
+        {
+          "id": "expr_122",
+          "operation": "not",
+          "arguments": [
+            "expr_121"
+          ],
+          "instances": [
+            "cell_0"
+          ]
+        },
+        {
+          "id": "expr_123",
+          "operation": "and",
+          "arguments": [
+            "expr_116",
+            "expr_122"
+          ],
+          "instances": [
+            "cell_0"
+          ]
+        },
+        {
+          "id": "expr_124",
+          "operation": "not",
+          "arguments": [
+            "expr_67"
+          ],
+          "instances": [
+            "cell_54"
+          ]
+        },
+        {
+          "id": "expr_125",
+          "operation": "and",
+          "arguments": [
+            "expr_40",
+            "expr_124"
+          ],
+          "instances": [
+            "cell_54"
+          ]
+        },
+        {
+          "id": "expr_126",
+          "operation": "not",
+          "arguments": [
+            "expr_40"
+          ],
+          "instances": [
+            "cell_54"
+          ]
+        },
+        {
+          "id": "expr_127",
+          "operation": "and",
+          "arguments": [
+            "expr_126",
+            "expr_67"
+          ],
+          "instances": [
+            "cell_54"
+          ]
+        },
+        {
+          "id": "expr_128",
+          "operation": "or",
+          "arguments": [
+            "expr_125",
+            "expr_127"
+          ],
+          "instances": [
+            "cell_54"
+          ]
+        },
+        {
+          "id": "expr_129",
+          "operation": "and",
+          "arguments": [
+            "expr_123",
+            "expr_128"
+          ],
+          "instances": [
+            "cell_0"
+          ]
+        },
+        {
+          "id": "expr_130",
+          "operation": "or",
+          "arguments": [
+            "expr_68",
+            "expr_34"
+          ],
+          "instances": [
+            "cell_59"
+          ]
+        },
+        {
+          "id": "expr_131",
+          "operation": "not",
+          "arguments": [
+            "expr_130"
+          ],
+          "instances": [
+            "cell_41"
+          ]
+        },
+        {
+          "id": "expr_132",
+          "operation": "and",
+          "arguments": [
+            "expr_77",
+            "expr_131"
+          ],
+          "instances": [
+            "cell_41"
+          ]
+        },
+        {
+          "id": "expr_133",
+          "operation": "not",
+          "arguments": [
+            "expr_77"
+          ],
+          "instances": [
+            "cell_41"
+          ]
+        },
+        {
+          "id": "expr_134",
+          "operation": "and",
+          "arguments": [
+            "expr_133",
+            "expr_130"
+          ],
+          "instances": [
+            "cell_41"
+          ]
+        },
+        {
+          "id": "expr_135",
+          "operation": "or",
+          "arguments": [
+            "expr_132",
+            "expr_134"
+          ],
+          "instances": [
+            "cell_41"
+          ]
+        },
+        {
+          "id": "expr_136",
+          "operation": "and",
+          "arguments": [
+            "expr_129",
+            "expr_135"
+          ],
+          "instances": [
+            "cell_0"
+          ]
+        },
+        {
+          "id": "expr_137",
+          "operation": "and",
+          "arguments": [
+            "expr_108",
+            "expr_136"
+          ],
+          "instances": [
+            "cell_147"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_4",
+          "output_nets": [],
+          "nodes": [
+            "expr_1",
+            "expr_3",
+            "expr_4"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_2"
+          ],
+          "children": [],
+          "instances": [
+            "cell_37"
+          ]
+        },
+        {
+          "id": "group_1",
+          "root": "expr_12",
+          "output_nets": [],
+          "nodes": [
+            "expr_8",
+            "expr_9",
+            "expr_10",
+            "expr_11",
+            "expr_12"
+          ],
+          "inputs": [
+            "expr_6",
+            "expr_7"
+          ],
+          "children": [],
+          "instances": [
+            "cell_40"
+          ]
+        },
+        {
+          "id": "group_2",
+          "root": "expr_26",
+          "output_nets": [],
+          "nodes": [
+            "expr_23",
+            "expr_25",
+            "expr_26"
+          ],
+          "inputs": [
+            "expr_22",
+            "expr_24"
+          ],
+          "children": [],
+          "instances": [
+            "cell_74"
+          ]
+        },
+        {
+          "id": "group_3",
+          "root": "expr_29",
+          "output_nets": [],
+          "nodes": [
+            "expr_28",
+            "expr_29"
+          ],
+          "inputs": [
+            "expr_22",
+            "expr_24"
+          ],
+          "children": [],
+          "instances": [
+            "cell_36",
+            "cell_43",
+            "cell_55"
+          ]
+        },
+        {
+          "id": "group_4",
+          "root": "expr_30",
+          "output_nets": [],
+          "nodes": [
+            "expr_27",
+            "expr_30"
+          ],
+          "inputs": [],
+          "children": [
+            "group_2",
+            "group_3"
+          ],
+          "instances": [
+            "cell_36"
+          ]
+        },
+        {
+          "id": "group_5",
+          "root": "expr_34",
+          "output_nets": [],
+          "nodes": [
+            "expr_34"
+          ],
+          "inputs": [
+            "expr_32",
+            "expr_33"
+          ],
+          "children": [],
+          "instances": [
+            "cell_42",
+            "cell_56"
+          ]
+        },
+        {
+          "id": "group_6",
+          "root": "expr_40",
+          "output_nets": [],
+          "nodes": [
+            "expr_35",
+            "expr_36",
+            "expr_37",
+            "expr_38",
+            "expr_39",
+            "expr_40"
+          ],
+          "inputs": [
+            "expr_32",
+            "expr_33"
+          ],
+          "children": [
+            "group_5"
+          ],
+          "instances": [
+            "cell_57",
+            "cell_65"
+          ]
+        },
+        {
+          "id": "group_7",
+          "root": "expr_44",
+          "output_nets": [],
+          "nodes": [
+            "expr_41",
+            "expr_42",
+            "expr_43",
+            "expr_44"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_2",
+            "expr_6",
+            "expr_7"
+          ],
+          "children": [
+            "group_1"
+          ],
+          "instances": [
+            "cell_44",
+            "cell_75"
+          ]
+        },
+        {
+          "id": "group_8",
+          "root": "expr_50",
+          "output_nets": [],
+          "nodes": [
+            "expr_48",
+            "expr_49",
+            "expr_50"
+          ],
+          "inputs": [
+            "expr_45",
+            "expr_46"
+          ],
+          "children": [],
+          "instances": [
+            "cell_35"
+          ]
+        },
+        {
+          "id": "group_9",
+          "root": "expr_51",
+          "output_nets": [],
+          "nodes": [
+            "expr_47",
+            "expr_51"
+          ],
+          "inputs": [
+            "expr_45",
+            "expr_46"
+          ],
+          "children": [
+            "group_8"
+          ],
+          "instances": [
+            "cell_50",
+            "cell_73"
+          ]
+        },
+        {
+          "id": "group_10",
+          "root": "expr_52",
+          "output_nets": [],
+          "nodes": [
+            "expr_52"
+          ],
+          "inputs": [],
+          "children": [
+            "group_7",
+            "group_9"
+          ],
+          "instances": [
+            "cell_53",
+            "cell_71"
+          ]
+        },
+        {
+          "id": "group_11",
+          "root": "expr_59",
+          "output_nets": [],
+          "nodes": [
+            "expr_59"
+          ],
+          "inputs": [
+            "expr_53",
+            "expr_55"
+          ],
+          "children": [],
+          "instances": [
+            "cell_66"
+          ]
+        },
+        {
+          "id": "group_12",
+          "root": "expr_61",
+          "output_nets": [],
+          "nodes": [
+            "expr_54",
+            "expr_56",
+            "expr_57",
+            "expr_58",
+            "expr_60",
+            "expr_61"
+          ],
+          "inputs": [
+            "expr_53",
+            "expr_55"
+          ],
+          "children": [
+            "group_11"
+          ],
+          "instances": [
+            "cell_58",
+            "cell_62"
+          ]
+        },
+        {
+          "id": "group_13",
+          "root": "expr_67",
+          "output_nets": [],
+          "nodes": [
+            "expr_62",
+            "expr_63",
+            "expr_64",
+            "expr_65",
+            "expr_66",
+            "expr_67"
+          ],
+          "inputs": [
+            "expr_45",
+            "expr_46",
+            "expr_53",
+            "expr_55"
+          ],
+          "children": [
+            "group_10",
+            "group_11",
+            "group_12"
+          ],
+          "instances": [
+            "cell_45",
+            "cell_52",
+            "cell_53"
+          ]
+        },
+        {
+          "id": "group_14",
+          "root": "expr_68",
+          "output_nets": [],
+          "nodes": [
+            "expr_68"
+          ],
+          "inputs": [],
+          "children": [
+            "group_6",
+            "group_13"
+          ],
+          "instances": [
+            "cell_46",
+            "cell_59"
+          ]
+        },
+        {
+          "id": "group_15",
+          "root": "expr_75",
+          "output_nets": [],
+          "nodes": [
+            "expr_75"
+          ],
+          "inputs": [
+            "expr_69",
+            "expr_71"
+          ],
+          "children": [],
+          "instances": [
+            "cell_72"
+          ]
+        },
+        {
+          "id": "group_16",
+          "root": "expr_77",
+          "output_nets": [],
+          "nodes": [
+            "expr_70",
+            "expr_72",
+            "expr_73",
+            "expr_74",
+            "expr_76",
+            "expr_77"
+          ],
+          "inputs": [
+            "expr_69",
+            "expr_71"
+          ],
+          "children": [
+            "group_15"
+          ],
+          "instances": [
+            "cell_60",
+            "cell_63"
+          ]
+        },
+        {
+          "id": "group_17",
+          "root": "expr_82",
+          "output_nets": [],
+          "nodes": [
+            "expr_78",
+            "expr_79",
+            "expr_80",
+            "expr_81",
+            "expr_82"
+          ],
+          "inputs": [
+            "expr_69",
+            "expr_71"
+          ],
+          "children": [
+            "group_5",
+            "group_14",
+            "group_15",
+            "group_16"
+          ],
+          "instances": [
+            "cell_42",
+            "cell_46",
+            "cell_68"
+          ]
+        },
+        {
+          "id": "group_18",
+          "root": "expr_83",
+          "output_nets": [],
+          "nodes": [
+            "expr_83"
+          ],
+          "inputs": [],
+          "children": [
+            "group_17"
+          ],
+          "instances": [
+            "cell_43",
+            "cell_48"
+          ]
+        },
+        {
+          "id": "group_19",
+          "root": "expr_89",
+          "output_nets": [],
+          "nodes": [
+            "expr_89"
+          ],
+          "inputs": [
+            "expr_87",
+            "expr_88"
+          ],
+          "children": [],
+          "instances": [
+            "cell_67"
+          ]
+        },
+        {
+          "id": "group_20",
+          "root": "expr_94",
+          "output_nets": [],
+          "nodes": [
+            "expr_91",
+            "expr_92",
+            "expr_93",
+            "expr_94"
+          ],
+          "inputs": [
+            "expr_87",
+            "expr_88"
+          ],
+          "children": [],
+          "instances": [
+            "cell_49",
+            "cell_61",
+            "cell_64"
+          ]
+        },
+        {
+          "id": "group_21",
+          "root": "expr_95",
+          "output_nets": [],
+          "nodes": [
+            "expr_90",
+            "expr_95"
+          ],
+          "inputs": [],
+          "children": [
+            "group_19",
+            "group_20"
+          ],
+          "instances": [
+            "cell_64"
+          ]
+        },
+        {
+          "id": "group_22",
+          "root": "expr_99",
+          "output_nets": [],
+          "nodes": [
+            "expr_97",
+            "expr_98",
+            "expr_99"
+          ],
+          "inputs": [],
+          "children": [
+            "group_2",
+            "group_3",
+            "group_18"
+          ],
+          "instances": [
+            "cell_43"
+          ]
+        },
+        {
+          "id": "group_23",
+          "root": "expr_100",
+          "output_nets": [],
+          "nodes": [
+            "expr_100"
+          ],
+          "inputs": [],
+          "children": [
+            "group_22"
+          ],
+          "instances": [
+            "cell_49",
+            "cell_69"
+          ]
+        },
+        {
+          "id": "group_24",
+          "root": "expr_110",
+          "output_nets": [],
+          "nodes": [
+            "expr_109",
+            "expr_110"
+          ],
+          "inputs": [],
+          "children": [
+            "group_8",
+            "group_10"
+          ],
+          "instances": [
+            "cell_71"
+          ]
+        },
+        {
+          "id": "group_25",
+          "root": "expr_130",
+          "output_nets": [],
+          "nodes": [
+            "expr_130"
+          ],
+          "inputs": [],
+          "children": [
+            "group_5",
+            "group_14"
+          ],
+          "instances": [
+            "cell_59"
+          ]
+        },
+        {
+          "id": "group_26",
+          "root": "expr_137",
+          "output_nets": [
+            "16"
+          ],
+          "nodes": [
+            "expr_5",
+            "expr_13",
+            "expr_14",
+            "expr_15",
+            "expr_16",
+            "expr_17",
+            "expr_18",
+            "expr_19",
+            "expr_20",
+            "expr_21",
+            "expr_31",
+            "expr_84",
+            "expr_85",
+            "expr_86",
+            "expr_96",
+            "expr_101",
+            "expr_102",
+            "expr_103",
+            "expr_104",
+            "expr_105",
+            "expr_106",
+            "expr_107",
+            "expr_108",
+            "expr_111",
+            "expr_112",
+            "expr_113",
+            "expr_114",
+            "expr_115",
+            "expr_116",
+            "expr_117",
+            "expr_118",
+            "expr_119",
+            "expr_120",
+            "expr_121",
+            "expr_122",
+            "expr_123",
+            "expr_124",
+            "expr_125",
+            "expr_126",
+            "expr_127",
+            "expr_128",
+            "expr_129",
+            "expr_131",
+            "expr_132",
+            "expr_133",
+            "expr_134",
+            "expr_135",
+            "expr_136",
+            "expr_137"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_2"
+          ],
+          "children": [
+            "group_0",
+            "group_1",
+            "group_4",
+            "group_6",
+            "group_7",
+            "group_9",
+            "group_12",
+            "group_13",
+            "group_16",
+            "group_17",
+            "group_18",
+            "group_19",
+            "group_20",
+            "group_21",
+            "group_22",
+            "group_23",
+            "group_24",
+            "group_25"
+          ],
+          "instances": [
+            "cell_0",
+            "cell_1",
+            "cell_147",
+            "cell_38",
+            "cell_39",
+            "cell_41",
+            "cell_47",
+            "cell_48",
+            "cell_49",
+            "cell_51",
+            "cell_54",
+            "cell_69",
+            "cell_70"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_0",
+        "cell_1",
+        "cell_147",
+        "cell_35",
+        "cell_36",
+        "cell_37",
+        "cell_38",
+        "cell_39",
+        "cell_40",
+        "cell_41",
+        "cell_42",
+        "cell_43",
+        "cell_44",
+        "cell_45",
+        "cell_46",
+        "cell_47",
+        "cell_48",
+        "cell_49",
+        "cell_50",
+        "cell_51",
+        "cell_52",
+        "cell_53",
+        "cell_54",
+        "cell_55",
+        "cell_56",
+        "cell_57",
+        "cell_58",
+        "cell_59",
+        "cell_60",
+        "cell_61",
+        "cell_62",
+        "cell_63",
+        "cell_64",
+        "cell_65",
+        "cell_66",
+        "cell_67",
+        "cell_68",
+        "cell_69",
+        "cell_70",
+        "cell_71",
+        "cell_72",
+        "cell_73",
+        "cell_74",
+        "cell_75"
+      ]
+    },
+    {
+      "name": "comb_1",
+      "inputs": {
+        "cell_24.Q": 35,
+        "cell_27.Q": 14,
+        "en": 28
+      },
+      "outputs": {
+        "67": {
+          "destinations": [
+            "cell_27.D"
+          ],
+          "source": {
+            "instance": "cell_10",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_27.Q",
+          "net_id": 14
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_10"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_10"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_24.Q",
+          "net_id": 35
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_10"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_10"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "67"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_10"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_10"
+      ]
+    },
+    {
+      "name": "comb_2",
+      "inputs": {
+        "cell_20.Q": 37,
+        "cell_25.Q": 233,
+        "en": 28
+      },
+      "outputs": {
+        "419": {
+          "destinations": [
+            "cell_25.D"
+          ],
+          "source": {
+            "instance": "cell_11",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_25.Q",
+          "net_id": 233
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_11"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_11"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_20.Q",
+          "net_id": 37
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_11"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_11"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "419"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_11"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_11"
+      ]
+    },
+    {
+      "name": "comb_3",
+      "inputs": {
+        "cell_21.Q": 46,
+        "cell_24.Q": 35,
+        "en": 28
+      },
+      "outputs": {
+        "30": {
+          "destinations": [
+            "cell_24.D"
+          ],
+          "source": {
+            "instance": "cell_12",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_24.Q",
+          "net_id": 35
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_12"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_12"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_21.Q",
+          "net_id": 46
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_12"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_12"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "30"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_12"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_12"
+      ]
+    },
+    {
+      "name": "comb_4",
+      "inputs": {
+        "cell_21.Q": 46,
+        "cell_32.Q": 123,
+        "en": 28
+      },
+      "outputs": {
+        "164": {
+          "destinations": [
+            "cell_21.D"
+          ],
+          "source": {
+            "instance": "cell_13",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_21.Q",
+          "net_id": 46
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_13"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_13"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_32.Q",
+          "net_id": 123
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_13"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_13"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "164"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_13"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_13"
+      ]
+    },
+    {
+      "name": "comb_5",
+      "inputs": {
+        "cell_25.Q": 233,
+        "cell_29.Q": 22,
+        "en": 28
+      },
+      "outputs": {
+        "385": {
+          "destinations": [
+            "cell_29.D"
+          ],
+          "source": {
+            "instance": "cell_14",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_29.Q",
+          "net_id": 22
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_14"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_14"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_25.Q",
+          "net_id": 233
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_14"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_14"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "385"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_14"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_14"
+      ]
+    },
+    {
+      "name": "comb_6",
+      "inputs": {
+        "cell_171.Q": 65,
+        "cell_22.Q": 113,
+        "en": 28
+      },
+      "outputs": {
+        "292": {
+          "destinations": [
+            "cell_22.D"
+          ],
+          "source": {
+            "instance": "cell_15",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_22.Q",
+          "net_id": 113
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_15"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_15"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_171.Q",
+          "net_id": 65
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_15"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_15"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "292"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_15"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_15"
+      ]
+    },
+    {
+      "name": "comb_7",
+      "inputs": {
+        "cell_23.Q": 34,
+        "cell_26.Q": 91,
+        "en": 28
+      },
+      "outputs": {
+        "400": {
+          "destinations": [
+            "cell_23.D"
+          ],
+          "source": {
+            "instance": "cell_16",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_23.Q",
+          "net_id": 34
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_16"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_16"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_26.Q",
+          "net_id": 91
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_16"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_16"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "400"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_16"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_16"
+      ]
+    },
+    {
+      "name": "comb_8",
+      "inputs": {
+        "cell_19.Q": 15,
+        "cell_23.Q": 34,
+        "en": 28
+      },
+      "outputs": {
+        "465": {
+          "destinations": [
+            "cell_19.D"
+          ],
+          "source": {
+            "instance": "cell_17",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_19.Q",
+          "net_id": 15
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_17"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_17"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_23.Q",
+          "net_id": 34
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_17"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_17"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "465"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_17"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_17"
+      ]
+    },
+    {
+      "name": "comb_9",
+      "inputs": {
+        "cell_19.Q": 15,
+        "cell_20.Q": 37,
+        "en": 28
+      },
+      "outputs": {
+        "415": {
+          "destinations": [
+            "cell_20.D"
+          ],
+          "source": {
+            "instance": "cell_18",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_20.Q",
+          "net_id": 37
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_18"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_18"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_19.Q",
+          "net_id": 15
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_18"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_18"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "415"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_18"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_18"
+      ]
+    },
+    {
+      "name": "comb_10",
+      "inputs": {
+        "clk": 435
+      },
+      "outputs": {
+        "66": {
+          "destinations": [
+            "cell_171.CLK",
+            "cell_21.CLK",
+            "cell_22.CLK",
+            "cell_24.CLK",
+            "cell_27.CLK",
+            "cell_32.CLK",
+            "cell_33.CLK",
+            "cell_34.CLK"
+          ],
+          "source": {
+            "instance": "cell_83",
+            "pin": "X"
+          },
+          "expression": "expr_0"
+        },
+        "371": {
+          "destinations": [
+            "cell_19.CLK",
+            "cell_20.CLK",
+            "cell_23.CLK",
+            "cell_25.CLK",
+            "cell_26.CLK",
+            "cell_29.CLK",
+            "cell_30.CLK",
+            "cell_31.CLK"
+          ],
+          "source": {
+            "instance": "cell_2",
+            "pin": "X"
+          },
+          "expression": "expr_0"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "clk",
+          "net_id": 435
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_0",
+          "output_nets": [
+            "66",
+            "371"
+          ],
+          "nodes": [],
+          "inputs": [
+            "expr_0"
+          ],
+          "children": [],
+          "instances": []
+        }
+      ],
+      "instances": [
+        "cell_2",
+        "cell_3",
+        "cell_83"
+      ]
+    },
+    {
+      "name": "comb_11",
+      "inputs": {
+        "cell_27.Q": 14,
+        "cell_34.Q": 33,
+        "en": 28
+      },
+      "outputs": {
+        "151": {
+          "destinations": [
+            "cell_34.D"
+          ],
+          "source": {
+            "instance": "cell_28",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_34.Q",
+          "net_id": 33
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_28"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_28"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_27.Q",
+          "net_id": 14
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_28"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_28"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "151"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_28"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_28"
+      ]
+    },
+    {
+      "name": "comb_12",
+      "inputs": {
+        "A": 282,
+        "cell_30.Q": 11,
+        "en": 28
+      },
+      "outputs": {
+        "422": {
+          "destinations": [
+            "cell_30.D"
+          ],
+          "source": {
+            "instance": "cell_4",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_30.Q",
+          "net_id": 11
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_4"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_4"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "A",
+          "net_id": 282
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_4"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_4"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "422"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_4"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_4"
+      ]
+    },
+    {
+      "name": "comb_13",
+      "inputs": {
+        "cell_32.Q": 123,
+        "cell_33.Q": 18,
+        "en": 28
+      },
+      "outputs": {
+        "247": {
+          "destinations": [
+            "cell_32.D"
+          ],
+          "source": {
+            "instance": "cell_5",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_32.Q",
+          "net_id": 123
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_5"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_5"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_33.Q",
+          "net_id": 18
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_5"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_5"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "247"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_5"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_5"
+      ]
+    },
+    {
+      "name": "comb_14",
+      "inputs": {
+        "B": 141,
+        "cell_33.Q": 18,
+        "en": 28
+      },
+      "outputs": {
+        "115": {
+          "destinations": [
+            "cell_33.D"
+          ],
+          "source": {
+            "instance": "cell_6",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_33.Q",
+          "net_id": 18
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_6"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_6"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "B",
+          "net_id": 141
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_6"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_6"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "115"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_6"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_6"
+      ]
+    },
+    {
+      "name": "comb_15",
+      "inputs": {
+        "cell_26.Q": 91,
+        "cell_31.Q": 122,
+        "en": 28
+      },
+      "outputs": {
+        "471": {
+          "destinations": [
+            "cell_26.D"
+          ],
+          "source": {
+            "instance": "cell_7",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_26.Q",
+          "net_id": 91
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_7"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_7"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_31.Q",
+          "net_id": 122
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_7"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_7"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "471"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_7"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_7"
+      ]
+    },
+    {
+      "name": "comb_16",
+      "inputs": {
+        "cell_30.Q": 11,
+        "cell_31.Q": 122,
+        "en": 28
+      },
+      "outputs": {
+        "383": {
+          "destinations": [
+            "cell_31.D"
+          ],
+          "source": {
+            "instance": "cell_8",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_31.Q",
+          "net_id": 122
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_8"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_8"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_30.Q",
+          "net_id": 11
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_8"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_8"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "383"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_8"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_8"
+      ]
+    },
+    {
+      "name": "comb_17",
+      "inputs": {
+        "cell_171.Q": 65,
+        "cell_34.Q": 33,
+        "en": 28
+      },
+      "outputs": {
+        "100": {
+          "destinations": [
+            "cell_171.D"
+          ],
+          "source": {
+            "instance": "cell_9",
+            "pin": "X"
+          },
+          "expression": "expr_6"
+        }
+      },
+      "expression_nodes": [
+        {
+          "id": "expr_0",
+          "operation": "boundary",
+          "name": "cell_171.Q",
+          "net_id": 65
+        },
+        {
+          "id": "expr_1",
+          "operation": "boundary",
+          "name": "en",
+          "net_id": 28
+        },
+        {
+          "id": "expr_2",
+          "operation": "not",
+          "arguments": [
+            "expr_1"
+          ],
+          "instances": [
+            "cell_9"
+          ]
+        },
+        {
+          "id": "expr_3",
+          "operation": "and",
+          "arguments": [
+            "expr_0",
+            "expr_2"
+          ],
+          "instances": [
+            "cell_9"
+          ]
+        },
+        {
+          "id": "expr_4",
+          "operation": "boundary",
+          "name": "cell_34.Q",
+          "net_id": 33
+        },
+        {
+          "id": "expr_5",
+          "operation": "and",
+          "arguments": [
+            "expr_4",
+            "expr_1"
+          ],
+          "instances": [
+            "cell_9"
+          ]
+        },
+        {
+          "id": "expr_6",
+          "operation": "or",
+          "arguments": [
+            "expr_3",
+            "expr_5"
+          ],
+          "instances": [
+            "cell_9"
+          ]
+        }
+      ],
+      "logic_groups": [
+        {
+          "id": "group_0",
+          "root": "expr_6",
+          "output_nets": [
+            "100"
+          ],
+          "nodes": [
+            "expr_2",
+            "expr_3",
+            "expr_5",
+            "expr_6"
+          ],
+          "inputs": [
+            "expr_0",
+            "expr_1",
+            "expr_4"
+          ],
+          "children": [],
+          "instances": [
+            "cell_9"
+          ]
+        }
+      ],
+      "instances": [
+        "cell_9"
+      ]
+    }
+  ]
+}

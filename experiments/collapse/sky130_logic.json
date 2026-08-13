@@ -1,0 +1,689 @@
+{
+  "source": {
+    "repository": "https://github.com/google/skywater-pdk-libs-sky130_fd_sc_hd",
+    "commit": "ac7fb61f06e6470b94e8afdf7c25268f62fbd7b1",
+    "liberty_corner": "tt_025C_1v80"
+  },
+  "cells": {
+    "sky130_fd_sc_hd__a2111oi": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!B1&!C1&!D1) | (!A2&!B1&!C1&!D1)"
+      },
+      "source": "cells/a2111oi/sky130_fd_sc_hd__a2111oi_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a2111oi_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a211o": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&A2) | (B1) | (C1)"
+      },
+      "source": "cells/a211o/sky130_fd_sc_hd__a211o_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a211o_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a211oi": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!B1&!C1) | (!A2&!B1&!C1)"
+      },
+      "source": "cells/a211oi/sky130_fd_sc_hd__a211oi_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a211oi_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a21bo": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&A2) | (!B1_N)"
+      },
+      "source": "cells/a21bo/sky130_fd_sc_hd__a21bo_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a21bo_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a21boi": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&B1_N) | (!A2&B1_N)"
+      },
+      "source": "cells/a21boi/sky130_fd_sc_hd__a21boi_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a21boi_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a21o": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&A2) | (B1)"
+      },
+      "source": "cells/a21o/sky130_fd_sc_hd__a21o_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a21o_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a21oi": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!B1) | (!A2&!B1)"
+      },
+      "source": "cells/a21oi/sky130_fd_sc_hd__a21oi_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a21oi_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a221o": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(B1&B2) | (A1&A2) | (C1)"
+      },
+      "source": "cells/a221o/sky130_fd_sc_hd__a221o_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a221o_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a221oi": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!B1&!C1) | (!A1&!B2&!C1) | (!A2&!B1&!C1) | (!A2&!B2&!C1)"
+      },
+      "source": "cells/a221oi/sky130_fd_sc_hd__a221oi_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a221oi_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a22o": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(B1&B2) | (A1&A2)"
+      },
+      "source": "cells/a22o/sky130_fd_sc_hd__a22o_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a22o_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a22oi": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!B1) | (!A1&!B2) | (!A2&!B1) | (!A2&!B2)"
+      },
+      "source": "cells/a22oi/sky130_fd_sc_hd__a22oi_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a22oi_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a311o": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&A2&A3) | (B1) | (C1)"
+      },
+      "source": "cells/a311o/sky130_fd_sc_hd__a311o_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a311o_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a31o": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&A2&A3) | (B1)"
+      },
+      "source": "cells/a31o/sky130_fd_sc_hd__a31o_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a31o_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a31oi": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!B1) | (!A2&!B1) | (!A3&!B1)"
+      },
+      "source": "cells/a31oi/sky130_fd_sc_hd__a31oi_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a31oi_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a32o": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&A2&A3) | (B1&B2)"
+      },
+      "source": "cells/a32o/sky130_fd_sc_hd__a32o_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a32o_2"
+      ]
+    },
+    "sky130_fd_sc_hd__a41oi": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!B1) | (!A2&!B1) | (!A3&!B1) | (!A4&!B1)"
+      },
+      "source": "cells/a41oi/sky130_fd_sc_hd__a41oi_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__a41oi_2"
+      ]
+    },
+    "sky130_fd_sc_hd__and2": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A&B)"
+      },
+      "source": "cells/and2/sky130_fd_sc_hd__and2_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__and2_2"
+      ]
+    },
+    "sky130_fd_sc_hd__and2b": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(!A_N&B)"
+      },
+      "source": "cells/and2b/sky130_fd_sc_hd__and2b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__and2b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__and3": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A&B&C)"
+      },
+      "source": "cells/and3/sky130_fd_sc_hd__and3_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__and3_2"
+      ]
+    },
+    "sky130_fd_sc_hd__and3b": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(!A_N&B&C)"
+      },
+      "source": "cells/and3b/sky130_fd_sc_hd__and3b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__and3b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__and4": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A&B&C&D)"
+      },
+      "source": "cells/and4/sky130_fd_sc_hd__and4_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__and4_2"
+      ]
+    },
+    "sky130_fd_sc_hd__and4b": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(!A_N&B&C&D)"
+      },
+      "source": "cells/and4b/sky130_fd_sc_hd__and4b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__and4b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__and4bb": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(!A_N&!B_N&C&D)"
+      },
+      "source": "cells/and4bb/sky130_fd_sc_hd__and4bb_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__and4bb_2"
+      ]
+    },
+    "sky130_fd_sc_hd__buf": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A)"
+      },
+      "source": "cells/buf/sky130_fd_sc_hd__buf_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__buf_2"
+      ]
+    },
+    "sky130_fd_sc_hd__clkbuf": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A)"
+      },
+      "source": "cells/clkbuf/sky130_fd_sc_hd__clkbuf_16__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__clkbuf_16",
+        "sky130_fd_sc_hd__clkbuf_4",
+        "sky130_fd_sc_hd__clkbuf_8"
+      ]
+    },
+    "sky130_fd_sc_hd__conb": {
+      "kind": "combinational",
+      "outputs": {
+        "HI": "1",
+        "LO": "0"
+      },
+      "source": "cells/conb/sky130_fd_sc_hd__conb_1__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__conb_1"
+      ]
+    },
+    "sky130_fd_sc_hd__dfrtp": {
+      "kind": "sequential",
+      "outputs": {
+        "Q": "IQ"
+      },
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clear": "!RESET_B",
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "source": "cells/dfrtp/sky130_fd_sc_hd__dfrtp_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__dfrtp_2"
+      ]
+    },
+    "sky130_fd_sc_hd__dfstp": {
+      "kind": "sequential",
+      "outputs": {
+        "Q": "IQ"
+      },
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clocked_on": "CLK",
+        "next_state": "D",
+        "preset": "!SET_B"
+      },
+      "source": "cells/dfstp/sky130_fd_sc_hd__dfstp_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__dfstp_2"
+      ]
+    },
+    "sky130_fd_sc_hd__dfxtp": {
+      "kind": "sequential",
+      "outputs": {
+        "Q": "IQ"
+      },
+      "state": {
+        "kind": "ff",
+        "variables": [
+          "IQ",
+          "IQ_N"
+        ],
+        "clocked_on": "CLK",
+        "next_state": "D"
+      },
+      "source": "cells/dfxtp/sky130_fd_sc_hd__dfxtp_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__dfxtp_2"
+      ]
+    },
+    "sky130_fd_sc_hd__diode": {
+      "kind": "passive",
+      "outputs": {},
+      "source": "cells/diode/sky130_fd_sc_hd__diode_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__diode_2"
+      ]
+    },
+    "sky130_fd_sc_hd__inv": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A)"
+      },
+      "source": "cells/inv/sky130_fd_sc_hd__inv_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__inv_2"
+      ]
+    },
+    "sky130_fd_sc_hd__mux2": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A0&!S) | (A1&S)"
+      },
+      "source": "cells/mux2/sky130_fd_sc_hd__mux2_1__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__mux2_1"
+      ]
+    },
+    "sky130_fd_sc_hd__nand2": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A) | (!B)"
+      },
+      "source": "cells/nand2/sky130_fd_sc_hd__nand2_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nand2_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nand2b": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(A_N) | (!B)"
+      },
+      "source": "cells/nand2b/sky130_fd_sc_hd__nand2b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nand2b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nand3": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A) | (!B) | (!C)"
+      },
+      "source": "cells/nand3/sky130_fd_sc_hd__nand3_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nand3_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nand3b": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(A_N) | (!B) | (!C)"
+      },
+      "source": "cells/nand3b/sky130_fd_sc_hd__nand3b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nand3b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nand4": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A) | (!B) | (!C) | (!D)"
+      },
+      "source": "cells/nand4/sky130_fd_sc_hd__nand4_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nand4_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nor2": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A&!B)"
+      },
+      "source": "cells/nor2/sky130_fd_sc_hd__nor2_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nor2_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nor3": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A&!B&!C)"
+      },
+      "source": "cells/nor3/sky130_fd_sc_hd__nor3_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nor3_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nor3b": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A&!B&C_N)"
+      },
+      "source": "cells/nor3b/sky130_fd_sc_hd__nor3b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nor3b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nor4": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A&!B&!C&!D)"
+      },
+      "source": "cells/nor4/sky130_fd_sc_hd__nor4_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nor4_2"
+      ]
+    },
+    "sky130_fd_sc_hd__nor4b": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A&!B&!C&D_N)"
+      },
+      "source": "cells/nor4b/sky130_fd_sc_hd__nor4b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__nor4b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o211a": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&B1&C1) | (A2&B1&C1)"
+      },
+      "source": "cells/o211a/sky130_fd_sc_hd__o211a_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o211a_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o211ai": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!A2) | (!B1) | (!C1)"
+      },
+      "source": "cells/o211ai/sky130_fd_sc_hd__o211ai_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o211ai_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o21a": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&B1) | (A2&B1)"
+      },
+      "source": "cells/o21a/sky130_fd_sc_hd__o21a_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o21a_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o21ai": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!A2) | (!B1)"
+      },
+      "source": "cells/o21ai/sky130_fd_sc_hd__o21ai_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o21ai_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o21ba": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&!B1_N) | (A2&!B1_N)"
+      },
+      "source": "cells/o21ba/sky130_fd_sc_hd__o21ba_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o21ba_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o21bai": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!A2) | (B1_N)"
+      },
+      "source": "cells/o21bai/sky130_fd_sc_hd__o21bai_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o21bai_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o221a": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&B1&C1) | (A2&B1&C1) | (A1&B2&C1) | (A2&B2&C1)"
+      },
+      "source": "cells/o221a/sky130_fd_sc_hd__o221a_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o221a_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o22a": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&B1) | (A2&B1) | (A1&B2) | (A2&B2)"
+      },
+      "source": "cells/o22a/sky130_fd_sc_hd__o22a_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o22a_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o22ai": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!B1&!B2) | (!A1&!A2)"
+      },
+      "source": "cells/o22ai/sky130_fd_sc_hd__o22ai_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o22ai_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o2bb2a": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(!A1_N&B1) | (!A2_N&B1) | (!A1_N&B2) | (!A2_N&B2)"
+      },
+      "source": "cells/o2bb2a/sky130_fd_sc_hd__o2bb2a_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o2bb2a_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o311a": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&B1&C1) | (A2&B1&C1) | (A3&B1&C1)"
+      },
+      "source": "cells/o311a/sky130_fd_sc_hd__o311a_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o311a_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o31a": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&B1) | (A2&B1) | (A3&B1)"
+      },
+      "source": "cells/o31a/sky130_fd_sc_hd__o31a_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o31a_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o31ai": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!A2&!A3) | (!B1)"
+      },
+      "source": "cells/o31ai/sky130_fd_sc_hd__o31ai_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o31ai_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o32a": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A1&B1) | (A1&B2) | (A2&B1) | (A3&B1) | (A2&B2) | (A3&B2)"
+      },
+      "source": "cells/o32a/sky130_fd_sc_hd__o32a_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o32a_2"
+      ]
+    },
+    "sky130_fd_sc_hd__o32ai": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A1&!A2&!A3) | (!B1&!B2)"
+      },
+      "source": "cells/o32ai/sky130_fd_sc_hd__o32ai_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__o32ai_2"
+      ]
+    },
+    "sky130_fd_sc_hd__or2": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A) | (B)"
+      },
+      "source": "cells/or2/sky130_fd_sc_hd__or2_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__or2_2"
+      ]
+    },
+    "sky130_fd_sc_hd__or3": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A) | (B) | (C)"
+      },
+      "source": "cells/or3/sky130_fd_sc_hd__or3_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__or3_2"
+      ]
+    },
+    "sky130_fd_sc_hd__or3b": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A) | (B) | (!C_N)"
+      },
+      "source": "cells/or3b/sky130_fd_sc_hd__or3b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__or3b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__or4": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A) | (B) | (C) | (D)"
+      },
+      "source": "cells/or4/sky130_fd_sc_hd__or4_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__or4_2"
+      ]
+    },
+    "sky130_fd_sc_hd__or4b": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A) | (B) | (C) | (!D_N)"
+      },
+      "source": "cells/or4b/sky130_fd_sc_hd__or4b_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__or4b_2"
+      ]
+    },
+    "sky130_fd_sc_hd__or4bb": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A) | (B) | (!C_N) | (!D_N)"
+      },
+      "source": "cells/or4bb/sky130_fd_sc_hd__or4bb_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__or4bb_2"
+      ]
+    },
+    "sky130_fd_sc_hd__xnor2": {
+      "kind": "combinational",
+      "outputs": {
+        "Y": "(!A&!B) | (A&B)"
+      },
+      "source": "cells/xnor2/sky130_fd_sc_hd__xnor2_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__xnor2_2"
+      ]
+    },
+    "sky130_fd_sc_hd__xor2": {
+      "kind": "combinational",
+      "outputs": {
+        "X": "(A&!B) | (!A&B)"
+      },
+      "source": "cells/xor2/sky130_fd_sc_hd__xor2_2__tt_025C_1v80.lib.json",
+      "variants": [
+        "sky130_fd_sc_hd__xor2_2"
+      ]
+    }
+  }
+}
