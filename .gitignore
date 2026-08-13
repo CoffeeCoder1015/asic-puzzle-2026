@@ -2,3 +2,4 @@ __pycache__/
 *.py[cod]
 *.vvp
 replayed_inputs.vcd
+.pdk/
