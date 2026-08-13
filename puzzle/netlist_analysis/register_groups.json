@@ -1,0 +1,377 @@
+{
+  "source_netlist": "puzzle/reversed_puzzle.v",
+  "registers": [
+    {
+      "id": 0,
+      "members": [
+        "cell_120",
+        "cell_143",
+        "cell_154",
+        "cell_174",
+        "cell_180",
+        "cell_203"
+      ]
+    },
+    {
+      "id": 1,
+      "members": [
+        "cell_133",
+        "cell_136",
+        "cell_149",
+        "cell_191",
+        "cell_192",
+        "cell_196"
+      ]
+    },
+    {
+      "id": 2,
+      "members": [
+        "cell_132",
+        "cell_147",
+        "cell_151",
+        "cell_186",
+        "cell_197",
+        "cell_198"
+      ]
+    },
+    {
+      "id": 3,
+      "members": [
+        "cell_129",
+        "cell_152",
+        "cell_168",
+        "cell_169",
+        "cell_199"
+      ]
+    },
+    {
+      "id": 4,
+      "members": [
+        "cell_124",
+        "cell_142",
+        "cell_153",
+        "cell_163",
+        "cell_201"
+      ]
+    },
+    {
+      "id": 5,
+      "members": [
+        "cell_150",
+        "cell_157",
+        "cell_184",
+        "cell_193"
+      ]
+    },
+    {
+      "id": 6,
+      "members": [
+        "cell_144",
+        "cell_179"
+      ]
+    },
+    {
+      "id": 7,
+      "members": [
+        "cell_137",
+        "cell_173"
+      ]
+    },
+    {
+      "id": 8,
+      "members": [
+        "cell_4",
+        "cell_478"
+      ]
+    },
+    {
+      "id": 9,
+      "members": [
+        "cell_125"
+      ]
+    },
+    {
+      "id": 10,
+      "members": [
+        "cell_5"
+      ]
+    },
+    {
+      "id": 11,
+      "members": [
+        "cell_130"
+      ]
+    },
+    {
+      "id": 12,
+      "members": [
+        "cell_128"
+      ]
+    },
+    {
+      "id": 13,
+      "members": [
+        "cell_189"
+      ]
+    },
+    {
+      "id": 14,
+      "members": [
+        "cell_165"
+      ]
+    },
+    {
+      "id": 15,
+      "members": [
+        "cell_200"
+      ]
+    },
+    {
+      "id": 16,
+      "members": [
+        "cell_170"
+      ]
+    },
+    {
+      "id": 17,
+      "members": [
+        "cell_334"
+      ]
+    },
+    {
+      "id": 18,
+      "members": [
+        "cell_118"
+      ]
+    },
+    {
+      "id": 19,
+      "members": [
+        "cell_181"
+      ]
+    },
+    {
+      "id": 20,
+      "members": [
+        "cell_146"
+      ]
+    },
+    {
+      "id": 21,
+      "members": [
+        "cell_122"
+      ]
+    },
+    {
+      "id": 22,
+      "members": [
+        "cell_156"
+      ]
+    },
+    {
+      "id": 23,
+      "members": [
+        "cell_183"
+      ]
+    },
+    {
+      "id": 24,
+      "members": [
+        "cell_2",
+        "cell_3"
+      ]
+    },
+    {
+      "id": 25,
+      "members": [
+        "cell_162"
+      ]
+    },
+    {
+      "id": 26,
+      "members": [
+        "cell_139",
+        "cell_190"
+      ]
+    },
+    {
+      "id": 27,
+      "members": [
+        "cell_145"
+      ]
+    },
+    {
+      "id": 28,
+      "members": [
+        "cell_148"
+      ]
+    },
+    {
+      "id": 29,
+      "members": [
+        "cell_178"
+      ]
+    },
+    {
+      "id": 30,
+      "members": [
+        "cell_121"
+      ]
+    },
+    {
+      "id": 31,
+      "members": [
+        "cell_202"
+      ]
+    },
+    {
+      "id": 32,
+      "members": [
+        "cell_7"
+      ]
+    },
+    {
+      "id": 33,
+      "members": [
+        "cell_188"
+      ]
+    },
+    {
+      "id": 34,
+      "members": [
+        "cell_6"
+      ]
+    },
+    {
+      "id": 35,
+      "members": [
+        "cell_138"
+      ]
+    },
+    {
+      "id": 36,
+      "members": [
+        "cell_155",
+        "cell_187"
+      ]
+    },
+    {
+      "id": 37,
+      "members": [
+        "cell_135",
+        "cell_194"
+      ]
+    },
+    {
+      "id": 38,
+      "members": [
+        "cell_176",
+        "cell_177"
+      ]
+    },
+    {
+      "id": 39,
+      "members": [
+        "cell_140"
+      ]
+    },
+    {
+      "id": 40,
+      "members": [
+        "cell_126"
+      ]
+    },
+    {
+      "id": 41,
+      "members": [
+        "cell_134"
+      ]
+    },
+    {
+      "id": 42,
+      "members": [
+        "cell_167"
+      ]
+    },
+    {
+      "id": 43,
+      "members": [
+        "cell_141"
+      ]
+    },
+    {
+      "id": 44,
+      "members": [
+        "cell_166"
+      ]
+    },
+    {
+      "id": 45,
+      "members": [
+        "cell_195"
+      ]
+    },
+    {
+      "id": 46,
+      "members": [
+        "cell_160"
+      ]
+    },
+    {
+      "id": 47,
+      "members": [
+        "cell_343"
+      ]
+    },
+    {
+      "id": 48,
+      "members": [
+        "cell_159"
+      ]
+    },
+    {
+      "id": 49,
+      "members": [
+        "cell_127"
+      ]
+    },
+    {
+      "id": 50,
+      "members": [
+        "cell_172"
+      ]
+    },
+    {
+      "id": 51,
+      "members": [
+        "cell_131",
+        "cell_161"
+      ]
+    },
+    {
+      "id": 52,
+      "members": [
+        "cell_158",
+        "cell_164"
+      ]
+    },
+    {
+      "id": 53,
+      "members": [
+        "cell_171"
+      ]
+    },
+    {
+      "id": 54,
+      "members": [
+        "cell_182"
+      ]
+    },
+    {
+      "id": 55,
+      "members": [
+        "cell_123"
+      ]
+    }
+  ]
+}
