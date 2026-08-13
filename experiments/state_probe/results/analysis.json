@@ -1,0 +1,4600 @@
+{
+  "stimulus": {
+    "baseline": "The night s",
+    "variants": [
+      {
+        "id": 0,
+        "position": null,
+        "text": "The night s",
+        "bits": "0010101000000010110000101001100000000010000001110110000100101100001110011000000010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 1,
+        "position": 0,
+        "text": "Uhe night s",
+        "bits": "1010101000000010110000101001100000000010000001110110000100101100001110011000000010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 2,
+        "position": 1,
+        "text": "Tie night s",
+        "bits": "0010101000010010110000101001100000000010000001110110000100101100001110011000000010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 3,
+        "position": 2,
+        "text": "Thd night s",
+        "bits": "0010101000000010110000001001100000000010000001110110000100101100001110011000000010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 4,
+        "position": 3,
+        "text": "The!night s",
+        "bits": "0010101000000010110000101001100001000010000001110110000100101100001110011000000010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 5,
+        "position": 4,
+        "text": "The oight s",
+        "bits": "0010101000000010110000101001100000000010000011110110000100101100001110011000000010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 6,
+        "position": 5,
+        "text": "The nhght s",
+        "bits": "0010101000000010110000101001100000000010000001110110000000101100001110011000000010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 7,
+        "position": 6,
+        "text": "The nifht s",
+        "bits": "0010101000000010110000101001100000000010000001110110000100101100000110011000000010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 8,
+        "position": 7,
+        "text": "The nigit s",
+        "bits": "0010101000000010110000101001100000000010000001110110000100101100001110011000010010110000001011100000000010000011001110000"
+      },
+      {
+        "id": 9,
+        "position": 8,
+        "text": "The nighu s",
+        "bits": "0010101000000010110000101001100000000010000001110110000100101100001110011000000010110000101011100000000010000011001110000"
+      },
+      {
+        "id": 10,
+        "position": 9,
+        "text": "The night!s",
+        "bits": "0010101000000010110000101001100000000010000001110110000100101100001110011000000010110000001011100001000010000011001110000"
+      },
+      {
+        "id": 11,
+        "position": 10,
+        "text": "The night r",
+        "bits": "0010101000000010110000101001100000000010000001110110000100101100001110011000000010110000001011100000000010000001001110000"
+      }
+    ],
+    "cycles_per_run": 152
+  },
+  "structure": {
+    "flip_flop_count": 92,
+    "shared_output_control_nets": [
+      3771,
+      3874
+    ],
+    "success_flip_flop": "cell_144",
+    "success_d_net": 4240,
+    "cones": {
+      "output_bus": {
+        "root_nets": [
+          69,
+          731,
+          1253,
+          1546,
+          1979,
+          2285,
+          2677,
+          3166
+        ],
+        "nets": [
+          69,
+          612,
+          684,
+          686,
+          716,
+          731,
+          769,
+          791,
+          802,
+          888,
+          919,
+          982,
+          1029,
+          1076,
+          1084,
+          1104,
+          1136,
+          1253,
+          1351,
+          1363,
+          1365,
+          1408,
+          1409,
+          1410,
+          1412,
+          1415,
+          1418,
+          1419,
+          1420,
+          1424,
+          1443,
+          1445,
+          1448,
+          1449,
+          1458,
+          1470,
+          1472,
+          1484,
+          1490,
+          1505,
+          1516,
+          1546,
+          1559,
+          1598,
+          1599,
+          1629,
+          1693,
+          1694,
+          1815,
+          1816,
+          1817,
+          1822,
+          1827,
+          1834,
+          1871,
+          1880,
+          1906,
+          1907,
+          1927,
+          1928,
+          1936,
+          1974,
+          1977,
+          1978,
+          1979,
+          1992,
+          2003,
+          2005,
+          2008,
+          2043,
+          2044,
+          2088,
+          2102,
+          2119,
+          2120,
+          2154,
+          2158,
+          2189,
+          2223,
+          2224,
+          2231,
+          2239,
+          2283,
+          2285,
+          2298,
+          2303,
+          2306,
+          2313,
+          2315,
+          2369,
+          2456,
+          2460,
+          2462,
+          2479,
+          2513,
+          2544,
+          2546,
+          2547,
+          2555,
+          2574,
+          2593,
+          2597,
+          2599,
+          2604,
+          2607,
+          2609,
+          2612,
+          2637,
+          2648,
+          2652,
+          2654,
+          2667,
+          2671,
+          2674,
+          2676,
+          2677,
+          2684,
+          2689,
+          2695,
+          2706,
+          2711,
+          2720,
+          2743,
+          2746,
+          2752,
+          2794,
+          2806,
+          2808,
+          2825,
+          2881,
+          2892,
+          2905,
+          2912,
+          2927,
+          2930,
+          2949,
+          3047,
+          3052,
+          3166,
+          3190,
+          3251,
+          3257,
+          3258,
+          3265,
+          3278,
+          3284,
+          3293,
+          3303,
+          3357,
+          3361,
+          3377,
+          3396,
+          3408,
+          3419,
+          3420,
+          3426,
+          3430,
+          3433,
+          3435,
+          3443,
+          3457,
+          3465,
+          3483,
+          3485,
+          3488,
+          3510,
+          3516,
+          3518,
+          3521,
+          3529,
+          3543,
+          3549,
+          3552,
+          3593,
+          3613,
+          3617,
+          3641,
+          3659,
+          3705,
+          3709,
+          3710,
+          3771,
+          3818,
+          3866,
+          3874,
+          3919,
+          3920,
+          3949,
+          4031
+        ],
+        "combinational_gates": [
+          "cell_100",
+          "cell_101",
+          "cell_104",
+          "cell_106",
+          "cell_107",
+          "cell_108",
+          "cell_114",
+          "cell_115",
+          "cell_119",
+          "cell_12",
+          "cell_13",
+          "cell_14",
+          "cell_1513",
+          "cell_1514",
+          "cell_1515",
+          "cell_1520",
+          "cell_1525",
+          "cell_1526",
+          "cell_1532",
+          "cell_1537",
+          "cell_1565",
+          "cell_1568",
+          "cell_1576",
+          "cell_1581",
+          "cell_1583",
+          "cell_1586",
+          "cell_1587",
+          "cell_1592",
+          "cell_16",
+          "cell_1602",
+          "cell_1605",
+          "cell_1609",
+          "cell_1613",
+          "cell_1615",
+          "cell_206",
+          "cell_209",
+          "cell_21",
+          "cell_217",
+          "cell_218",
+          "cell_219",
+          "cell_22",
+          "cell_226",
+          "cell_231",
+          "cell_234",
+          "cell_235",
+          "cell_236",
+          "cell_237",
+          "cell_24",
+          "cell_25",
+          "cell_258",
+          "cell_26",
+          "cell_27",
+          "cell_270",
+          "cell_271",
+          "cell_272",
+          "cell_273",
+          "cell_275",
+          "cell_277",
+          "cell_28",
+          "cell_282",
+          "cell_283",
+          "cell_284",
+          "cell_286",
+          "cell_287",
+          "cell_288",
+          "cell_289",
+          "cell_29",
+          "cell_290",
+          "cell_291",
+          "cell_292",
+          "cell_293",
+          "cell_295",
+          "cell_296",
+          "cell_297",
+          "cell_298",
+          "cell_299",
+          "cell_30",
+          "cell_300",
+          "cell_301",
+          "cell_31",
+          "cell_310",
+          "cell_311",
+          "cell_312",
+          "cell_313",
+          "cell_32",
+          "cell_321",
+          "cell_324",
+          "cell_326",
+          "cell_33",
+          "cell_331",
+          "cell_332",
+          "cell_335",
+          "cell_34",
+          "cell_345",
+          "cell_346",
+          "cell_349",
+          "cell_35",
+          "cell_350",
+          "cell_357",
+          "cell_358",
+          "cell_36",
+          "cell_361",
+          "cell_363",
+          "cell_364",
+          "cell_37",
+          "cell_386",
+          "cell_387",
+          "cell_388",
+          "cell_389",
+          "cell_390",
+          "cell_392",
+          "cell_393",
+          "cell_394",
+          "cell_396",
+          "cell_398",
+          "cell_403",
+          "cell_406",
+          "cell_412",
+          "cell_418",
+          "cell_421",
+          "cell_425",
+          "cell_428",
+          "cell_448",
+          "cell_456",
+          "cell_460",
+          "cell_461",
+          "cell_464",
+          "cell_469",
+          "cell_470",
+          "cell_471",
+          "cell_474",
+          "cell_480",
+          "cell_487",
+          "cell_491",
+          "cell_493",
+          "cell_494",
+          "cell_495",
+          "cell_496",
+          "cell_497",
+          "cell_498",
+          "cell_502",
+          "cell_507",
+          "cell_508",
+          "cell_511",
+          "cell_512",
+          "cell_513",
+          "cell_53",
+          "cell_532",
+          "cell_745",
+          "cell_767",
+          "cell_768",
+          "cell_775",
+          "cell_777",
+          "cell_779",
+          "cell_78",
+          "cell_782",
+          "cell_784",
+          "cell_786",
+          "cell_800",
+          "cell_801",
+          "cell_802",
+          "cell_806",
+          "cell_812",
+          "cell_813",
+          "cell_819",
+          "cell_820"
+        ],
+        "gate_types": {
+          "sky130_fd_sc_hd__a2111oi_2": 1,
+          "sky130_fd_sc_hd__a211o_2": 2,
+          "sky130_fd_sc_hd__a211oi_2": 2,
+          "sky130_fd_sc_hd__a21o_2": 2,
+          "sky130_fd_sc_hd__a21oi_2": 7,
+          "sky130_fd_sc_hd__a22o_2": 18,
+          "sky130_fd_sc_hd__a22oi_2": 1,
+          "sky130_fd_sc_hd__a311o_2": 1,
+          "sky130_fd_sc_hd__a31o_2": 2,
+          "sky130_fd_sc_hd__a31oi_2": 1,
+          "sky130_fd_sc_hd__and2_2": 4,
+          "sky130_fd_sc_hd__and2b_2": 9,
+          "sky130_fd_sc_hd__and3_2": 12,
+          "sky130_fd_sc_hd__and3b_2": 3,
+          "sky130_fd_sc_hd__and4b_2": 1,
+          "sky130_fd_sc_hd__and4bb_2": 2,
+          "sky130_fd_sc_hd__conb_1": 5,
+          "sky130_fd_sc_hd__inv_2": 6,
+          "sky130_fd_sc_hd__mux2_1": 1,
+          "sky130_fd_sc_hd__nand2_2": 8,
+          "sky130_fd_sc_hd__nand2b_2": 6,
+          "sky130_fd_sc_hd__nand4_2": 1,
+          "sky130_fd_sc_hd__nor2_2": 11,
+          "sky130_fd_sc_hd__nor3_2": 4,
+          "sky130_fd_sc_hd__nor3b_2": 4,
+          "sky130_fd_sc_hd__nor4b_2": 2,
+          "sky130_fd_sc_hd__o211a_2": 2,
+          "sky130_fd_sc_hd__o21a_2": 2,
+          "sky130_fd_sc_hd__o21ai_2": 2,
+          "sky130_fd_sc_hd__o21ba_2": 1,
+          "sky130_fd_sc_hd__o21bai_2": 1,
+          "sky130_fd_sc_hd__o221a_2": 1,
+          "sky130_fd_sc_hd__o22a_2": 2,
+          "sky130_fd_sc_hd__o31a_2": 11,
+          "sky130_fd_sc_hd__o32a_2": 1,
+          "sky130_fd_sc_hd__o32ai_2": 1,
+          "sky130_fd_sc_hd__or2_2": 2,
+          "sky130_fd_sc_hd__or3_2": 11,
+          "sky130_fd_sc_hd__or3b_2": 1,
+          "sky130_fd_sc_hd__or4b_2": 1,
+          "sky130_fd_sc_hd__xnor2_2": 7,
+          "sky130_fd_sc_hd__xor2_2": 4
+        },
+        "boundary_flip_flops": [
+          "cell_118",
+          "cell_122",
+          "cell_138",
+          "cell_144",
+          "cell_146",
+          "cell_148",
+          "cell_156",
+          "cell_162",
+          "cell_165",
+          "cell_179",
+          "cell_181",
+          "cell_183",
+          "cell_195",
+          "cell_2",
+          "cell_200",
+          "cell_3",
+          "cell_334",
+          "cell_343",
+          "cell_4",
+          "cell_478",
+          "cell_5",
+          "cell_6",
+          "cell_7"
+        ],
+        "boundary_inputs": [],
+        "undriven_nets": []
+      },
+      "success_output": {
+        "root_nets": [
+          3919
+        ],
+        "nets": [
+          3919
+        ],
+        "combinational_gates": [],
+        "gate_types": {},
+        "boundary_flip_flops": [
+          "cell_144"
+        ],
+        "boundary_inputs": [],
+        "undriven_nets": []
+      },
+      "success_next_state": {
+        "root_nets": [
+          4240
+        ],
+        "nets": [
+          203,
+          204,
+          226,
+          289,
+          294,
+          341,
+          342,
+          343,
+          349,
+          397,
+          399,
+          401,
+          404,
+          546,
+          612,
+          684,
+          686,
+          716,
+          719,
+          769,
+          802,
+          840,
+          919,
+          982,
+          1032,
+          1104,
+          1136,
+          1185,
+          1190,
+          1191,
+          1193,
+          1226,
+          1246,
+          1288,
+          1290,
+          1293,
+          1438,
+          1482,
+          1488,
+          1495,
+          1522,
+          1558,
+          1593,
+          1672,
+          1748,
+          1856,
+          1921,
+          1965,
+          1966,
+          1967,
+          2019,
+          2038,
+          2204,
+          2221,
+          2255,
+          2258,
+          2386,
+          2393,
+          2415,
+          2416,
+          2459,
+          2463,
+          2467,
+          2471,
+          2474,
+          2475,
+          2480,
+          2505,
+          2545,
+          2818,
+          2923,
+          3136,
+          3139,
+          3148,
+          3207,
+          3283,
+          3320,
+          3326,
+          3414,
+          3470,
+          3471,
+          3675,
+          3676,
+          3685,
+          3751,
+          3755,
+          3771,
+          3830,
+          3861,
+          3902,
+          3919,
+          4023,
+          4028,
+          4147,
+          4160,
+          4163,
+          4166,
+          4178,
+          4199,
+          4201,
+          4236,
+          4240,
+          4274,
+          4300
+        ],
+        "combinational_gates": [
+          "cell_18",
+          "cell_248",
+          "cell_252",
+          "cell_253",
+          "cell_255",
+          "cell_274",
+          "cell_304",
+          "cell_305",
+          "cell_306",
+          "cell_308",
+          "cell_309",
+          "cell_319",
+          "cell_320",
+          "cell_322",
+          "cell_323",
+          "cell_325",
+          "cell_327",
+          "cell_328",
+          "cell_329",
+          "cell_330",
+          "cell_336",
+          "cell_386",
+          "cell_490",
+          "cell_500",
+          "cell_502",
+          "cell_503",
+          "cell_504",
+          "cell_505",
+          "cell_776",
+          "cell_778",
+          "cell_781",
+          "cell_785",
+          "cell_787",
+          "cell_788",
+          "cell_789",
+          "cell_791",
+          "cell_792",
+          "cell_794",
+          "cell_803",
+          "cell_804",
+          "cell_805",
+          "cell_807",
+          "cell_808",
+          "cell_815",
+          "cell_816",
+          "cell_817",
+          "cell_818"
+        ],
+        "gate_types": {
+          "sky130_fd_sc_hd__a32o_2": 1,
+          "sky130_fd_sc_hd__and2_2": 9,
+          "sky130_fd_sc_hd__and2b_2": 14,
+          "sky130_fd_sc_hd__and3_2": 4,
+          "sky130_fd_sc_hd__and4_2": 5,
+          "sky130_fd_sc_hd__and4b_2": 1,
+          "sky130_fd_sc_hd__inv_2": 10,
+          "sky130_fd_sc_hd__nand2b_2": 1,
+          "sky130_fd_sc_hd__nor3_2": 1,
+          "sky130_fd_sc_hd__or3_2": 1
+        },
+        "boundary_flip_flops": [
+          "cell_118",
+          "cell_120",
+          "cell_122",
+          "cell_124",
+          "cell_125",
+          "cell_126",
+          "cell_129",
+          "cell_131",
+          "cell_132",
+          "cell_133",
+          "cell_134",
+          "cell_135",
+          "cell_136",
+          "cell_137",
+          "cell_139",
+          "cell_142",
+          "cell_143",
+          "cell_144",
+          "cell_145",
+          "cell_146",
+          "cell_147",
+          "cell_149",
+          "cell_151",
+          "cell_152",
+          "cell_153",
+          "cell_154",
+          "cell_155",
+          "cell_156",
+          "cell_158",
+          "cell_160",
+          "cell_161",
+          "cell_163",
+          "cell_164",
+          "cell_165",
+          "cell_168",
+          "cell_169",
+          "cell_172",
+          "cell_173",
+          "cell_174",
+          "cell_178",
+          "cell_180",
+          "cell_181",
+          "cell_183",
+          "cell_186",
+          "cell_187",
+          "cell_190",
+          "cell_191",
+          "cell_192",
+          "cell_194",
+          "cell_196",
+          "cell_197",
+          "cell_198",
+          "cell_199",
+          "cell_200",
+          "cell_201",
+          "cell_203",
+          "cell_334"
+        ],
+        "boundary_inputs": [],
+        "undriven_nets": []
+      }
+    }
+  },
+  "baseline": {
+    "emitted_bytes": [
+      {
+        "cycle": 121,
+        "value": 84,
+        "character": "T"
+      },
+      {
+        "cycle": 122,
+        "value": 82,
+        "character": "R"
+      },
+      {
+        "cycle": 123,
+        "value": 89,
+        "character": "Y"
+      },
+      {
+        "cycle": 124,
+        "value": 32,
+        "character": " "
+      },
+      {
+        "cycle": 125,
+        "value": 65,
+        "character": "A"
+      },
+      {
+        "cycle": 126,
+        "value": 71,
+        "character": "G"
+      },
+      {
+        "cycle": 127,
+        "value": 65,
+        "character": "A"
+      },
+      {
+        "cycle": 128,
+        "value": 73,
+        "character": "I"
+      },
+      {
+        "cycle": 129,
+        "value": 78,
+        "character": "N"
+      }
+    ],
+    "flip_flop_activity": [
+      {
+        "flip_flop": "cell_150",
+        "transition_count": 109,
+        "input_transitions": 109,
+        "post_input_transitions": 0,
+        "first_transition": 1,
+        "last_transition": 119
+      },
+      {
+        "flip_flop": "cell_148",
+        "transition_count": 69,
+        "input_transitions": 58,
+        "post_input_transitions": 11,
+        "first_transition": 1,
+        "last_transition": 135
+      },
+      {
+        "flip_flop": "cell_138",
+        "transition_count": 67,
+        "input_transitions": 59,
+        "post_input_transitions": 8,
+        "first_transition": 1,
+        "last_transition": 136
+      },
+      {
+        "flip_flop": "cell_162",
+        "transition_count": 67,
+        "input_transitions": 58,
+        "post_input_transitions": 9,
+        "first_transition": 1,
+        "last_transition": 136
+      },
+      {
+        "flip_flop": "cell_6",
+        "transition_count": 66,
+        "input_transitions": 58,
+        "post_input_transitions": 8,
+        "first_transition": 2,
+        "last_transition": 134
+      },
+      {
+        "flip_flop": "cell_7",
+        "transition_count": 66,
+        "input_transitions": 57,
+        "post_input_transitions": 9,
+        "first_transition": 1,
+        "last_transition": 136
+      },
+      {
+        "flip_flop": "cell_193",
+        "transition_count": 66,
+        "input_transitions": 66,
+        "post_input_transitions": 0,
+        "first_transition": 1,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_343",
+        "transition_count": 65,
+        "input_transitions": 59,
+        "post_input_transitions": 6,
+        "first_transition": 1,
+        "last_transition": 136
+      },
+      {
+        "flip_flop": "cell_195",
+        "transition_count": 64,
+        "input_transitions": 56,
+        "post_input_transitions": 8,
+        "first_transition": 1,
+        "last_transition": 136
+      },
+      {
+        "flip_flop": "cell_5",
+        "transition_count": 61,
+        "input_transitions": 55,
+        "post_input_transitions": 6,
+        "first_transition": 1,
+        "last_transition": 136
+      },
+      {
+        "flip_flop": "cell_130",
+        "transition_count": 46,
+        "input_transitions": 46,
+        "post_input_transitions": 0,
+        "first_transition": 2,
+        "last_transition": 117
+      },
+      {
+        "flip_flop": "cell_141",
+        "transition_count": 46,
+        "input_transitions": 46,
+        "post_input_transitions": 0,
+        "first_transition": 3,
+        "last_transition": 118
+      },
+      {
+        "flip_flop": "cell_167",
+        "transition_count": 46,
+        "input_transitions": 46,
+        "post_input_transitions": 0,
+        "first_transition": 5,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_189",
+        "transition_count": 46,
+        "input_transitions": 46,
+        "post_input_transitions": 0,
+        "first_transition": 4,
+        "last_transition": 119
+      },
+      {
+        "flip_flop": "cell_127",
+        "transition_count": 45,
+        "input_transitions": 45,
+        "post_input_transitions": 0,
+        "first_transition": 8,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_140",
+        "transition_count": 45,
+        "input_transitions": 45,
+        "post_input_transitions": 0,
+        "first_transition": 6,
+        "last_transition": 118
+      },
+      {
+        "flip_flop": "cell_166",
+        "transition_count": 45,
+        "input_transitions": 45,
+        "post_input_transitions": 0,
+        "first_transition": 7,
+        "last_transition": 119
+      },
+      {
+        "flip_flop": "cell_123",
+        "transition_count": 44,
+        "input_transitions": 44,
+        "post_input_transitions": 0,
+        "first_transition": 10,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_159",
+        "transition_count": 44,
+        "input_transitions": 44,
+        "post_input_transitions": 0,
+        "first_transition": 9,
+        "last_transition": 119
+      },
+      {
+        "flip_flop": "cell_182",
+        "transition_count": 43,
+        "input_transitions": 43,
+        "post_input_transitions": 0,
+        "first_transition": 12,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_188",
+        "transition_count": 43,
+        "input_transitions": 43,
+        "post_input_transitions": 0,
+        "first_transition": 11,
+        "last_transition": 119
+      },
+      {
+        "flip_flop": "cell_171",
+        "transition_count": 42,
+        "input_transitions": 42,
+        "post_input_transitions": 0,
+        "first_transition": 13,
+        "last_transition": 116
+      },
+      {
+        "flip_flop": "cell_176",
+        "transition_count": 40,
+        "input_transitions": 40,
+        "post_input_transitions": 0,
+        "first_transition": 2,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_122",
+        "transition_count": 38,
+        "input_transitions": 38,
+        "post_input_transitions": 0,
+        "first_transition": 2,
+        "last_transition": 116
+      },
+      {
+        "flip_flop": "cell_157",
+        "transition_count": 22,
+        "input_transitions": 22,
+        "post_input_transitions": 0,
+        "first_transition": 3,
+        "last_transition": 117
+      },
+      {
+        "flip_flop": "cell_184",
+        "transition_count": 22,
+        "input_transitions": 22,
+        "post_input_transitions": 0,
+        "first_transition": 7,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_118",
+        "transition_count": 19,
+        "input_transitions": 19,
+        "post_input_transitions": 0,
+        "first_transition": 4,
+        "last_transition": 116
+      },
+      {
+        "flip_flop": "cell_177",
+        "transition_count": 18,
+        "input_transitions": 18,
+        "post_input_transitions": 0,
+        "first_transition": 4,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_2",
+        "transition_count": 15,
+        "input_transitions": 0,
+        "post_input_transitions": 15,
+        "first_transition": 122,
+        "last_transition": 136
+      },
+      {
+        "flip_flop": "cell_128",
+        "transition_count": 10,
+        "input_transitions": 10,
+        "post_input_transitions": 0,
+        "first_transition": 10,
+        "last_transition": 109
+      },
+      {
+        "flip_flop": "cell_183",
+        "transition_count": 9,
+        "input_transitions": 9,
+        "post_input_transitions": 0,
+        "first_transition": 14,
+        "last_transition": 114
+      },
+      {
+        "flip_flop": "cell_3",
+        "transition_count": 7,
+        "input_transitions": 0,
+        "post_input_transitions": 7,
+        "first_transition": 123,
+        "last_transition": 135
+      },
+      {
+        "flip_flop": "cell_121",
+        "transition_count": 6,
+        "input_transitions": 6,
+        "post_input_transitions": 0,
+        "first_transition": 21,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_181",
+        "transition_count": 4,
+        "input_transitions": 4,
+        "post_input_transitions": 0,
+        "first_transition": 24,
+        "last_transition": 94
+      },
+      {
+        "flip_flop": "cell_4",
+        "transition_count": 3,
+        "input_transitions": 0,
+        "post_input_transitions": 3,
+        "first_transition": 125,
+        "last_transition": 133
+      },
+      {
+        "flip_flop": "cell_120",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 38,
+        "last_transition": 61
+      },
+      {
+        "flip_flop": "cell_124",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 2,
+        "last_transition": 14
+      },
+      {
+        "flip_flop": "cell_126",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 2,
+        "last_transition": 46
+      },
+      {
+        "flip_flop": "cell_129",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 6,
+        "last_transition": 28
+      },
+      {
+        "flip_flop": "cell_131",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 6,
+        "last_transition": 27
+      },
+      {
+        "flip_flop": "cell_133",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 4,
+        "last_transition": 114
+      },
+      {
+        "flip_flop": "cell_137",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 80,
+        "last_transition": 111
+      },
+      {
+        "flip_flop": "cell_164",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 49,
+        "last_transition": 92
+      },
+      {
+        "flip_flop": "cell_174",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 24,
+        "last_transition": 55
+      },
+      {
+        "flip_flop": "cell_187",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 45,
+        "last_transition": 111
+      },
+      {
+        "flip_flop": "cell_190",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 22,
+        "last_transition": 66
+      },
+      {
+        "flip_flop": "cell_192",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 16,
+        "last_transition": 38
+      },
+      {
+        "flip_flop": "cell_196",
+        "transition_count": 3,
+        "input_transitions": 3,
+        "post_input_transitions": 0,
+        "first_transition": 14,
+        "last_transition": 58
+      },
+      {
+        "flip_flop": "cell_170",
+        "transition_count": 2,
+        "input_transitions": 2,
+        "post_input_transitions": 0,
+        "first_transition": 87,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_202",
+        "transition_count": 2,
+        "input_transitions": 2,
+        "post_input_transitions": 0,
+        "first_transition": 43,
+        "last_transition": 87
+      },
+      {
+        "flip_flop": "cell_334",
+        "transition_count": 2,
+        "input_transitions": 2,
+        "post_input_transitions": 0,
+        "first_transition": 50,
+        "last_transition": 94
+      },
+      {
+        "flip_flop": "cell_125",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 120,
+        "last_transition": 120
+      },
+      {
+        "flip_flop": "cell_132",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 17,
+        "last_transition": 17
+      },
+      {
+        "flip_flop": "cell_134",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 60,
+        "last_transition": 60
+      },
+      {
+        "flip_flop": "cell_136",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 24,
+        "last_transition": 24
+      },
+      {
+        "flip_flop": "cell_139",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 55,
+        "last_transition": 55
+      },
+      {
+        "flip_flop": "cell_143",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 46,
+        "last_transition": 46
+      },
+      {
+        "flip_flop": "cell_145",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 14,
+        "last_transition": 14
+      },
+      {
+        "flip_flop": "cell_149",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 47,
+        "last_transition": 47
+      },
+      {
+        "flip_flop": "cell_152",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 27,
+        "last_transition": 27
+      },
+      {
+        "flip_flop": "cell_155",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 67,
+        "last_transition": 67
+      },
+      {
+        "flip_flop": "cell_156",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 94,
+        "last_transition": 94
+      },
+      {
+        "flip_flop": "cell_158",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 50,
+        "last_transition": 50
+      },
+      {
+        "flip_flop": "cell_161",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 16,
+        "last_transition": 16
+      },
+      {
+        "flip_flop": "cell_163",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 4,
+        "last_transition": 4
+      },
+      {
+        "flip_flop": "cell_172",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 10,
+        "last_transition": 10
+      },
+      {
+        "flip_flop": "cell_173",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 90,
+        "last_transition": 90
+      },
+      {
+        "flip_flop": "cell_191",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 92,
+        "last_transition": 92
+      },
+      {
+        "flip_flop": "cell_200",
+        "transition_count": 1,
+        "input_transitions": 0,
+        "post_input_transitions": 1,
+        "first_transition": 121,
+        "last_transition": 121
+      },
+      {
+        "flip_flop": "cell_201",
+        "transition_count": 1,
+        "input_transitions": 1,
+        "post_input_transitions": 0,
+        "first_transition": 17,
+        "last_transition": 17
+      },
+      {
+        "flip_flop": "cell_478",
+        "transition_count": 1,
+        "input_transitions": 0,
+        "post_input_transitions": 1,
+        "first_transition": 129,
+        "last_transition": 129
+      },
+      {
+        "flip_flop": "cell_135",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_142",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_144",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_146",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_147",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_151",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_153",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_154",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_160",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_165",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_168",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_169",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_178",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_179",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_180",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_186",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_194",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_197",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_198",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_199",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      },
+      {
+        "flip_flop": "cell_203",
+        "transition_count": 0,
+        "input_transitions": 0,
+        "post_input_transitions": 0,
+        "first_transition": null,
+        "last_transition": null
+      }
+    ],
+    "post_only_flip_flops": [
+      "cell_2",
+      "cell_3",
+      "cell_4",
+      "cell_200",
+      "cell_478"
+    ],
+    "frame_counter": {
+      "bits_lsb_to_msb": [
+        "cell_150",
+        "cell_193",
+        "cell_157",
+        "cell_184"
+      ],
+      "modulus": 11,
+      "phase": 1,
+      "values": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        0
+      ]
+    },
+    "counter": {
+      "bits_lsb_to_msb": [
+        "cell_2",
+        "cell_3",
+        "cell_4",
+        "cell_478"
+      ],
+      "cycles": [
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136
+      ],
+      "values": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "output_values": [
+        84,
+        82,
+        89,
+        32,
+        65,
+        71,
+        65,
+        73,
+        78,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "net_3771": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "net_3874": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0
+      ]
+    }
+  },
+  "differentials": [
+    {
+      "run": 1,
+      "position": 0,
+      "baseline_character": "T",
+      "mutant_character": "U",
+      "input_difference_cycle": 0,
+      "first_d_difference": {
+        "cycle": 0,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_141",
+          "cell_145",
+          "cell_163",
+          "cell_177",
+          "cell_187",
+          "cell_190",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 0,
+        "flip_flops": [
+          "cell_122",
+          "cell_124",
+          "cell_130",
+          "cell_176",
+          "cell_190",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 2,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 4,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 5,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 6,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 8,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 10,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 12,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 14,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 15,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 16,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 18,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 21,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 22,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 23,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 24,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 27,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 31,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 32,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 33,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 34,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 35,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 36,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 37,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 38,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 43,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 45,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 47,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 48,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 49,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 50,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 52,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 53,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 55,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 58,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 60,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 61,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 63,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 68,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 69,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 71,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 72,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 73,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 76,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 78,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 79,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 80,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 82,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 83,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 87,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 88,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 90,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 91,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 92,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 93,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 97,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 98,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 100,
+            "different_q_bits": 2
+          },
+          {
+            "cycle": 101,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 102,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 105,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 113,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 118,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 119,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 130,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 132,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 133,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 6
+          }
+        ],
+        "maximum_bits": 11,
+        "maximum_cycle": 93,
+        "final_bits": 6
+      }
+    },
+    {
+      "run": 2,
+      "position": 1,
+      "baseline_character": "h",
+      "mutant_character": "i",
+      "input_difference_cycle": 11,
+      "first_d_difference": {
+        "cycle": 11,
+        "flip_flops": [
+          "cell_118",
+          "cell_124",
+          "cell_130",
+          "cell_141",
+          "cell_145",
+          "cell_177",
+          "cell_183",
+          "cell_187",
+          "cell_190",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 11,
+        "flip_flops": [
+          "cell_118",
+          "cell_122",
+          "cell_124",
+          "cell_130",
+          "cell_176",
+          "cell_183",
+          "cell_190",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 11,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 14,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 15,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 16,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 17,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 19,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 21,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 22,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 23,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 24,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 25,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 26,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 27,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 29,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 32,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 34,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 38,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 39,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 42,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 43,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 44,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 45,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 46,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 47,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 48,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 49,
+            "different_q_bits": 12
+          },
+          {
+            "cycle": 50,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 54,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 56,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 57,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 58,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 59,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 60,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 61,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 63,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 64,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 66,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 67,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 68,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 71,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 72,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 74,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 78,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 79,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 80,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 82,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 83,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 84,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 87,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 89,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 90,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 91,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 92,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 93,
+            "different_q_bits": 12
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 98,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 99,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 102,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 105,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 108,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 109,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 112,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 113,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 122,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 130,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 133,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 8
+          }
+        ],
+        "maximum_bits": 12,
+        "maximum_cycle": 49,
+        "final_bits": 8
+      }
+    },
+    {
+      "run": 3,
+      "position": 2,
+      "baseline_character": "e",
+      "mutant_character": "d",
+      "input_difference_cycle": 22,
+      "first_d_difference": {
+        "cycle": 22,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_141",
+          "cell_177",
+          "cell_181",
+          "cell_183",
+          "cell_187",
+          "cell_190",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 22,
+        "flip_flops": [
+          "cell_122",
+          "cell_130",
+          "cell_176",
+          "cell_190",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 22,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 24,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 26,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 27,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 28,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 30,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 32,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 34,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 36,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 37,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 39,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 40,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 43,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 45,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 46,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 47,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 49,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 50,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 53,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 54,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 55,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 56,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 57,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 59,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 61,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 65,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 66,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 68,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 69,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 70,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 71,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 72,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 74,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 75,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 77,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 80,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 82,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 83,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 85,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 89,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 90,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 91,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 92,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 93,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 95,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 98,
+            "different_q_bits": 12
+          },
+          {
+            "cycle": 100,
+            "different_q_bits": 13
+          },
+          {
+            "cycle": 101,
+            "different_q_bits": 14
+          },
+          {
+            "cycle": 102,
+            "different_q_bits": 13
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 109,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 113,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 119,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 120,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 122,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 130,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 133,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 4
+          }
+        ],
+        "maximum_bits": 14,
+        "maximum_cycle": 101,
+        "final_bits": 4
+      }
+    },
+    {
+      "run": 4,
+      "position": 3,
+      "baseline_character": " ",
+      "mutant_character": "!",
+      "input_difference_cycle": 33,
+      "first_d_difference": {
+        "cycle": 33,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_139",
+          "cell_141",
+          "cell_177",
+          "cell_183",
+          "cell_187",
+          "cell_190",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 33,
+        "flip_flops": [
+          "cell_122",
+          "cell_130",
+          "cell_139",
+          "cell_176",
+          "cell_190",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 33,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 37,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 38,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 39,
+            "different_q_bits": 12
+          },
+          {
+            "cycle": 41,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 43,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 45,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 46,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 47,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 48,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 49,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 50,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 51,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 54,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 56,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 58,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 60,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 61,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 64,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 65,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 66,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 68,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 69,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 70,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 71,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 72,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 76,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 78,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 79,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 80,
+            "different_q_bits": 2
+          },
+          {
+            "cycle": 81,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 82,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 83,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 85,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 86,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 88,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 90,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 92,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 93,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 96,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 100,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 101,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 102,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 106,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 109,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 112,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 113,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 116,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 120,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 122,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 132,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 6
+          }
+        ],
+        "maximum_bits": 12,
+        "maximum_cycle": 39,
+        "final_bits": 6
+      }
+    },
+    {
+      "run": 5,
+      "position": 4,
+      "baseline_character": "n",
+      "mutant_character": "o",
+      "input_difference_cycle": 44,
+      "first_d_difference": {
+        "cycle": 44,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_139",
+          "cell_141",
+          "cell_143",
+          "cell_174",
+          "cell_177",
+          "cell_183",
+          "cell_187",
+          "cell_190",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 44,
+        "flip_flops": [
+          "cell_118",
+          "cell_122",
+          "cell_130",
+          "cell_139",
+          "cell_143",
+          "cell_174",
+          "cell_176",
+          "cell_183",
+          "cell_190",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 44,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 45,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 46,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 47,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 48,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 49,
+            "different_q_bits": 12
+          },
+          {
+            "cycle": 50,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 52,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 54,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 55,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 56,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 58,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 59,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 60,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 61,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 62,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 65,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 67,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 68,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 71,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 72,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 75,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 76,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 77,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 78,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 79,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 80,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 81,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 82,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 83,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 87,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 89,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 91,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 93,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 96,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 97,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 99,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 107,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 112,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 113,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 116,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 117,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 120,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 122,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 2
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 4
+          }
+        ],
+        "maximum_bits": 12,
+        "maximum_cycle": 49,
+        "final_bits": 4
+      }
+    },
+    {
+      "run": 6,
+      "position": 5,
+      "baseline_character": "i",
+      "mutant_character": "h",
+      "input_difference_cycle": 55,
+      "first_d_difference": {
+        "cycle": 55,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_139",
+          "cell_141",
+          "cell_155",
+          "cell_174",
+          "cell_177",
+          "cell_187",
+          "cell_190",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 55,
+        "flip_flops": [
+          "cell_122",
+          "cell_130",
+          "cell_139",
+          "cell_174",
+          "cell_176",
+          "cell_190",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 55,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 58,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 59,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 60,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 61,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 63,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 65,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 66,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 67,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 68,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 69,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 70,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 71,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 72,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 73,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 76,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 78,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 80,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 82,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 83,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 86,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 87,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 88,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 89,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 90,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 91,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 92,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 13
+          },
+          {
+            "cycle": 98,
+            "different_q_bits": 12
+          },
+          {
+            "cycle": 100,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 101,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 102,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 103,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 107,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 108,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 116,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 118,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 132,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 7
+          }
+        ],
+        "maximum_bits": 13,
+        "maximum_cycle": 94,
+        "final_bits": 7
+      }
+    },
+    {
+      "run": 7,
+      "position": 6,
+      "baseline_character": "g",
+      "mutant_character": "f",
+      "input_difference_cycle": 66,
+      "first_d_difference": {
+        "cycle": 66,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_141",
+          "cell_155",
+          "cell_177",
+          "cell_187",
+          "cell_190",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 66,
+        "flip_flops": [
+          "cell_122",
+          "cell_130",
+          "cell_176",
+          "cell_190",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 66,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 67,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 68,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 70,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 71,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 72,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 74,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 76,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 78,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 81,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 83,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 84,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 87,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 89,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 90,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 92,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 93,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 97,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 98,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 99,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 100,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 101,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 102,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 103,
+            "different_q_bits": 11
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 109,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 112,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 113,
+            "different_q_bits": 2
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 116,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 118,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 119,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 122,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 130,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 132,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 133,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 8
+          }
+        ],
+        "maximum_bits": 11,
+        "maximum_cycle": 97,
+        "final_bits": 8
+      }
+    },
+    {
+      "run": 8,
+      "position": 7,
+      "baseline_character": "h",
+      "mutant_character": "i",
+      "input_difference_cycle": 77,
+      "first_d_difference": {
+        "cycle": 77,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_137",
+          "cell_141",
+          "cell_177",
+          "cell_187",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 77,
+        "flip_flops": [
+          "cell_118",
+          "cell_122",
+          "cell_130",
+          "cell_176",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 77,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 81,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 82,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 83,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 85,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 87,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 89,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 90,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 91,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 93,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 95,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 98,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 100,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 105,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 108,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 109,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 112,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 113,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 116,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 120,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 122,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 130,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 133,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 6
+          }
+        ],
+        "maximum_bits": 10,
+        "maximum_cycle": 93,
+        "final_bits": 6
+      }
+    },
+    {
+      "run": 9,
+      "position": 8,
+      "baseline_character": "t",
+      "mutant_character": "u",
+      "input_difference_cycle": 88,
+      "first_d_difference": {
+        "cycle": 88,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_137",
+          "cell_141",
+          "cell_173",
+          "cell_177",
+          "cell_187",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 88,
+        "flip_flops": [
+          "cell_122",
+          "cell_130",
+          "cell_176",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 88,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 90,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 92,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 93,
+            "different_q_bits": 10
+          },
+          {
+            "cycle": 94,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 96,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 98,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 100,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 102,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 103,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 105,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 106,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 109,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 111,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 119,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 120,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 122,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 130,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 132,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 5
+          }
+        ],
+        "maximum_bits": 10,
+        "maximum_cycle": 93,
+        "final_bits": 5
+      }
+    },
+    {
+      "run": 10,
+      "position": 9,
+      "baseline_character": " ",
+      "mutant_character": "!",
+      "input_difference_cycle": 99,
+      "first_d_difference": {
+        "cycle": 99,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_141",
+          "cell_177",
+          "cell_187",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 99,
+        "flip_flops": [
+          "cell_122",
+          "cell_130",
+          "cell_176",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 99,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 103,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 104,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 105,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 107,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 109,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 113,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 117,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 120,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 129,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 130,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 131,
+            "different_q_bits": 3
+          },
+          {
+            "cycle": 132,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 133,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 134,
+            "different_q_bits": 4
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 3
+          }
+        ],
+        "maximum_bits": 9,
+        "maximum_cycle": 105,
+        "final_bits": 3
+      }
+    },
+    {
+      "run": 11,
+      "position": 10,
+      "baseline_character": "s",
+      "mutant_character": "r",
+      "input_difference_cycle": 110,
+      "first_d_difference": {
+        "cycle": 110,
+        "flip_flops": [
+          "cell_118",
+          "cell_130",
+          "cell_137",
+          "cell_141",
+          "cell_177",
+          "cell_187",
+          "cell_195",
+          "cell_5"
+        ]
+      },
+      "first_q_difference": {
+        "cycle": 110,
+        "flip_flops": [
+          "cell_118",
+          "cell_122",
+          "cell_130",
+          "cell_176",
+          "cell_5"
+        ]
+      },
+      "first_visible_difference": null,
+      "first_success_next_difference": null,
+      "state_spread": {
+        "changes": [
+          {
+            "cycle": 0,
+            "different_q_bits": 0
+          },
+          {
+            "cycle": 110,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 114,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 115,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 116,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 118,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 120,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 123,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 124,
+            "different_q_bits": 6
+          },
+          {
+            "cycle": 125,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 126,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 127,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 128,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 130,
+            "different_q_bits": 9
+          },
+          {
+            "cycle": 132,
+            "different_q_bits": 5
+          },
+          {
+            "cycle": 133,
+            "different_q_bits": 7
+          },
+          {
+            "cycle": 135,
+            "different_q_bits": 8
+          },
+          {
+            "cycle": 136,
+            "different_q_bits": 7
+          }
+        ],
+        "maximum_bits": 9,
+        "maximum_cycle": 130,
+        "final_bits": 7
+      }
+    }
+  ]
+}
