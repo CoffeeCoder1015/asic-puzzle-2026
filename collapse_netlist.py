@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import networkx as nx
+
 
 breakdown_path = Path(__file__).parent / "puzzle" / "reversed_puzzle.json"
 cell_classifications = Path(__file__).parent / "cell_classifications.json"
@@ -85,4 +87,79 @@ for pin in top_pins:
             "pin": pin_name,
         }
 
-print(list( nets.items() )[0])
+compute_graph = nx.MultiDiGraph()
+
+for net_id, net_info in nets.items():
+    # A logical net has one driving endpoint and any number of receiving
+    # endpoints. Fanout therefore becomes multiple graph edges with the same
+    # net ID.
+    source_name, source_type = next(iter(net_info["sources"].items()))
+
+    if source_name == "top":
+        source_name = f"top:{source_type['pin']}"
+        compute_graph.add_node(
+            source_name,
+            cell_type="top",
+            kind="top",
+            port_direction="input",
+            pins={
+                source_type["pin"]: {
+                    "net_id": net_id,
+                    "direction": "output",
+                    "kind": "signal",
+                    "supply": None,
+                }
+            },
+        )
+
+    for sink_name, sink_type in net_info["sinks"].items():
+        if sink_name == "top":
+            sink_name = f"top:{sink_type['pin']}"
+            compute_graph.add_node(
+                sink_name,
+                cell_type="top",
+                kind="top",
+                port_direction="output",
+                pins={
+                    sink_type["pin"]: {
+                        "net_id": net_id,
+                        "direction": "input",
+                        "kind": "signal",
+                        "supply": None,
+                    }
+                },
+            )
+
+        compute_graph.add_edge(
+            source_name,
+            sink_name,
+            net_id=net_id,
+            source_pin=source_type["pin"],
+            sink_pin=sink_type["pin"],
+        )
+
+for instance_name, instance in instances.items():
+    if instance_name not in compute_graph:
+        continue
+
+    compute_graph.nodes[instance_name].update(
+        cell_type=instance["cell_type"],
+        kind=instance["kind"],
+        pins=instance["pins"],
+    )
+
+
+start_node = "top:success"
+visited = set([ start_node ])
+queue = [start_node]
+while queue:
+    current = queue.pop(0)
+    neighbors = list(compute_graph.in_edges(current,data=True,keys=True))
+    for source,_,_,meta in neighbors:
+        source_pin = meta["source_pin"]
+        current_pin = meta["sink_pin"]
+        edge = f"{current}:{current_pin} -> {source}:{source_pin}"
+        print(edge)
+        if source not in visited:
+            visited.add(source)
+            queue.append(source)
