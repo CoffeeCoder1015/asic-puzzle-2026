@@ -96,7 +96,7 @@ for net_id, net_info in nets.items():
     source_name, source_type = next(iter(net_info["sources"].items()))
 
     if source_name == "top":
-        source_name = f"top:{source_type['pin']}"
+        source_name = f"top_{source_type['pin']}"
         compute_graph.add_node(
             source_name,
             cell_type="top",
@@ -114,7 +114,7 @@ for net_id, net_info in nets.items():
 
     for sink_name, sink_type in net_info["sinks"].items():
         if sink_name == "top":
-            sink_name = f"top:{sink_type['pin']}"
+            sink_name = f"top_{sink_type['pin']}"
             compute_graph.add_node(
                 sink_name,
                 cell_type="top",
@@ -149,17 +149,82 @@ for instance_name, instance in instances.items():
     )
 
 
-start_node = "top:success"
-visited = set([ start_node ])
-queue = [start_node]
-while queue:
-    current = queue.pop(0)
-    neighbors = list(compute_graph.in_edges(current,data=True,keys=True))
-    for source,_,_,meta in neighbors:
-        source_pin = meta["source_pin"]
-        current_pin = meta["sink_pin"]
-        edge = f"{current}:{current_pin} -> {source}:{source_pin}"
-        print(edge)
-        if source not in visited:
-            visited.add(source)
-            queue.append(source)
+def cell_function_args(cell_in_edges):
+    args = []
+    for source,sink,_,pin_map  in cell_in_edges:
+        arg_name = pin_map["sink_pin"] # function argument which is being filled
+        arg_value = f"{source}_{pin_map["source_pin"]}"
+        args.append((arg_name,arg_value))
+    return args
+
+def format_cell_pin(node_name: str, pin_name: str) -> str:
+    cell_type = get_cell_family_name(
+        compute_graph.nodes[node_name]["cell_type"]
+    ).removeprefix("sky130_fd_sc_hd__")
+    node_parts = node_name.rsplit("_", 1)
+    cell_id = node_parts[1] if len(node_parts) == 2 else ""
+
+    args = list( compute_graph.in_edges(node_name,data=True,keys=True)   )
+    arguments_str = ""
+    arguments = cell_function_args(args)
+    if arguments:
+        arguments_str += "("
+        arguments_str += ", ".join(map(lambda x: f"{ x[0] }={x[1]}",arguments))
+        arguments_str += ")"
+    
+    return f"{cell_type}_{pin_name}_{cell_id}{arguments_str}"
+
+
+def bfs_upstream(start_nodes: list[str]) -> None:
+    """Traverse backward from sinks to sources (upstream)."""
+    queue = list(start_nodes)
+    visited = set(queue)
+    while queue:
+        current = queue.pop(0)
+        neighbors = list(compute_graph.in_edges(current, data=True, keys=True))
+        for source, _, _, meta in neighbors:
+            source_pin = meta["source_pin"]
+            current_pin = meta["sink_pin"]
+            print(
+                f"{format_cell_pin(current, current_pin)} <- {format_cell_pin(source, source_pin)}"
+            )
+            if source not in visited:
+                visited.add(source)
+                queue.append(source)
+
+
+def bfs_downstream(start_nodes: list[str]) -> None:
+    """Traverse forward from sources to sinks (downstream)."""
+    queue = list(start_nodes)
+    visited = set(queue)
+    while queue:
+        current = queue.pop(0)
+        neighbors = list(compute_graph.out_edges(current, data=True, keys=True))
+        for _, sink, _, meta in neighbors:
+            source_pin = meta["source_pin"]
+            sink_pin = meta["sink_pin"]
+            print(
+                f"{format_cell_pin(current, source_pin)} -> {format_cell_pin(sink, sink_pin)}"
+            )
+            if sink not in visited:
+                visited.add(sink)
+                queue.append(sink)
+
+
+input_ports = [
+        "top_I"
+]
+
+print("=== DOWNSTREAM BFS (From Inputs) ===")
+bfs_downstream(input_ports)
+
+output_ports = [
+    f"top_{pin['name']}"
+    for pin in top_pins
+    if port_map.get(pin["name"].rsplit("[", 1)[0]) == "output"
+]
+print("\n=== UPSTREAM BFS (From Outputs) ===")
+bfs_upstream(output_ports)
+
+
+
