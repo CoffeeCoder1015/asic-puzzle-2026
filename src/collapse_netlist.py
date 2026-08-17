@@ -5,8 +5,8 @@ import re
 import networkx as nx
 
 
-breakdown_path = Path(__file__).parent / "puzzle" / "reversed_puzzle.json"
-cell_classifications = Path(__file__).parent / "cell_classifications.json"
+breakdown_path = Path(__file__).parent.parent / "puzzle" / "reversed_puzzle.json"
+cell_classifications = Path(__file__).parent.parent / "cell_classifications.json"
 
 with breakdown_path.open() as file:
     gds_breakdown = json.load(file)
@@ -412,5 +412,5 @@ program = "\n".join([
     "\n".join(module_definition_lines),
     body,
 ])
-with open("program.py","w+") as fio:
+with open(Path(__file__).parent / "program.py","w+") as fio:
     fio.write(program)
