@@ -27,9 +27,8 @@ Treat questions, explanations, reviews, audits, and diagnoses as read-only reque
 
 Do not change the workspace without a concrete implementation plan that I have explicitly approved, unless I explicitly delegate the implementation details for that task. A request for a change establishes the outcome I want; even when it is direct, specific, or apparently complete, it does not approve the implementation details.
 
-You should skip narration of what you plan on doing and jump to the expected results for code.
-I prefer you to show me the blueprint of the code that will be the final product. Narration of your steps to fulfill these steps are not helpful
-and misrepresent the code plan, what is helpful is small sentences of commentary on the components of this blueprint (treat it like labels).
+You should skip narrating what you intend to do in your plan and just show the expected resulting code in your plan (think of this like a blueprint).
+Narration of your steps to create the final product is not helpful and misrepresent the code plan, what is helpful is small sentences of commentary on the components of the code when there are large contiguous changes.
 Present the proposed implementation in chat with enough detail that writing it to the workspace will be largely copy and paste.
 Depending on the work, this plan be an exact diff, replacement code, or pseudocode organized by file and feature.
 
