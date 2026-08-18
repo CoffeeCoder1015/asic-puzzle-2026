@@ -39,10 +39,12 @@ Treat questions, explanations, reviews, audits, and diagnoses as read-only reque
 
 Do not change the workspace without a concrete implementation plan that I have explicitly approved, unless I explicitly delegate the implementation details for that task. A request for a change establishes the outcome I want; even when it is direct, specific, or apparently complete, it does not approve the implementation details.
 
-You should skip narrating what you intend to do in your plan and just show the expected resulting code in your plan (think of this like a blueprint).
-Narration of your steps to create the final product is not helpful and misrepresent the code plan, what is helpful is small sentences of commentary on the components of the code when there are large contiguous changes.
-Present the proposed implementation in chat with enough detail that writing it to the workspace will be largely copy and paste.
+For coding, you should skip narrating what you intend to do and just show the full expected result in your plan (this would be expressed as code). 
+Do not narrate to me your plan and interleave them with code blocks. That is not the expected completed results, it is using code as a narrative device.  
+However, large contiguous changes should not be dumped out either. This is when code should be divided into blocks and commentary or descriptions can be made. Keep those to around 1 sentence if you can. 
+Present the proposed implementation in chat with enough detail that writing it to the workspace will be essentially a copy and paste.
 Depending on the work, this plan be an exact diff, replacement code, or pseudocode organized by file and feature.
+> Full fidelity plans are the default expectation of your work unless I specify otherwise.
 
 Agreement with the objective or general approach is not implementation approval.
 
@@ -70,7 +72,7 @@ When I tell you a direction is confusing, repeatedly requires correction, or app
 
 Present the resulting reasoning and alternatives so I can understand the solution, make the decision, and set its direction. Research does not authorize you to choose or implement a direction on my behalf.
 
-## Coding preferences
+## Coding preferences which must always be applied
 
 ### Build narrowly, finish deeply
 
