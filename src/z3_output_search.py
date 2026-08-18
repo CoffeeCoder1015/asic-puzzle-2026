@@ -7,6 +7,34 @@ from z3_program import call_count, solver
 
 input_length = 121
 message_start = 122
+board_size = 11
+
+
+def print_board(model):
+    border = "+" + "-" * (board_size * 2) + "+"
+
+    print(border)
+
+    for row in range(board_size):
+        print(
+            "|"
+            + "".join(
+                "██"
+                if z3.is_true(
+                    model.eval(
+                        z3.Bool(
+                            f"top_I_{row * board_size + column}"
+                        ),
+                        model_completion=True,
+                    )
+                )
+                else "  "
+                for column in range(board_size)
+            )
+            + "|"
+        )
+
+    print(border)
 
 for time in range(call_count):
     solver.add(
@@ -58,6 +86,7 @@ while queue:
         )
 
     accepted_bytes = set()
+    terminal_model = None
 
     while True:
         result = solver.check()
@@ -82,6 +111,9 @@ while queue:
             model_completion=True,
         ).as_long()
 
+        if byte == 0:
+            terminal_model = model
+
         accepted_bytes.add(byte)
 
         # This is the prefix-local visited set. It excludes every board and
@@ -98,7 +130,7 @@ while queue:
             f"reachable prefix has no continuation: {prefix!r}"
         )
 
-    if 0 in accepted_bytes:
+    if terminal_model is not None:
         print(
             "".join(
                 chr(byte)
@@ -107,6 +139,8 @@ while queue:
                 for byte in prefix
             )
         )
+        print_board(terminal_model)
+        print()
 
     for byte in sorted(accepted_bytes - {0}):
         queue.append((*prefix, byte))
