@@ -146,14 +146,19 @@ def optimize_model(
     torch.Tensor,
     torch.Tensor,
     torch.Tensor,
+    torch.Tensor,
 ]:
     device = sampled_candidate.device
     log_probabilities = distribution.log_prob(
         sampled_candidate
     )[0]
     entropy = distribution.entropy().mean()
+    credit_scale = (
+        bit_credits.abs().max().clamp_min(1.0)
+    )
+    scaled_credits = bit_credits / credit_scale
     policy_loss = -(
-        bit_credits.to(device) * log_probabilities
+        scaled_credits.to(device) * log_probabilities
     ).mean()
     loss = policy_loss - entropy_coefficient * entropy
 
@@ -165,7 +170,13 @@ def optimize_model(
     )
     optimizer.step()
 
-    return policy_loss, entropy, loss, gradient_norm
+    return (
+        policy_loss,
+        entropy,
+        loss,
+        gradient_norm,
+        credit_scale,
+    )
 
 
 def log_training_step(
@@ -182,6 +193,8 @@ def log_training_step(
     entropy: torch.Tensor,
     loss: torch.Tensor,
     gradient_norm: torch.Tensor,
+    temperature: float,
+    credit_scale: torch.Tensor,
 ) -> None:
     positive_credits = int((bit_credits > 0).sum())
     negative_credits = int((bit_credits < 0).sum())
@@ -205,10 +218,14 @@ def log_training_step(
             "credit/maximum_absolute": float(
                 bit_credits.abs().max()
             ),
+            "credit/scale": float(credit_scale),
             "policy/loss": float(policy_loss.detach()),
             "policy/entropy": float(entropy.detach()),
+            "policy/temperature": temperature,
             "policy/mean_probability": float(
-                torch.sigmoid(logits).mean().detach()
+                torch.sigmoid(
+                    logits / temperature
+                ).mean().detach()
             ),
             "policy/candidate_ones": int(
                 candidate_bits.sum()
@@ -300,9 +317,13 @@ def train(args: argparse.Namespace) -> None:
                 completion[None].to(device),
                 reference_phases[None].to(device),
             )
+            temperature = min(
+                8.0,
+                1.0 + no_gain_steps / 8.0,
+            )
             distribution = (
                 torch.distributions.Bernoulli(
-                    logits=logits
+                    logits=logits / temperature
                 )
             )
             sampled_candidate = distribution.sample()
@@ -333,6 +354,7 @@ def train(args: argparse.Namespace) -> None:
                 entropy,
                 loss,
                 gradient_norm,
+                credit_scale,
             ) = optimize_model(
                 model=model,
                 optimizer=optimizer,
@@ -395,6 +417,8 @@ def train(args: argparse.Namespace) -> None:
                 entropy=entropy,
                 loss=loss,
                 gradient_norm=gradient_norm,
+                temperature=temperature,
+                credit_scale=credit_scale,
             )
 
             if current_total == COVERABLE_VARIABLE_COUNT:
