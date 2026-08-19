@@ -7,5 +7,4 @@ uv run python src/ml_train.py \
     --wandb-mode online \
     --wandb-project asic-puzzle-ml \
     --device auto \
-    --max-steps 1000 \
-    --plateau-steps 100
+    --max-steps 1000
