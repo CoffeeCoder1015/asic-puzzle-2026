@@ -487,7 +487,12 @@ def train(args: argparse.Namespace) -> None:
                 completion[None].to(device),
                 rollout_phases[None].to(device),
             )
-            temperature = 1.0
+            temperature = min(
+                8.0,
+                1.0
+                + current_board.zero_gain_attempts
+                / 8.0,
+            )
             distribution = (
                 torch.distributions.Bernoulli(
                     logits=logits / temperature
