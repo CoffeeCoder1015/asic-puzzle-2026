@@ -33,7 +33,7 @@ class PivotalBoard:
     def failure_ratio(self) -> float:
         return (
             self.zero_gain_attempts + 1
-        ) / (self.attempts + 2)
+        ) / (self.attempts + 10)
 
 
 def archive_probabilities(
