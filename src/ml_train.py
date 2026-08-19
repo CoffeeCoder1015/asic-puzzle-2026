@@ -1,5 +1,6 @@
 import argparse
 import os
+from dataclasses import dataclass
 from pathlib import Path
 
 import torch
@@ -21,15 +22,49 @@ DEFAULT_RESULTS = (
 )
 
 
+@dataclass
+class PivotalBoard:
+    bits: torch.Tensor
+    frames: torch.Tensor
+    attempts: int = 0
+    zero_gain_attempts: int = 0
+
+    @property
+    def failure_ratio(self) -> float:
+        return (
+            self.zero_gain_attempts + 1
+        ) / (self.attempts + 2)
+
+
+def archive_probabilities(
+    pivotal_boards: list[PivotalBoard],
+    newness_strength: float,
+    selection_temperature: float,
+) -> torch.Tensor:
+    selection_scores = torch.tensor(
+        [
+            -board.failure_ratio
+            + newness_strength
+            / ((board.attempts + 1) ** 0.5)
+            for board in pivotal_boards
+        ],
+        dtype=torch.float64,
+    )
+    return torch.softmax(
+        selection_scores / selection_temperature,
+        dim=0,
+    )
+
+
 def save_progress(
     checkpoint_path: Path,
     replay_path: Path,
     model: TrajectoryEditor,
     optimizer: torch.optim.Optimizer,
     step: int,
-    no_gain_steps: int,
     cumulative_coverage: set[str],
-    reference_bits: torch.Tensor,
+    pivotal_boards: list[PivotalBoard],
+    current_board_index: int,
     replay_inputs: list[list[int]],
     config: dict[str, object],
 ) -> None:
@@ -45,13 +80,22 @@ def save_progress(
     torch.save(
         {
             "step": step,
-            "no_gain_steps": no_gain_steps,
             "model": model.state_dict(),
             "optimizer": optimizer.state_dict(),
             "cumulative_coverage": sorted(
                 cumulative_coverage
             ),
-            "reference_bits": reference_bits.tolist(),
+            "current_board_index": current_board_index,
+            "pivotal_boards": [
+                {
+                    "bits": board.bits.tolist(),
+                    "attempts": board.attempts,
+                    "zero_gain_attempts": (
+                        board.zero_gain_attempts
+                    ),
+                }
+                for board in pivotal_boards
+            ],
             "replay_inputs": replay_inputs,
             "config": config,
         },
@@ -185,7 +229,6 @@ def log_training_step(
     candidate_coverage: set[str],
     cumulative_coverage: set[str],
     coverage_gain: int,
-    no_gain_steps: int,
     bit_credits: torch.Tensor,
     candidate_bits: torch.Tensor,
     logits: torch.Tensor,
@@ -195,6 +238,10 @@ def log_training_step(
     gradient_norm: torch.Tensor,
     temperature: float,
     credit_scale: torch.Tensor,
+    pivotal_boards: list[PivotalBoard],
+    current_board_index: int,
+    current_board_probability: float,
+    selection_entropy: float,
 ) -> None:
     positive_credits = int((bit_credits > 0).sum())
     negative_credits = int((bit_credits < 0).sum())
@@ -209,7 +256,23 @@ def log_training_step(
             "coverage/union_ratio": (
                 current_total / COVERABLE_VARIABLE_COUNT
             ),
-            "coverage/no_gain_steps": no_gain_steps,
+            "archive/size": len(pivotal_boards),
+            "archive/current_attempts": (
+                pivotal_boards[
+                    current_board_index
+                ].attempts
+            ),
+            "archive/current_failure_ratio": (
+                pivotal_boards[
+                    current_board_index
+                ].failure_ratio
+            ),
+            "archive/current_probability": (
+                current_board_probability
+            ),
+            "archive/selection_entropy": (
+                selection_entropy
+            ),
             "credit/positive_bits": positive_credits,
             "credit/negative_bits": negative_credits,
             "credit/mean_absolute": float(
@@ -242,6 +305,10 @@ def log_training_step(
         f"union={current_total}/"
         f"{COVERABLE_VARIABLE_COUNT} "
         f"gain={coverage_gain:+d} "
+        f"archive={len(pivotal_boards)} "
+        f"current={current_board_index} "
+        "failure="
+        f"{pivotal_boards[current_board_index].failure_ratio:.3f} "
         f"credits=+{positive_credits}/"
         f"-{negative_credits} "
         f"loss={float(loss.detach()):.6f}",
@@ -272,16 +339,22 @@ def train(args: argparse.Namespace) -> None:
     )
 
     (
-        reference_bits,
-        reference_frames,
-        reference_phases,
+        initial_bits,
+        initial_frames,
+        rollout_phases,
     ) = record_rollout([0] * INPUT_CYCLES)
 
     cumulative_coverage = coverage_from_rollout(
-        reference_frames
+        initial_frames
     )
-    replay_inputs = [reference_bits.tolist()]
-    no_gain_steps = 0
+    pivotal_boards = [
+        PivotalBoard(
+            bits=initial_bits,
+            frames=initial_frames,
+        )
+    ]
+    current_board_index = 0
+    replay_inputs = [initial_bits.tolist()]
 
     config = {
         key: (
@@ -307,19 +380,24 @@ def train(args: argparse.Namespace) -> None:
         config=config,
     ) as run:
         for step in range(args.max_steps):
+            current_board = pivotal_boards[
+                current_board_index
+            ]
             completion = coverage_completion(
                 cumulative_coverage
             )
 
             logits = model(
-                reference_bits[None].to(device),
-                reference_frames[None].to(device),
+                current_board.bits[None].to(device),
+                current_board.frames[None].to(device),
                 completion[None].to(device),
-                reference_phases[None].to(device),
+                rollout_phases[None].to(device),
             )
             temperature = min(
                 8.0,
-                1.0 + no_gain_steps / 8.0,
+                1.0
+                + current_board.zero_gain_attempts
+                / 8.0,
             )
             distribution = (
                 torch.distributions.Bernoulli(
@@ -336,7 +414,7 @@ def train(args: argparse.Namespace) -> None:
             (
                 candidate_bits,
                 candidate_frames,
-                candidate_phases,
+                _,
                 candidate_coverage,
                 actual_gain,
             ) = measure_candidate(
@@ -378,17 +456,52 @@ def train(args: argparse.Namespace) -> None:
                 current_total - previous_total
             )
 
+            current_board.attempts += 1
             if coverage_gain > 0:
+                pivotal_boards.append(
+                    PivotalBoard(
+                        bits=candidate_bits,
+                        frames=candidate_frames,
+                    )
+                )
                 replay_inputs.append(
                     candidate_bits.tolist()
                 )
-                no_gain_steps = 0
+                current_board_index = (
+                    len(pivotal_boards) - 1
+                )
             else:
-                no_gain_steps += 1
+                current_board.zero_gain_attempts += 1
 
-            reference_bits = candidate_bits
-            reference_frames = candidate_frames
-            reference_phases = candidate_phases
+            probabilities = archive_probabilities(
+                pivotal_boards=pivotal_boards,
+                newness_strength=(
+                    args.archive_newness_strength
+                ),
+                selection_temperature=(
+                    args.archive_selection_temperature
+                ),
+            )
+            if coverage_gain == 0:
+                current_board_index = int(
+                    torch.multinomial(
+                        probabilities,
+                        num_samples=1,
+                    ).item()
+                )
+            current_board_probability = float(
+                probabilities[current_board_index]
+            )
+            selection_entropy = float(
+                -(
+                    probabilities
+                    * probabilities.clamp_min(
+                        torch.finfo(
+                            probabilities.dtype
+                        ).tiny
+                    ).log()
+                ).sum()
+            )
 
             save_progress(
                 checkpoint_path=args.checkpoint,
@@ -396,9 +509,9 @@ def train(args: argparse.Namespace) -> None:
                 model=model,
                 optimizer=optimizer,
                 step=step,
-                no_gain_steps=no_gain_steps,
                 cumulative_coverage=cumulative_coverage,
-                reference_bits=reference_bits,
+                pivotal_boards=pivotal_boards,
+                current_board_index=current_board_index,
                 replay_inputs=replay_inputs,
                 config=config,
             )
@@ -409,7 +522,6 @@ def train(args: argparse.Namespace) -> None:
                 candidate_coverage=candidate_coverage,
                 cumulative_coverage=cumulative_coverage,
                 coverage_gain=coverage_gain,
-                no_gain_steps=no_gain_steps,
                 bit_credits=bit_credits,
                 candidate_bits=candidate_bits,
                 logits=logits,
@@ -419,18 +531,16 @@ def train(args: argparse.Namespace) -> None:
                 gradient_norm=gradient_norm,
                 temperature=temperature,
                 credit_scale=credit_scale,
+                pivotal_boards=pivotal_boards,
+                current_board_index=current_board_index,
+                current_board_probability=(
+                    current_board_probability
+                ),
+                selection_entropy=selection_entropy,
             )
 
             if current_total == COVERABLE_VARIABLE_COUNT:
                 print("coverage complete", flush=True)
-                break
-
-            if no_gain_steps >= args.plateau_steps:
-                print(
-                    "coverage plateau reached after "
-                    f"{no_gain_steps} steps without gain",
-                    flush=True,
-                )
                 break
 
         run.summary["final_union_coverage"] = len(
@@ -458,9 +568,14 @@ def parse_args() -> argparse.Namespace:
         default=1000,
     )
     parser.add_argument(
-        "--plateau-steps",
-        type=int,
-        default=100,
+        "--archive-newness-strength",
+        type=float,
+        default=0.5,
+    )
+    parser.add_argument(
+        "--archive-selection-temperature",
+        type=float,
+        default=0.25,
     )
     parser.add_argument(
         "--learning-rate",
@@ -510,8 +625,14 @@ def parse_args() -> argparse.Namespace:
 
     if args.max_steps <= 0:
         parser.error("--max-steps must be positive")
-    if args.plateau_steps <= 0:
-        parser.error("--plateau-steps must be positive")
+    if args.archive_newness_strength < 0:
+        parser.error(
+            "--archive-newness-strength cannot be negative"
+        )
+    if args.archive_selection_temperature <= 0:
+        parser.error(
+            "--archive-selection-temperature must be positive"
+        )
     if args.learning_rate <= 0:
         parser.error("--learning-rate must be positive")
     if args.entropy_coefficient < 0:
