@@ -6,5 +6,7 @@ dependencies = [
     "klayout==0.30.10",
     "matplotlib>=3.11.1",
     "networkx>=3.6.1",
+    "torch>=2.13.0",
+    "wandb>=0.22.0",
     "z3-solver==5.0.0.0",
 ]
