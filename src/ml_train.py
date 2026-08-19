@@ -227,12 +227,31 @@ def measure_counterfactual_credits(
     return credits
 
 
+def measure_edit_credits(
+    candidate_bits: torch.Tensor,
+    current_bits: torch.Tensor,
+    zero_gain_attempts: int,
+) -> torch.Tensor:
+    edit_strength = min(
+        0.10,
+        0.01 * (1.0 + zero_gain_attempts / 10.0),
+    )
+    edit_directions = torch.where(
+        candidate_bits != current_bits,
+        1.0,
+        -1.0,
+    )
+
+    return edit_strength * edit_directions
+
+
 def optimize_model(
     model: TrajectoryEditor,
     optimizer: torch.optim.Optimizer,
     distribution: torch.distributions.Bernoulli,
     sampled_candidate: torch.Tensor,
     bit_credits: torch.Tensor,
+    edit_credits: torch.Tensor,
     board_advantage: float,
     entropy_coefficient: float,
     max_gradient_norm: float,
@@ -256,6 +275,7 @@ def optimize_model(
     scaled_credits = bit_credits / credit_scale
     advantages = (
         scaled_credits.to(device)
+        + edit_credits.to(device)
         + board_advantage
     )
     policy_loss = -(
@@ -467,12 +487,7 @@ def train(args: argparse.Namespace) -> None:
                 completion[None].to(device),
                 rollout_phases[None].to(device),
             )
-            temperature = min(
-                8.0,
-                1.0
-                + current_board.zero_gain_attempts
-                / 8.0,
-            )
+            temperature = 1.0
             distribution = (
                 torch.distributions.Bernoulli(
                     logits=logits / temperature
@@ -521,6 +536,13 @@ def train(args: argparse.Namespace) -> None:
                 fine_coverage_reward,
                 cumulative_coverage,
             )
+            edit_credits = measure_edit_credits(
+                candidate_bits=candidate_bits,
+                current_bits=current_board.bits,
+                zero_gain_attempts=(
+                    current_board.zero_gain_attempts
+                ),
+            )
 
             (
                 policy_loss,
@@ -534,6 +556,7 @@ def train(args: argparse.Namespace) -> None:
                 distribution=distribution,
                 sampled_candidate=sampled_candidate,
                 bit_credits=bit_credits,
+                edit_credits=edit_credits,
                 board_advantage=board_advantage,
                 entropy_coefficient=(
                     args.entropy_coefficient
