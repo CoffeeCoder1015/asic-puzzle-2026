@@ -33,7 +33,7 @@ class PivotalBoard:
     def failure_ratio(self) -> float:
         return (
             self.zero_gain_attempts + 1
-        ) / (self.attempts + 10)
+        ) / (self.attempts + 40)
 
 
 def archive_probabilities(
@@ -470,38 +470,52 @@ def train(args: argparse.Namespace) -> None:
                 current_board_index = (
                     len(pivotal_boards) - 1
                 )
+                current_board_probability = 1.0
+                selection_entropy = 0.0
             else:
                 current_board.zero_gain_attempts += 1
+                probabilities = archive_probabilities(
+                    pivotal_boards=pivotal_boards,
+                    newness_strength=(
+                        args.archive_newness_strength
+                    ),
+                    selection_temperature=(
+                        args.archive_selection_temperature
+                    ),
+                )
 
-            probabilities = archive_probabilities(
-                pivotal_boards=pivotal_boards,
-                newness_strength=(
-                    args.archive_newness_strength
-                ),
-                selection_temperature=(
-                    args.archive_selection_temperature
-                ),
-            )
-            if coverage_gain == 0:
+                if len(pivotal_boards) > 1:
+                    leave_probability = (
+                        current_board.failure_ratio
+                    )
+                    probabilities[
+                        current_board_index
+                    ] = 0.0
+                    probabilities /= probabilities.sum()
+                    probabilities *= leave_probability
+                    probabilities[
+                        current_board_index
+                    ] = 1.0 - leave_probability
+
                 current_board_index = int(
                     torch.multinomial(
                         probabilities,
                         num_samples=1,
                     ).item()
                 )
-            current_board_probability = float(
-                probabilities[current_board_index]
-            )
-            selection_entropy = float(
-                -(
-                    probabilities
-                    * probabilities.clamp_min(
-                        torch.finfo(
-                            probabilities.dtype
-                        ).tiny
-                    ).log()
-                ).sum()
-            )
+                current_board_probability = float(
+                    probabilities[current_board_index]
+                )
+                selection_entropy = float(
+                    -(
+                        probabilities
+                        * probabilities.clamp_min(
+                            torch.finfo(
+                                probabilities.dtype
+                            ).tiny
+                        ).log()
+                    ).sum()
+                )
 
             save_progress(
                 checkpoint_path=args.checkpoint,
