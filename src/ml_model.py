@@ -153,11 +153,11 @@ class TrajectoryEditor(nn.Module):
         input_length: int = INPUT_CYCLES,
         frame_count: int = FRAME_COUNT,
         circuit_width: int = len(CIRCUIT_VARIABLES),
-        d_model: int = 128,
-        circuit_hidden: int = 512,
-        attention_heads: int = 4,
+        d_model: int = 256,
+        circuit_hidden: int = 1024,
+        attention_heads: int = 8,
         transformer_blocks: int = 4,
-        feedforward_width: int = 512,
+        feedforward_width: int = 1024,
         dropout: float = 0.1,
     ):
         super().__init__()
