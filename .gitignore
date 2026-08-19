@@ -3,3 +3,4 @@ __pycache__/
 *.vvp
 replayed_inputs.vcd
 .pdk/
+wandb/
