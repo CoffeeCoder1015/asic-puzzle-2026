@@ -33,7 +33,7 @@ class PivotalBoard:
     def failure_ratio(self) -> float:
         return (
             self.zero_gain_attempts + 1
-        ) / (self.attempts + 40)
+        ) / (self.attempts + 20)
 
 
 def archive_probabilities(
@@ -473,6 +473,8 @@ def train(args: argparse.Namespace) -> None:
                 current_board_probability = 1.0
                 selection_entropy = 0.0
             else:
+                current_board.bits = candidate_bits
+                current_board.frames = candidate_frames
                 current_board.zero_gain_attempts += 1
                 probabilities = archive_probabilities(
                     pivotal_boards=pivotal_boards,
