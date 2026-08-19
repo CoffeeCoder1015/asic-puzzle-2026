@@ -133,26 +133,67 @@ def select_device(requested_device: str) -> torch.device:
 
 def measure_candidate(
     candidate_bits: torch.Tensor,
-    cumulative_coverage: set[str],
 ) -> tuple[
     torch.Tensor,
     torch.Tensor,
     torch.Tensor,
     set[str],
-    int,
 ]:
     candidate_bits, frames, phases = record_rollout(
         candidate_bits.tolist()
     )
     coverage = coverage_from_rollout(frames)
-    gain = len(coverage - cumulative_coverage)
 
-    return candidate_bits, frames, phases, coverage, gain
+    return candidate_bits, frames, phases, coverage
+
+
+def score_rollout_coverage(
+    rollout_coverage: set[str],
+    cumulative_coverage: set[str],
+) -> tuple[int, int, float]:
+    new_count = len(
+        rollout_coverage - cumulative_coverage
+    )
+    repeated_count = len(
+        rollout_coverage & cumulative_coverage
+    )
+    fine_reward = (
+        new_count
+        - repeated_count / COVERABLE_VARIABLE_COUNT
+    )
+
+    return new_count, repeated_count, fine_reward
+
+
+def coverage_board_advantage(
+    coverage_gain: int,
+    repeated_coverage: int,
+    rollout_coverage_size: int,
+    current_remaining: int,
+    initial_remaining: int,
+    base_penalty: float,
+) -> float:
+    if coverage_gain > 0:
+        return 1.0
+
+    repeat_fraction = (
+        repeated_coverage
+        / max(1, rollout_coverage_size)
+    )
+    coverage_pressure = (
+        current_remaining / initial_remaining
+    )
+
+    return (
+        -base_penalty
+        * coverage_pressure
+        * repeat_fraction
+    )
 
 
 def measure_counterfactual_credits(
     candidate_bits: torch.Tensor,
-    actual_gain: int,
+    actual_coverage_reward: float,
     cumulative_coverage: set[str],
 ) -> torch.Tensor:
     credits = torch.empty(
@@ -166,12 +207,21 @@ def measure_counterfactual_credits(
             1 - counterfactual_bits[bit_index]
         )
 
-        _, _, _, _, counterfactual_gain = measure_candidate(
-            counterfactual_bits,
-            cumulative_coverage,
+        (
+            _,
+            _,
+            _,
+            counterfactual_coverage,
+        ) = measure_candidate(counterfactual_bits)
+        _, _, counterfactual_reward = (
+            score_rollout_coverage(
+                counterfactual_coverage,
+                cumulative_coverage,
+            )
         )
         credits[bit_index] = (
-            actual_gain - counterfactual_gain
+            actual_coverage_reward
+            - counterfactual_reward
         )
 
     return credits
@@ -183,6 +233,7 @@ def optimize_model(
     distribution: torch.distributions.Bernoulli,
     sampled_candidate: torch.Tensor,
     bit_credits: torch.Tensor,
+    board_advantage: float,
     entropy_coefficient: float,
     max_gradient_norm: float,
 ) -> tuple[
@@ -198,11 +249,17 @@ def optimize_model(
     )[0]
     entropy = distribution.entropy().mean()
     credit_scale = (
-        bit_credits.abs().max().clamp_min(1.0)
+        bit_credits.abs().max().clamp_min(
+            1.0 / COVERABLE_VARIABLE_COUNT
+        )
     )
     scaled_credits = bit_credits / credit_scale
+    advantages = (
+        scaled_credits.to(device)
+        + board_advantage
+    )
     policy_loss = -(
-        scaled_credits.to(device) * log_probabilities
+        advantages * log_probabilities
     ).mean()
     loss = policy_loss - entropy_coefficient * entropy
 
@@ -229,6 +286,9 @@ def log_training_step(
     candidate_coverage: set[str],
     cumulative_coverage: set[str],
     coverage_gain: int,
+    repeated_coverage: int,
+    fine_coverage_reward: float,
+    board_advantage: float,
     bit_credits: torch.Tensor,
     candidate_bits: torch.Tensor,
     logits: torch.Tensor,
@@ -253,6 +313,12 @@ def log_training_step(
             "coverage/rollout": len(candidate_coverage),
             "coverage/union": current_total,
             "coverage/gain": coverage_gain,
+            "coverage/repeated": repeated_coverage,
+            "coverage/repeat_surface_ratio": (
+                repeated_coverage
+                / COVERABLE_VARIABLE_COUNT
+            ),
+            "coverage/reward": fine_coverage_reward,
             "coverage/union_ratio": (
                 current_total / COVERABLE_VARIABLE_COUNT
             ),
@@ -283,6 +349,9 @@ def log_training_step(
             ),
             "credit/scale": float(credit_scale),
             "policy/loss": float(policy_loss.detach()),
+            "policy/board_advantage": (
+                board_advantage
+            ),
             "policy/entropy": float(entropy.detach()),
             "policy/temperature": temperature,
             "policy/mean_probability": float(
@@ -346,6 +415,11 @@ def train(args: argparse.Namespace) -> None:
 
     cumulative_coverage = coverage_from_rollout(
         initial_frames
+    )
+    initial_remaining_coverage = max(
+        1,
+        COVERABLE_VARIABLE_COUNT
+        - len(cumulative_coverage),
     )
     pivotal_boards = [
         PivotalBoard(
@@ -416,14 +490,35 @@ def train(args: argparse.Namespace) -> None:
                 candidate_frames,
                 _,
                 candidate_coverage,
-                actual_gain,
-            ) = measure_candidate(
-                candidate_bits,
+            ) = measure_candidate(candidate_bits)
+            (
+                coverage_gain,
+                repeated_coverage,
+                fine_coverage_reward,
+            ) = score_rollout_coverage(
+                candidate_coverage,
                 cumulative_coverage,
+            )
+            board_advantage = coverage_board_advantage(
+                coverage_gain=coverage_gain,
+                repeated_coverage=repeated_coverage,
+                rollout_coverage_size=len(
+                    candidate_coverage
+                ),
+                current_remaining=(
+                    COVERABLE_VARIABLE_COUNT
+                    - len(cumulative_coverage)
+                ),
+                initial_remaining=(
+                    initial_remaining_coverage
+                ),
+                base_penalty=(
+                    args.coverage_base_penalty
+                ),
             )
             bit_credits = measure_counterfactual_credits(
                 candidate_bits,
-                actual_gain,
+                fine_coverage_reward,
                 cumulative_coverage,
             )
 
@@ -439,6 +534,7 @@ def train(args: argparse.Namespace) -> None:
                 distribution=distribution,
                 sampled_candidate=sampled_candidate,
                 bit_credits=bit_credits,
+                board_advantage=board_advantage,
                 entropy_coefficient=(
                     args.entropy_coefficient
                 ),
@@ -447,14 +543,10 @@ def train(args: argparse.Namespace) -> None:
                 ),
             )
 
-            previous_total = len(cumulative_coverage)
             cumulative_coverage.update(
                 candidate_coverage
             )
             current_total = len(cumulative_coverage)
-            coverage_gain = (
-                current_total - previous_total
-            )
 
             current_board.attempts += 1
             if coverage_gain > 0:
@@ -538,6 +630,11 @@ def train(args: argparse.Namespace) -> None:
                 candidate_coverage=candidate_coverage,
                 cumulative_coverage=cumulative_coverage,
                 coverage_gain=coverage_gain,
+                repeated_coverage=repeated_coverage,
+                fine_coverage_reward=(
+                    fine_coverage_reward
+                ),
+                board_advantage=board_advantage,
                 bit_credits=bit_credits,
                 candidate_bits=candidate_bits,
                 logits=logits,
@@ -599,6 +696,11 @@ def parse_args() -> argparse.Namespace:
         default=1e-4,
     )
     parser.add_argument(
+        "--coverage-base-penalty",
+        type=float,
+        default=1.0,
+    )
+    parser.add_argument(
         "--entropy-coefficient",
         type=float,
         default=0.01,
@@ -651,6 +753,10 @@ def parse_args() -> argparse.Namespace:
         )
     if args.learning_rate <= 0:
         parser.error("--learning-rate must be positive")
+    if args.coverage_base_penalty < 0:
+        parser.error(
+            "--coverage-base-penalty cannot be negative"
+        )
     if args.entropy_coefficient < 0:
         parser.error(
             "--entropy-coefficient cannot be negative"
