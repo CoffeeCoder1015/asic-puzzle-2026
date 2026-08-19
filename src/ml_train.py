@@ -133,26 +133,56 @@ def select_device(requested_device: str) -> torch.device:
 
 def measure_candidate(
     candidate_bits: torch.Tensor,
-    cumulative_coverage: set[str],
 ) -> tuple[
     torch.Tensor,
     torch.Tensor,
     torch.Tensor,
     set[str],
-    int,
 ]:
     candidate_bits, frames, phases = record_rollout(
         candidate_bits.tolist()
     )
     coverage = coverage_from_rollout(frames)
-    gain = len(coverage - cumulative_coverage)
 
-    return candidate_bits, frames, phases, coverage, gain
+    return candidate_bits, frames, phases, coverage
+
+
+def score_rollout_coverage(
+    rollout_coverage: set[str],
+    cumulative_coverage: set[str],
+) -> tuple[int, int, float, float]:
+    new_count = len(
+        rollout_coverage - cumulative_coverage
+    )
+    repeated_count = len(
+        rollout_coverage & cumulative_coverage
+    )
+    coverage_ratio = (
+        len(cumulative_coverage)
+        / COVERABLE_VARIABLE_COUNT
+    )
+    repeat_fraction = (
+        repeated_count / len(rollout_coverage)
+        if rollout_coverage
+        else 1.0
+    )
+    coverage_score = (
+        coverage_ratio * new_count
+        - (1.0 - coverage_ratio)
+        * repeat_fraction
+    )
+
+    return (
+        new_count,
+        repeated_count,
+        repeat_fraction,
+        coverage_score,
+    )
 
 
 def measure_counterfactual_credits(
     candidate_bits: torch.Tensor,
-    actual_gain: int,
+    actual_coverage_score: float,
     cumulative_coverage: set[str],
 ) -> torch.Tensor:
     credits = torch.empty(
@@ -170,14 +200,20 @@ def measure_counterfactual_credits(
             _,
             _,
             _,
+            counterfactual_coverage,
+        ) = measure_candidate(counterfactual_bits)
+        (
             _,
-            counterfactual_gain,
-        ) = measure_candidate(
-            counterfactual_bits,
+            _,
+            _,
+            counterfactual_coverage_score,
+        ) = score_rollout_coverage(
+            counterfactual_coverage,
             cumulative_coverage,
         )
         credits[bit_index] = (
-            actual_gain - counterfactual_gain
+            actual_coverage_score
+            - counterfactual_coverage_score
         )
 
     return credits
@@ -259,6 +295,8 @@ def log_training_step(
     cumulative_coverage: set[str],
     coverage_gain: int,
     repeated_coverage: int,
+    repeat_fraction: float,
+    coverage_score: float,
     bit_credits: torch.Tensor,
     candidate_bits: torch.Tensor,
     logits: torch.Tensor,
@@ -286,6 +324,12 @@ def log_training_step(
             "coverage/repeated": repeated_coverage,
             "coverage/repeat_surface_ratio": (
                 repeated_coverage
+                / COVERABLE_VARIABLE_COUNT
+            ),
+            "coverage/repeat_fraction": repeat_fraction,
+            "coverage/score": coverage_score,
+            "coverage/reference_union_ratio": (
+                (current_total - coverage_gain)
                 / COVERABLE_VARIABLE_COUNT
             ),
             "coverage/union_ratio": (
@@ -451,18 +495,19 @@ def train(args: argparse.Namespace) -> None:
                 candidate_frames,
                 _,
                 candidate_coverage,
+            ) = measure_candidate(candidate_bits)
+            (
                 coverage_gain,
-            ) = measure_candidate(
-                candidate_bits,
+                repeated_coverage,
+                repeat_fraction,
+                coverage_score,
+            ) = score_rollout_coverage(
+                candidate_coverage,
                 cumulative_coverage,
-            )
-            repeated_coverage = len(
-                candidate_coverage
-                & cumulative_coverage
             )
             bit_credits = measure_counterfactual_credits(
                 candidate_bits,
-                coverage_gain,
+                coverage_score,
                 cumulative_coverage,
             )
             edit_credits = measure_edit_credits(
@@ -582,6 +627,8 @@ def train(args: argparse.Namespace) -> None:
                 cumulative_coverage=cumulative_coverage,
                 coverage_gain=coverage_gain,
                 repeated_coverage=repeated_coverage,
+                repeat_fraction=repeat_fraction,
+                coverage_score=coverage_score,
                 bit_credits=bit_credits,
                 candidate_bits=candidate_bits,
                 logits=logits,
