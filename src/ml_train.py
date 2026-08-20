@@ -7,7 +7,7 @@ from pathlib import Path
 import torch
 import wandb
 
-from ml_model import TrajectoryEditor
+from ml_model import ReferenceTokenizer, TrajectoryEditor
 from ml_rollout import (
     COVERABLE_VARIABLE_COUNT,
     INPUT_CYCLES,
@@ -65,7 +65,8 @@ def archive_probabilities(
 def save_progress(
     checkpoint_path: Path,
     replay_path: Path,
-    model: TrajectoryEditor,
+    reference_tokenizer: ReferenceTokenizer,
+    trajectory_editor: TrajectoryEditor,
     optimizer: torch.optim.Optimizer,
     step: int,
     cumulative_coverage: set[str],
@@ -86,7 +87,12 @@ def save_progress(
     torch.save(
         {
             "step": step,
-            "model": model.state_dict(),
+            "reference_tokenizer": (
+                reference_tokenizer.state_dict()
+            ),
+            "trajectory_editor": (
+                trajectory_editor.state_dict()
+            ),
             "optimizer": optimizer.state_dict(),
             "cumulative_coverage": sorted(
                 cumulative_coverage
@@ -427,7 +433,7 @@ def measure_edit_credits(
 
 
 def optimize_model(
-    model: TrajectoryEditor,
+    trainable_parameters: list[torch.nn.Parameter],
     optimizer: torch.optim.Optimizer,
     distribution: torch.distributions.Bernoulli,
     sampled_edit_mask: torch.Tensor,
@@ -474,7 +480,7 @@ def optimize_model(
     optimizer.zero_grad(set_to_none=True)
     loss.backward()
     gradient_norm = torch.nn.utils.clip_grad_norm_(
-        model.parameters(),
+        trainable_parameters,
         max_norm=max_gradient_norm,
     )
     optimizer.step()
@@ -618,10 +624,21 @@ def train(args: argparse.Namespace) -> None:
                 "WANDB_ENTITY is required for online logging"
             )
 
-    model = TrajectoryEditor().to(device)
-    model.train()
+    reference_tokenizer = ReferenceTokenizer().to(device)
+    trajectory_editor = TrajectoryEditor(
+        reference_token_count=(
+            reference_tokenizer.output_token_count
+        ),
+        d_model=reference_tokenizer.d_model,
+    ).to(device)
+    reference_tokenizer.train()
+    trajectory_editor.train()
+    trainable_parameters = [
+        *reference_tokenizer.parameters(),
+        *trajectory_editor.parameters(),
+    ]
     optimizer = torch.optim.AdamW(
-        model.parameters(),
+        trainable_parameters,
         lr=args.learning_rate,
     )
 
@@ -654,7 +671,7 @@ def train(args: argparse.Namespace) -> None:
     }
     config["model_parameters"] = sum(
         parameter.numel()
-        for parameter in model.parameters()
+        for parameter in trainable_parameters
     )
     config["coverable_variables"] = (
         COVERABLE_VARIABLE_COUNT
@@ -689,29 +706,17 @@ def train(args: argparse.Namespace) -> None:
                 device=device,
             )
             branch_count = len(branch_scales)
-            model_batch_size = len(model_scales)
+            reference_tokens = reference_tokenizer(
+                current_board.bits[None].to(device),
+                current_board.frames[None].to(device),
+                completion[None].to(device),
+                rollout_phases[None].to(device),
+            )
             (
                 edit_logits,
                 predicted_scale_logits,
-            ) = model(
-                current_board.bits[None].expand(
-                    model_batch_size,
-                    -1,
-                ).to(device),
-                current_board.frames[None].expand(
-                    model_batch_size,
-                    -1,
-                    -1,
-                ).to(device),
-                completion[None].expand(
-                    model_batch_size,
-                    -1,
-                    -1,
-                ).to(device),
-                rollout_phases[None].expand(
-                    model_batch_size,
-                    -1,
-                ).to(device),
+            ) = trajectory_editor(
+                reference_tokens,
                 encode_edit_scale(model_edit_scales),
             )
             predicted_encoded_scale = torch.sigmoid(
@@ -818,7 +823,7 @@ def train(args: argparse.Namespace) -> None:
                 gradient_norm,
                 credit_scale,
             ) = optimize_model(
-                model=model,
+                trainable_parameters=trainable_parameters,
                 optimizer=optimizer,
                 distribution=distribution,
                 sampled_edit_mask=sampled_edit_mask,
@@ -929,7 +934,8 @@ def train(args: argparse.Namespace) -> None:
             save_progress(
                 checkpoint_path=args.checkpoint,
                 replay_path=args.replay_inputs,
-                model=model,
+                reference_tokenizer=reference_tokenizer,
+                trajectory_editor=trajectory_editor,
                 optimizer=optimizer,
                 step=step,
                 cumulative_coverage=cumulative_coverage,
