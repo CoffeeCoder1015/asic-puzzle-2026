@@ -217,8 +217,10 @@ class TrajectoryEditor(nn.Module):
             norm=nn.LayerNorm(d_model),
             enable_nested_tensor=False,
         )
-        self.temperature_embedding = nn.Linear(1, d_model)
+        self.edit_scale_embedding = nn.Linear(1, d_model)
+        self.scale_token_embedding = nn.Embedding(1, d_model)
         self.output_head = nn.Linear(d_model, 1)
+        self.scale_output_head = nn.Linear(d_model, 1)
 
     def forward(
         self,
@@ -226,19 +228,19 @@ class TrajectoryEditor(nn.Module):
         circuit_frames: Tensor,
         coverage_completion: Tensor,
         phases: Tensor,
-        temperature_scale: Tensor,
-    ) -> Tensor:
+        edit_scale: Tensor,
+    ) -> tuple[Tensor, Tensor]:
         if input_bits.shape[0] != circuit_frames.shape[0]:
             raise ValueError(
                 "input_bits and circuit_frames must have "
                 "the same batch size"
             )
 
-        expected_temperature_shape = (input_bits.shape[0],)
-        if tuple(temperature_scale.shape) != expected_temperature_shape:
+        expected_edit_scale_shape = (input_bits.shape[0],)
+        if tuple(edit_scale.shape) != expected_edit_scale_shape:
             raise ValueError(
-                "temperature_scale must have shape "
-                f"{expected_temperature_shape}"
+                "edit_scale must have shape "
+                f"{expected_edit_scale_shape}"
             )
 
         input_tokens = self.input_embedding(input_bits)
@@ -247,19 +249,31 @@ class TrajectoryEditor(nn.Module):
             coverage_completion,
             phases,
         ).flatten(start_dim=1, end_dim=2)
+        scale_condition = self.edit_scale_embedding(
+            edit_scale[:, None]
+        )
+        scale_token = self.scale_token_embedding.weight[
+            0
+        ][None, None, :].expand(
+            input_bits.shape[0],
+            -1,
+            -1,
+        )
         context = torch.cat(
-            (input_tokens, circuit_tokens),
+            (input_tokens, circuit_tokens, scale_token),
             dim=1,
         )
-        context = context + self.temperature_embedding(
-            temperature_scale[:, None]
-        )[:, None, :]
+        context = context + scale_condition[:, None, :]
         contextualized = self.transformer(context)
         input_context = contextualized[
             :,
             :self.input_length,
         ]
+        scale_context = contextualized[:, -1]
 
-        return self.output_head(
-            input_context
-        ).squeeze(-1)
+        return (
+            self.output_head(input_context).squeeze(-1),
+            self.scale_output_head(
+                scale_context
+            ).squeeze(-1),
+        )

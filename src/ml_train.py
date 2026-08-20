@@ -1,4 +1,5 @@
 import argparse
+import math
 import os
 from dataclasses import dataclass
 from pathlib import Path
@@ -20,12 +21,17 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_RESULTS = (
     ROOT / "experiments" / "ml_training"
 )
+MIN_EDIT_SCALE = 1.0 / INPUT_CYCLES
+MAX_EDIT_SCALE = 0.5
+DEFAULT_EDIT_SCALE = 0.1
+EDIT_SCALE_FACTOR = 2.0
 
 
 @dataclass
 class PivotalBoard:
     bits: torch.Tensor
     frames: torch.Tensor
+    edit_scale: float
     attempts: int = 0
     zero_gain_attempts: int = 0
 
@@ -89,6 +95,7 @@ def save_progress(
             "pivotal_boards": [
                 {
                     "bits": board.bits.tolist(),
+                    "edit_scale": board.edit_scale,
                     "attempts": board.attempts,
                     "zero_gain_attempts": (
                         board.zero_gain_attempts
@@ -129,6 +136,163 @@ def select_device(requested_device: str) -> torch.device:
         )
 
     return torch.device(requested_device)
+
+
+def encode_edit_scale(
+    edit_scale: torch.Tensor,
+) -> torch.Tensor:
+    return torch.log(edit_scale / MIN_EDIT_SCALE) / math.log(
+        MAX_EDIT_SCALE / MIN_EDIT_SCALE
+    )
+
+
+def decode_edit_scale(
+    encoded_edit_scale: torch.Tensor,
+) -> torch.Tensor:
+    return MIN_EDIT_SCALE * torch.exp(
+        encoded_edit_scale
+        * math.log(MAX_EDIT_SCALE / MIN_EDIT_SCALE)
+    )
+
+
+def branch_edit_scales(
+    current_scale: float,
+) -> tuple[float, float]:
+    return (
+        max(
+            MIN_EDIT_SCALE,
+            current_scale / EDIT_SCALE_FACTOR,
+        ),
+        min(
+            MAX_EDIT_SCALE,
+            current_scale * EDIT_SCALE_FACTOR,
+        ),
+    )
+
+
+def make_edit_distribution(
+    edit_logits: torch.Tensor,
+    edit_scale: torch.Tensor,
+) -> tuple[
+    torch.distributions.Bernoulli,
+    torch.Tensor,
+]:
+    expected_scale_shape = (edit_logits.shape[0],)
+    if tuple(edit_scale.shape) != expected_scale_shape:
+        raise ValueError(
+            "edit_scale must have shape "
+            f"{expected_scale_shape}"
+        )
+    if bool(
+        (
+            (edit_scale < MIN_EDIT_SCALE)
+            | (edit_scale > MAX_EDIT_SCALE)
+        ).any()
+    ):
+        raise ValueError(
+            "edit_scale must be between "
+            f"{MIN_EDIT_SCALE} and {MAX_EDIT_SCALE}"
+        )
+
+    target_edits = edit_scale * edit_logits.shape[-1]
+    detached_logits = edit_logits.detach()
+    with torch.no_grad():
+        lower_bias = (
+            -40.0 - detached_logits.amax(dim=-1)
+        )
+        upper_bias = (
+            40.0 - detached_logits.amin(dim=-1)
+        )
+        for _ in range(32):
+            middle_bias = (
+                lower_bias + upper_bias
+            ) / 2.0
+            expected_edits = torch.sigmoid(
+                detached_logits + middle_bias[:, None]
+            ).sum(dim=-1)
+            lower_bias = torch.where(
+                expected_edits < target_edits,
+                middle_bias,
+                lower_bias,
+            )
+            upper_bias = torch.where(
+                expected_edits >= target_edits,
+                middle_bias,
+                upper_bias,
+            )
+        calibrated_bias = (
+            lower_bias + upper_bias
+        ) / 2.0
+
+        calibrated_probabilities = torch.sigmoid(
+            detached_logits + calibrated_bias[:, None]
+        )
+        probability_slopes = (
+            calibrated_probabilities
+            * (1.0 - calibrated_probabilities)
+        )
+
+    implicit_bias_gradient = -(
+        probability_slopes
+        * (edit_logits - detached_logits)
+    ).sum(dim=-1) / probability_slopes.sum(
+        dim=-1
+    ).clamp_min(torch.finfo(edit_logits.dtype).eps)
+    calibrated_logits = (
+        edit_logits
+        + calibrated_bias[:, None]
+        + implicit_bias_gradient[:, None]
+    )
+
+    return (
+        torch.distributions.Bernoulli(
+            logits=calibrated_logits
+        ),
+        torch.sigmoid(calibrated_logits),
+    )
+
+
+def sample_candidate(
+    current_bits: torch.Tensor,
+    distribution: torch.distributions.Bernoulli,
+) -> tuple[torch.Tensor, torch.Tensor]:
+    sampled_edit_mask = distribution.sample()
+    if current_bits.ndim != 1:
+        raise ValueError(
+            "current_bits must have shape [input_cycles]"
+        )
+    if (
+        sampled_edit_mask.ndim != 2
+        or sampled_edit_mask.shape[1]
+        != current_bits.shape[0]
+    ):
+        raise ValueError(
+            "sampled edit mask must have shape "
+            "[batch, input_cycles]"
+        )
+
+    candidate_bits = (
+        torch.bitwise_xor(
+            current_bits[None].to(
+                sampled_edit_mask.device
+            ),
+            sampled_edit_mask.to(torch.long),
+        )
+        .to(torch.long)
+        .cpu()
+    )
+    return sampled_edit_mask, candidate_bits
+
+
+def select_winning_branch(
+    lower_gain: int,
+    higher_gain: int,
+) -> int:
+    if lower_gain > higher_gain:
+        return 0
+    if higher_gain > lower_gain:
+        return 1
+    return int(torch.randint(0, 2, ()).item())
 
 
 def measure_candidate(
@@ -185,6 +349,7 @@ def measure_counterfactual_credits(
     actual_coverage: set[str],
     actual_coverage_score: float,
     cumulative_coverage: set[str],
+    edit_scale: float,
 ) -> tuple[
     torch.Tensor,
     int | None,
@@ -237,6 +402,7 @@ def measure_counterfactual_credits(
             best_board = PivotalBoard(
                 bits=counterfactual_bits,
                 frames=counterfactual_frames,
+                edit_scale=edit_scale,
             )
 
     return credits, best_bit_index, best_board
@@ -265,9 +431,12 @@ def optimize_model(
     optimizer: torch.optim.Optimizer,
     distribution: torch.distributions.Bernoulli,
     sampled_edit_mask: torch.Tensor,
+    selected_sample: int,
     bit_credits: torch.Tensor,
     edit_credits: torch.Tensor,
     counterfactual_bonus: torch.Tensor,
+    scale_loss: torch.Tensor,
+    scale_loss_coefficient: float,
     entropy_coefficient: float,
     max_gradient_norm: float,
 ) -> tuple[
@@ -280,8 +449,10 @@ def optimize_model(
     device = sampled_edit_mask.device
     log_probabilities = distribution.log_prob(
         sampled_edit_mask
-    )[0]
-    entropy = distribution.entropy().mean()
+    )[selected_sample]
+    entropy = distribution.entropy()[
+        selected_sample
+    ].mean()
     credit_scale = bit_credits.abs().max().clamp_min(
         1.0
     )
@@ -294,7 +465,11 @@ def optimize_model(
     policy_loss = -(
         advantages * log_probabilities
     ).mean()
-    loss = policy_loss - entropy_coefficient * entropy
+    loss = (
+        policy_loss
+        + scale_loss_coefficient * scale_loss
+        - entropy_coefficient * entropy
+    )
 
     optimizer.zero_grad(set_to_none=True)
     loss.backward()
@@ -324,12 +499,16 @@ def log_training_step(
     coverage_score: float,
     bit_credits: torch.Tensor,
     candidate_bits: torch.Tensor,
-    logits: torch.Tensor,
+    edit_probabilities: torch.Tensor,
     policy_loss: torch.Tensor,
     entropy: torch.Tensor,
     loss: torch.Tensor,
     gradient_norm: torch.Tensor,
-    temperature: float,
+    edit_scale: float,
+    current_edit_scale: float,
+    predicted_next_scale: torch.Tensor,
+    scale_gain_delta: int,
+    scale_loss: torch.Tensor,
     credit_scale: torch.Tensor,
     pivotal_boards: list[PivotalBoard],
     current_board_index: int,
@@ -388,12 +567,16 @@ def log_training_step(
             "credit/scale": float(credit_scale),
             "policy/loss": float(policy_loss.detach()),
             "policy/entropy": float(entropy.detach()),
-            "policy/temperature": temperature,
-            "policy/mean_probability": float(
-                torch.sigmoid(
-                    logits / temperature
-                ).mean().detach()
+            "policy/edit_scale": edit_scale,
+            "policy/mean_edit_probability": float(
+                edit_probabilities.mean().detach()
             ),
+            "scale/current": current_edit_scale,
+            "scale/predicted_next": float(
+                predicted_next_scale.detach()
+            ),
+            "scale/gain_delta": scale_gain_delta,
+            "scale/loss": float(scale_loss.detach()),
             "policy/candidate_ones": int(
                 candidate_bits.sum()
             ),
@@ -455,6 +638,7 @@ def train(args: argparse.Namespace) -> None:
         PivotalBoard(
             bits=initial_bits,
             frames=initial_frames,
+            edit_scale=args.initial_edit_scale,
         )
     ]
     current_board_index = 0
@@ -491,45 +675,104 @@ def train(args: argparse.Namespace) -> None:
                 cumulative_coverage
             )
 
-            temperature = min(
-                8.0,
-                1.0
-                + current_board.zero_gain_attempts
-                / 8.0,
+            current_edit_scale = current_board.edit_scale
+            branch_scales = branch_edit_scales(
+                current_edit_scale
             )
-            temperature_scale = torch.tensor(
-                [(temperature - 1.0) / (8.0 - 1.0)],
+            model_scales = (
+                current_edit_scale,
+                *branch_scales,
+            )
+            model_edit_scales = torch.tensor(
+                model_scales,
                 dtype=torch.float32,
                 device=device,
             )
-            edit_logits = model(
-                current_board.bits[None].to(device),
-                current_board.frames[None].to(device),
-                completion[None].to(device),
-                rollout_phases[None].to(device),
-                temperature_scale,
+            branch_count = len(branch_scales)
+            model_batch_size = len(model_scales)
+            (
+                edit_logits,
+                predicted_scale_logits,
+            ) = model(
+                current_board.bits[None].expand(
+                    model_batch_size,
+                    -1,
+                ).to(device),
+                current_board.frames[None].expand(
+                    model_batch_size,
+                    -1,
+                    -1,
+                ).to(device),
+                completion[None].expand(
+                    model_batch_size,
+                    -1,
+                    -1,
+                ).to(device),
+                rollout_phases[None].expand(
+                    model_batch_size,
+                    -1,
+                ).to(device),
+                encode_edit_scale(model_edit_scales),
             )
-            distribution = (
-                torch.distributions.Bernoulli(
-                    logits=edit_logits / temperature
-                )
+            predicted_encoded_scale = torch.sigmoid(
+                predicted_scale_logits[0]
             )
-            sampled_edit_mask = distribution.sample()
-            candidate_bits = (
-                torch.bitwise_xor(
-                    current_board.bits.to(device),
-                    sampled_edit_mask[0].to(torch.long),
-                )
-                .to(torch.long)
-                .cpu()
+            predicted_next_scale = decode_edit_scale(
+                predicted_encoded_scale
+            )
+            (
+                distribution,
+                edit_probabilities,
+            ) = make_edit_distribution(
+                edit_logits=edit_logits[1:],
+                edit_scale=model_edit_scales[1:],
+            )
+            (
+                sampled_edit_mask,
+                candidate_bits,
+            ) = sample_candidate(
+                current_bits=current_board.bits,
+                distribution=distribution,
             )
 
+            candidate_results = [
+                measure_candidate(candidate_bits[index])
+                for index in range(branch_count)
+            ]
+            branch_gains = [
+                len(result[3] - cumulative_coverage)
+                for result in candidate_results
+            ]
+            winning_branch = select_winning_branch(
+                lower_gain=branch_gains[0],
+                higher_gain=branch_gains[1],
+            )
+            winning_edit_scale = branch_scales[
+                winning_branch
+            ]
+            scale_gain_delta = (
+                branch_gains[1] - branch_gains[0]
+            )
+            if scale_gain_delta:
+                target_encoded_scale = encode_edit_scale(
+                    torch.tensor(
+                        [winning_edit_scale],
+                        dtype=torch.float32,
+                        device=device,
+                    )
+                )[0]
+                scale_loss = (
+                    target_encoded_scale
+                    - predicted_encoded_scale
+                ).square()
+            else:
+                scale_loss = predicted_encoded_scale * 0.0
             (
                 candidate_bits,
                 candidate_frames,
                 _,
                 candidate_coverage,
-            ) = measure_candidate(candidate_bits)
+            ) = candidate_results[winning_branch]
             (
                 coverage_gain,
                 repeated_coverage,
@@ -548,6 +791,7 @@ def train(args: argparse.Namespace) -> None:
                 candidate_coverage,
                 coverage_score,
                 cumulative_coverage,
+                winning_edit_scale,
             )
             counterfactual_bonus = torch.zeros(
                 INPUT_CYCLES,
@@ -578,10 +822,15 @@ def train(args: argparse.Namespace) -> None:
                 optimizer=optimizer,
                 distribution=distribution,
                 sampled_edit_mask=sampled_edit_mask,
+                selected_sample=winning_branch,
                 bit_credits=bit_credits,
                 edit_credits=edit_credits,
                 counterfactual_bonus=(
                     counterfactual_bonus
+                ),
+                scale_loss=scale_loss,
+                scale_loss_coefficient=(
+                    args.scale_loss_coefficient
                 ),
                 entropy_coefficient=(
                     args.entropy_coefficient
@@ -616,6 +865,7 @@ def train(args: argparse.Namespace) -> None:
                     PivotalBoard(
                         bits=candidate_bits,
                         frames=candidate_frames,
+                        edit_scale=winning_edit_scale,
                     )
                 )
                 replay_inputs.append(
@@ -629,6 +879,9 @@ def train(args: argparse.Namespace) -> None:
             else:
                 current_board.bits = candidate_bits
                 current_board.frames = candidate_frames
+                current_board.edit_scale = (
+                    winning_edit_scale
+                )
                 current_board.zero_gain_attempts += 1
                 probabilities = archive_probabilities(
                     pivotal_boards=pivotal_boards,
@@ -697,12 +950,18 @@ def train(args: argparse.Namespace) -> None:
                 coverage_score=coverage_score,
                 bit_credits=bit_credits,
                 candidate_bits=candidate_bits,
-                logits=edit_logits,
+                edit_probabilities=edit_probabilities[
+                    winning_branch
+                ],
                 policy_loss=policy_loss,
                 entropy=entropy,
                 loss=loss,
                 gradient_norm=gradient_norm,
-                temperature=temperature,
+                edit_scale=winning_edit_scale,
+                current_edit_scale=current_edit_scale,
+                predicted_next_scale=predicted_next_scale,
+                scale_gain_delta=scale_gain_delta,
+                scale_loss=scale_loss,
                 credit_scale=credit_scale,
                 pivotal_boards=pivotal_boards,
                 current_board_index=current_board_index,
@@ -766,6 +1025,16 @@ def parse_args() -> argparse.Namespace:
         default=0.25,
     )
     parser.add_argument(
+        "--initial-edit-scale",
+        type=float,
+        default=DEFAULT_EDIT_SCALE,
+    )
+    parser.add_argument(
+        "--scale-loss-coefficient",
+        type=float,
+        default=1.0,
+    )
+    parser.add_argument(
         "--max-gradient-norm",
         type=float,
         default=1.0,
@@ -820,6 +1089,19 @@ def parse_args() -> argparse.Namespace:
     if args.best_counterfactual_bonus < 0:
         parser.error(
             "--best-counterfactual-bonus cannot be negative"
+        )
+    if not (
+        MIN_EDIT_SCALE
+        <= args.initial_edit_scale
+        <= MAX_EDIT_SCALE
+    ):
+        parser.error(
+            "--initial-edit-scale must be between "
+            f"{MIN_EDIT_SCALE} and {MAX_EDIT_SCALE}"
+        )
+    if args.scale_loss_coefficient < 0:
+        parser.error(
+            "--scale-loss-coefficient cannot be negative"
         )
     if args.max_gradient_norm <= 0:
         parser.error(
