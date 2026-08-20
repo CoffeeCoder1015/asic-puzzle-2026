@@ -1,5 +1,6 @@
 import importlib
-from collections.abc import Collection, Sequence
+from collections.abc import Sequence
+from dataclasses import dataclass
 
 import torch
 from torch import Tensor
@@ -61,9 +62,18 @@ COVERABLE_VARIABLE_COUNT = len(
 )
 
 
+@dataclass
+class BoardEvaluation:
+    bits: Tensor
+    frames: Tensor
+    phases: Tensor
+    output: str
+    rollout_coverage: Tensor
+
+
 def record_rollout(
     puzzle_inputs: Sequence[int],
-) -> tuple[Tensor, Tensor, Tensor]:
+) -> BoardEvaluation:
     input_bits = [int(bit) for bit in puzzle_inputs]
 
     if len(input_bits) != INPUT_CYCLES:
@@ -79,19 +89,28 @@ def record_rollout(
 
     circuit = importlib.reload(probed_program)
     circuit_frames = []
+    output_characters = []
     input_sequence = (
         input_bits
         + [0] * READOUT_CYCLES
     )
 
-    for input_bit in input_sequence:
-        _, _, probe_values = circuit.asic(
+    for frame, input_bit in enumerate(input_sequence):
+        _, output_bits, probe_values = circuit.asic(
             True,
             input_bit,
             True,
             True,
             CIRCUIT_VARIABLES,
         )
+
+        if frame >= INPUT_CYCLES:
+            output_byte = sum(
+                int(value) << bit
+                for bit, value in enumerate(output_bits)
+            )
+            if output_byte:
+                output_characters.append(chr(output_byte))
 
         circuit_frames.append([
             float(bool(probe_values[variable_name]))
@@ -102,20 +121,33 @@ def record_rollout(
         [0] * INPUT_CYCLES
         + [1] * READOUT_CYCLES
     )
+    bits_tensor = torch.tensor(
+        input_bits,
+        dtype=torch.long,
+    )
+    frames_tensor = torch.tensor(
+        circuit_frames,
+        dtype=torch.float32,
+    )
+    phases_tensor = torch.tensor(
+        phases,
+        dtype=torch.long,
+    )
 
-    return (
-        torch.tensor(input_bits, dtype=torch.long),
-        torch.tensor(
-            circuit_frames,
-            dtype=torch.float32,
+    return BoardEvaluation(
+        bits=bits_tensor,
+        frames=frames_tensor,
+        phases=phases_tensor,
+        output="".join(output_characters),
+        rollout_coverage=coverage_from_rollout(
+            frames_tensor
         ),
-        torch.tensor(phases, dtype=torch.long),
     )
 
 
 def coverage_from_rollout(
     circuit_frames: Tensor,
-) -> set[str]:
+) -> Tensor:
     expected_shape = (
         FRAME_COUNT,
         len(CIRCUIT_VARIABLES),
@@ -133,37 +165,39 @@ def coverage_from_rollout(
         )
     ].bool()
 
-    return {
-        variable_name
-        for variable_name, active
-        in zip(
-            COVERAGE_VARIABLE_NAMES,
-            active_values.tolist(),
-            strict=True,
-        )
-        if active
-    }
+    return active_values.detach().to(
+        device="cpu",
+        dtype=torch.bool,
+    )
 
 
 def coverage_completion(
-    cumulative_coverage: Collection[str],
+    cumulative_coverage: Tensor,
 ) -> Tensor:
+    expected_shape = (COVERABLE_VARIABLE_COUNT,)
+    if tuple(cumulative_coverage.shape) != expected_shape:
+        raise ValueError(
+            "cumulative_coverage must have shape "
+            f"{expected_shape}"
+        )
+
+    if cumulative_coverage.dtype != torch.bool:
+        raise ValueError(
+            "cumulative_coverage must have dtype bool"
+        )
+
+    if cumulative_coverage.device.type != "cpu":
+        raise ValueError(
+            "cumulative_coverage must be on the CPU"
+        )
+
     completion = torch.ones(
         FRAME_COUNT * len(CIRCUIT_VARIABLES),
         dtype=torch.float32,
     )
-    uncovered_indices = [
-        flat_index
-        for variable_name, flat_index
-        in zip(
-            COVERAGE_VARIABLE_NAMES,
-            coverage_flat_indices,
-            strict=True,
-        )
-        if variable_name not in cumulative_coverage
-    ]
-
-    completion[uncovered_indices] = 0.0
+    completion[COVERAGE_FLAT_INDICES] = (
+        cumulative_coverage.to(torch.float32)
+    )
 
     return completion.reshape(
         FRAME_COUNT,

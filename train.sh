@@ -7,4 +7,7 @@ uv run python src/ml_train.py \
     --wandb-mode online \
     --wandb-project asic-puzzle-ml \
     --device auto \
+    --trajectory-count 4 \
+    --steps-per-generation 32 \
+    --beam-size 8 \
     --max-steps 1000
