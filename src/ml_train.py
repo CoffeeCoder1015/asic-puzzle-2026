@@ -182,13 +182,24 @@ def score_rollout_coverage(
 
 def measure_counterfactual_credits(
     candidate_bits: torch.Tensor,
+    actual_coverage: set[str],
     actual_coverage_score: float,
     cumulative_coverage: set[str],
-) -> torch.Tensor:
+) -> tuple[
+    torch.Tensor,
+    int | None,
+    PivotalBoard | None,
+]:
     credits = torch.empty(
         INPUT_CYCLES,
         dtype=torch.float32,
     )
+    post_actual_coverage = (
+        cumulative_coverage | actual_coverage
+    )
+    best_residual_gain = 0
+    best_bit_index = None
+    best_board = None
 
     for bit_index in range(INPUT_CYCLES):
         counterfactual_bits = candidate_bits.clone()
@@ -197,8 +208,8 @@ def measure_counterfactual_credits(
         )
 
         (
-            _,
-            _,
+            counterfactual_bits,
+            counterfactual_frames,
             _,
             counterfactual_coverage,
         ) = measure_candidate(counterfactual_bits)
@@ -216,7 +227,19 @@ def measure_counterfactual_credits(
             - counterfactual_coverage_score
         )
 
-    return credits
+        residual_gain = len(
+            counterfactual_coverage
+            - post_actual_coverage
+        )
+        if residual_gain > best_residual_gain:
+            best_residual_gain = residual_gain
+            best_bit_index = bit_index
+            best_board = PivotalBoard(
+                bits=counterfactual_bits,
+                frames=counterfactual_frames,
+            )
+
+    return credits, best_bit_index, best_board
 
 
 def measure_edit_credits(
@@ -244,6 +267,7 @@ def optimize_model(
     sampled_candidate: torch.Tensor,
     bit_credits: torch.Tensor,
     edit_credits: torch.Tensor,
+    counterfactual_bonus: torch.Tensor,
     entropy_coefficient: float,
     max_gradient_norm: float,
 ) -> tuple[
@@ -265,6 +289,7 @@ def optimize_model(
     advantages = (
         scaled_credits.to(device)
         + edit_credits.to(device)
+        + counterfactual_bonus.to(device)
     )
     policy_loss = -(
         advantages * log_probabilities
@@ -505,11 +530,26 @@ def train(args: argparse.Namespace) -> None:
                 candidate_coverage,
                 cumulative_coverage,
             )
-            bit_credits = measure_counterfactual_credits(
+            (
+                bit_credits,
+                best_counterfactual_bit,
+                best_counterfactual_board,
+            ) = measure_counterfactual_credits(
                 candidate_bits,
+                candidate_coverage,
                 coverage_score,
                 cumulative_coverage,
             )
+            counterfactual_bonus = torch.zeros(
+                INPUT_CYCLES,
+                dtype=torch.float32,
+            )
+            if best_counterfactual_bit is not None:
+                # The sampled value produced the actual candidate.
+                # Negative advantage favors its binary complement.
+                counterfactual_bonus[
+                    best_counterfactual_bit
+                ] = -args.best_counterfactual_bonus
             edit_credits = measure_edit_credits(
                 candidate_bits=candidate_bits,
                 current_bits=current_board.bits,
@@ -531,6 +571,9 @@ def train(args: argparse.Namespace) -> None:
                 sampled_candidate=sampled_candidate,
                 bit_credits=bit_credits,
                 edit_credits=edit_credits,
+                counterfactual_bonus=(
+                    counterfactual_bonus
+                ),
                 entropy_coefficient=(
                     args.entropy_coefficient
                 ),
@@ -545,6 +588,20 @@ def train(args: argparse.Namespace) -> None:
             current_total = len(cumulative_coverage)
 
             current_board.attempts += 1
+            if (
+                best_counterfactual_board is not None
+                and not any(
+                    torch.equal(
+                        best_counterfactual_board.bits,
+                        board.bits,
+                    )
+                    for board in pivotal_boards
+                )
+            ):
+                pivotal_boards.append(
+                    best_counterfactual_board
+                )
+
             if coverage_gain > 0:
                 pivotal_boards.append(
                     PivotalBoard(
@@ -695,6 +752,11 @@ def parse_args() -> argparse.Namespace:
         default=0.01,
     )
     parser.add_argument(
+        "--best-counterfactual-bonus",
+        type=float,
+        default=0.25,
+    )
+    parser.add_argument(
         "--max-gradient-norm",
         type=float,
         default=1.0,
@@ -745,6 +807,10 @@ def parse_args() -> argparse.Namespace:
     if args.entropy_coefficient < 0:
         parser.error(
             "--entropy-coefficient cannot be negative"
+        )
+    if args.best_counterfactual_bonus < 0:
+        parser.error(
+            "--best-counterfactual-bonus cannot be negative"
         )
     if args.max_gradient_norm <= 0:
         parser.error(
