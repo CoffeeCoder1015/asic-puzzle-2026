@@ -51,24 +51,24 @@ class InputTokenEmbedding(nn.Module):
         )
 
 
-class CircuitFrameEncoder(nn.Module):
+class RolloutFrameEncoder(nn.Module):
     def __init__(
         self,
-        circuit_width: int,
+        frame_width: int,
         frame_count: int,
         d_model: int,
         hidden_width: int,
         tokens_per_frame: int,
     ):
         super().__init__()
-        self.circuit_width = circuit_width
+        self.frame_width = frame_width
         self.frame_count = frame_count
         self.d_model = d_model
         self.tokens_per_frame = tokens_per_frame
 
         self.frame_mlp = nn.Sequential(
             nn.Linear(
-                circuit_width * 2,
+                frame_width,
                 hidden_width,
             ),
             nn.GELU(),
@@ -77,54 +77,42 @@ class CircuitFrameEncoder(nn.Module):
                 tokens_per_frame * d_model,
             ),
         )
-        self.cycle_embedding = nn.Embedding(
-            frame_count,
+        self.position_embedding = nn.Embedding(
+            frame_count * tokens_per_frame,
             d_model,
         )
         self.phase_embedding = nn.Embedding(2, d_model)
         self.token_type_embedding = nn.Embedding(
-            1,
-            d_model,
-        )
-        self.slot_embedding = nn.Embedding(
-            tokens_per_frame,
+            2,
             d_model,
         )
         self.output_norm = nn.LayerNorm(d_model)
 
     def forward(
         self,
-        circuit_frames: Tensor,
-        coverage_completion: Tensor,
+        frames: Tensor,
         phases: Tensor,
+        token_type: int,
     ) -> Tensor:
-        if circuit_frames.ndim != 3:
+        if frames.ndim != 3:
             raise ValueError(
-                "circuit_frames must have shape "
-                "[batch, frame_count, circuit_width]"
+                "frames must have shape "
+                "[batch, frame_count, frame_width]"
             )
 
         expected_frame_shape = (
-            circuit_frames.shape[0],
+            frames.shape[0],
             self.frame_count,
-            self.circuit_width,
+            self.frame_width,
         )
-        if tuple(circuit_frames.shape) != expected_frame_shape:
+        if tuple(frames.shape) != expected_frame_shape:
             raise ValueError(
-                "circuit_frames must have shape "
-                f"{expected_frame_shape}"
-            )
-
-        if tuple(coverage_completion.shape) != (
-            expected_frame_shape
-        ):
-            raise ValueError(
-                "coverage_completion must have shape "
+                "frames must have shape "
                 f"{expected_frame_shape}"
             )
 
         expected_phase_shape = (
-            circuit_frames.shape[0],
+            frames.shape[0],
             self.frame_count,
         )
         if tuple(phases.shape) != expected_phase_shape:
@@ -132,44 +120,41 @@ class CircuitFrameEncoder(nn.Module):
                 f"phases must have shape {expected_phase_shape}"
             )
 
-        cycle_positions = torch.arange(
-            self.frame_count,
-            device=circuit_frames.device,
+        if token_type not in (0, 1):
+            raise ValueError("token_type must be 0 or 1")
+
+        token_count = (
+            self.frame_count * self.tokens_per_frame
         )
-        slot_positions = torch.arange(
+        token_positions = torch.arange(
+            token_count,
+            device=frames.device,
+        )
+        token_phases = phases.unsqueeze(-1).expand(
+            -1,
+            -1,
             self.tokens_per_frame,
-            device=circuit_frames.device,
+        ).reshape(
+            frames.shape[0],
+            token_count,
         )
-        frame_features = torch.stack(
-            (
-                circuit_frames,
-                coverage_completion,
-            ),
-            dim=-1,
-        ).flatten(start_dim=-2)
-        signed_frame_features = (
-            frame_features * 2.0 - 1.0
-        )
+        signed_frames = frames * 2.0 - 1.0
 
         frame_tokens = self.frame_mlp(
-            signed_frame_features
+            signed_frames
         ).reshape(
-            circuit_frames.shape[0],
-            self.frame_count,
-            self.tokens_per_frame,
+            frames.shape[0],
+            token_count,
             self.d_model,
         )
 
         return self.output_norm(
             frame_tokens
-            + self.cycle_embedding(
-                cycle_positions
-            )[None, :, None, :]
-            + self.phase_embedding(phases).unsqueeze(2)
-            + self.token_type_embedding.weight[0]
-            + self.slot_embedding(
-                slot_positions
-            )[None, None, :, :]
+            + self.position_embedding(
+                token_positions
+            ).unsqueeze(0)
+            + self.phase_embedding(token_phases)
+            + self.token_type_embedding.weight[token_type]
         )
 
 
@@ -181,7 +166,7 @@ class TrajectoryEditor(nn.Module):
         circuit_width: int = len(CIRCUIT_VARIABLES),
         d_model: int = 256,
         circuit_hidden: int = 1024,
-        circuit_tokens_per_frame: int = 4,
+        rollout_tokens_per_frame: int = 4,
         attention_heads: int = 8,
         transformer_blocks: int = 4,
         feedforward_width: int = 1024,
@@ -194,12 +179,12 @@ class TrajectoryEditor(nn.Module):
             input_length=input_length,
             d_model=d_model,
         )
-        self.circuit_encoder = CircuitFrameEncoder(
-            circuit_width=circuit_width,
+        self.rollout_encoder = RolloutFrameEncoder(
+            frame_width=circuit_width,
             frame_count=frame_count,
             d_model=d_model,
             hidden_width=circuit_hidden,
-            tokens_per_frame=circuit_tokens_per_frame,
+            tokens_per_frame=rollout_tokens_per_frame,
         )
 
         transformer_layer = nn.TransformerEncoderLayer(
@@ -244,11 +229,16 @@ class TrajectoryEditor(nn.Module):
             )
 
         input_tokens = self.input_embedding(input_bits)
-        circuit_tokens = self.circuit_encoder(
+        circuit_tokens = self.rollout_encoder(
             circuit_frames,
+            phases,
+            token_type=0,
+        )
+        coverage_tokens = self.rollout_encoder(
             coverage_completion,
             phases,
-        ).flatten(start_dim=1, end_dim=2)
+            token_type=1,
+        )
         scale_condition = self.edit_scale_embedding(
             edit_scale[:, None]
         )
@@ -259,17 +249,22 @@ class TrajectoryEditor(nn.Module):
             -1,
             -1,
         )
+        scale_token = scale_token + scale_condition[:, None, :]
         context = torch.cat(
-            (input_tokens, circuit_tokens, scale_token),
+            (
+                scale_token,
+                input_tokens,
+                circuit_tokens,
+                coverage_tokens,
+            ),
             dim=1,
         )
-        context = context + scale_condition[:, None, :]
         contextualized = self.transformer(context)
         input_context = contextualized[
             :,
-            :self.input_length,
+            1:1 + self.input_length,
         ]
-        scale_context = contextualized[:, -1]
+        scale_context = contextualized[:, 0]
 
         return (
             self.output_head(input_context).squeeze(-1),
