@@ -217,6 +217,7 @@ class TrajectoryEditor(nn.Module):
             norm=nn.LayerNorm(d_model),
             enable_nested_tensor=False,
         )
+        self.temperature_embedding = nn.Linear(1, d_model)
         self.output_head = nn.Linear(d_model, 1)
 
     def forward(
@@ -225,11 +226,19 @@ class TrajectoryEditor(nn.Module):
         circuit_frames: Tensor,
         coverage_completion: Tensor,
         phases: Tensor,
+        temperature_scale: Tensor,
     ) -> Tensor:
         if input_bits.shape[0] != circuit_frames.shape[0]:
             raise ValueError(
                 "input_bits and circuit_frames must have "
                 "the same batch size"
+            )
+
+        expected_temperature_shape = (input_bits.shape[0],)
+        if tuple(temperature_scale.shape) != expected_temperature_shape:
+            raise ValueError(
+                "temperature_scale must have shape "
+                f"{expected_temperature_shape}"
             )
 
         input_tokens = self.input_embedding(input_bits)
@@ -242,6 +251,9 @@ class TrajectoryEditor(nn.Module):
             (input_tokens, circuit_tokens),
             dim=1,
         )
+        context = context + self.temperature_embedding(
+            temperature_scale[:, None]
+        )[:, None, :]
         contextualized = self.transformer(context)
         input_context = contextualized[
             :,

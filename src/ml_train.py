@@ -491,17 +491,23 @@ def train(args: argparse.Namespace) -> None:
                 cumulative_coverage
             )
 
-            edit_logits = model(
-                current_board.bits[None].to(device),
-                current_board.frames[None].to(device),
-                completion[None].to(device),
-                rollout_phases[None].to(device),
-            )
             temperature = min(
                 8.0,
                 1.0
                 + current_board.zero_gain_attempts
                 / 8.0,
+            )
+            temperature_scale = torch.tensor(
+                [(temperature - 1.0) / (8.0 - 1.0)],
+                dtype=torch.float32,
+                device=device,
+            )
+            edit_logits = model(
+                current_board.bits[None].to(device),
+                current_board.frames[None].to(device),
+                completion[None].to(device),
+                rollout_phases[None].to(device),
+                temperature_scale,
             )
             distribution = (
                 torch.distributions.Bernoulli(
