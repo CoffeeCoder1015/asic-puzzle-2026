@@ -264,7 +264,7 @@ def optimize_model(
     model: TrajectoryEditor,
     optimizer: torch.optim.Optimizer,
     distribution: torch.distributions.Bernoulli,
-    sampled_candidate: torch.Tensor,
+    sampled_edit_mask: torch.Tensor,
     bit_credits: torch.Tensor,
     edit_credits: torch.Tensor,
     counterfactual_bonus: torch.Tensor,
@@ -277,9 +277,9 @@ def optimize_model(
     torch.Tensor,
     torch.Tensor,
 ]:
-    device = sampled_candidate.device
+    device = sampled_edit_mask.device
     log_probabilities = distribution.log_prob(
-        sampled_candidate
+        sampled_edit_mask
     )[0]
     entropy = distribution.entropy().mean()
     credit_scale = bit_credits.abs().max().clamp_min(
@@ -491,7 +491,7 @@ def train(args: argparse.Namespace) -> None:
                 cumulative_coverage
             )
 
-            logits = model(
+            edit_logits = model(
                 current_board.bits[None].to(device),
                 current_board.frames[None].to(device),
                 completion[None].to(device),
@@ -505,12 +505,15 @@ def train(args: argparse.Namespace) -> None:
             )
             distribution = (
                 torch.distributions.Bernoulli(
-                    logits=logits / temperature
+                    logits=edit_logits / temperature
                 )
             )
-            sampled_candidate = distribution.sample()
+            sampled_edit_mask = distribution.sample()
             candidate_bits = (
-                sampled_candidate[0]
+                torch.bitwise_xor(
+                    current_board.bits.to(device),
+                    sampled_edit_mask[0].to(torch.long),
+                )
                 .to(torch.long)
                 .cpu()
             )
@@ -545,8 +548,8 @@ def train(args: argparse.Namespace) -> None:
                 dtype=torch.float32,
             )
             if best_counterfactual_bit is not None:
-                # The sampled value produced the actual candidate.
-                # Negative advantage favors its binary complement.
+                # Negative advantage favors the complementary
+                # edit decision that produced the better board.
                 counterfactual_bonus[
                     best_counterfactual_bit
                 ] = -args.best_counterfactual_bonus
@@ -568,7 +571,7 @@ def train(args: argparse.Namespace) -> None:
                 model=model,
                 optimizer=optimizer,
                 distribution=distribution,
-                sampled_candidate=sampled_candidate,
+                sampled_edit_mask=sampled_edit_mask,
                 bit_credits=bit_credits,
                 edit_credits=edit_credits,
                 counterfactual_bonus=(
@@ -688,7 +691,7 @@ def train(args: argparse.Namespace) -> None:
                 coverage_score=coverage_score,
                 bit_credits=bit_credits,
                 candidate_bits=candidate_bits,
-                logits=logits,
+                logits=edit_logits,
                 policy_loss=policy_loss,
                 entropy=entropy,
                 loss=loss,
