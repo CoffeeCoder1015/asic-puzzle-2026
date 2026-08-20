@@ -58,10 +58,13 @@ class CircuitFrameEncoder(nn.Module):
         frame_count: int,
         d_model: int,
         hidden_width: int,
+        tokens_per_frame: int,
     ):
         super().__init__()
         self.circuit_width = circuit_width
         self.frame_count = frame_count
+        self.d_model = d_model
+        self.tokens_per_frame = tokens_per_frame
 
         self.frame_mlp = nn.Sequential(
             nn.Linear(
@@ -69,7 +72,10 @@ class CircuitFrameEncoder(nn.Module):
                 hidden_width,
             ),
             nn.GELU(),
-            nn.Linear(hidden_width, d_model),
+            nn.Linear(
+                hidden_width,
+                tokens_per_frame * d_model,
+            ),
         )
         self.cycle_embedding = nn.Embedding(
             frame_count,
@@ -78,6 +84,10 @@ class CircuitFrameEncoder(nn.Module):
         self.phase_embedding = nn.Embedding(2, d_model)
         self.token_type_embedding = nn.Embedding(
             1,
+            d_model,
+        )
+        self.slot_embedding = nn.Embedding(
+            tokens_per_frame,
             d_model,
         )
         self.output_norm = nn.LayerNorm(d_model)
@@ -126,6 +136,10 @@ class CircuitFrameEncoder(nn.Module):
             self.frame_count,
             device=circuit_frames.device,
         )
+        slot_positions = torch.arange(
+            self.tokens_per_frame,
+            device=circuit_frames.device,
+        )
         frame_features = torch.stack(
             (
                 circuit_frames,
@@ -137,13 +151,25 @@ class CircuitFrameEncoder(nn.Module):
             frame_features * 2.0 - 1.0
         )
 
+        frame_tokens = self.frame_mlp(
+            signed_frame_features
+        ).reshape(
+            circuit_frames.shape[0],
+            self.frame_count,
+            self.tokens_per_frame,
+            self.d_model,
+        )
+
         return self.output_norm(
-            self.frame_mlp(signed_frame_features)
+            frame_tokens
             + self.cycle_embedding(
                 cycle_positions
-            ).unsqueeze(0)
-            + self.phase_embedding(phases)
+            )[None, :, None, :]
+            + self.phase_embedding(phases).unsqueeze(2)
             + self.token_type_embedding.weight[0]
+            + self.slot_embedding(
+                slot_positions
+            )[None, None, :, :]
         )
 
 
@@ -155,6 +181,7 @@ class TrajectoryEditor(nn.Module):
         circuit_width: int = len(CIRCUIT_VARIABLES),
         d_model: int = 256,
         circuit_hidden: int = 1024,
+        circuit_tokens_per_frame: int = 4,
         attention_heads: int = 8,
         transformer_blocks: int = 4,
         feedforward_width: int = 1024,
@@ -172,6 +199,7 @@ class TrajectoryEditor(nn.Module):
             frame_count=frame_count,
             d_model=d_model,
             hidden_width=circuit_hidden,
+            tokens_per_frame=circuit_tokens_per_frame,
         )
 
         transformer_layer = nn.TransformerEncoderLayer(
@@ -209,7 +237,7 @@ class TrajectoryEditor(nn.Module):
             circuit_frames,
             coverage_completion,
             phases,
-        )
+        ).flatten(start_dim=1, end_dim=2)
         context = torch.cat(
             (input_tokens, circuit_tokens),
             dim=1,
