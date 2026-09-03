@@ -14,10 +14,11 @@ FRAME_COUNT = INPUT_CYCLES + READOUT_CYCLES
 SAMPLES_PER_DENSITY = 5
 RANDOM_SEED = 2026
 GRAPH_PATH = (
-    Path(__file__).resolve().parents[1]
-    / "experiments"
+    Path(__file__).resolve().parent
+    / "outputs"
     / "probe_coverage.png"
 )
+GRAPH_PATH.parent.mkdir(parents=True, exist_ok=True)
 
 relevant_variables_by_frame = trace_relevant_frames(
     frame_count=FRAME_COUNT,

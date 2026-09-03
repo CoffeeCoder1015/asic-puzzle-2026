@@ -4,3 +4,4 @@ __pycache__/
 replayed_inputs.vcd
 .pdk/
 wandb/
+src/ml/outputs/

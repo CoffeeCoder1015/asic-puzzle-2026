@@ -19,9 +19,13 @@ dependencies = [
     { name = "klayout" },
     { name = "matplotlib" },
     { name = "networkx" },
+    { name = "z3-solver" },
+]
+
+[package.optional-dependencies]
+ml = [
     { name = "torch" },
     { name = "wandb" },
-    { name = "z3-solver" },
 ]
 
 [package.metadata]
@@ -29,10 +33,11 @@ requires-dist = [
     { name = "klayout", specifier = "==0.30.10" },
     { name = "matplotlib", specifier = ">=3.11.1" },
     { name = "networkx", specifier = ">=3.6.1" },
-    { name = "torch", specifier = ">=2.13.0" },
-    { name = "wandb", specifier = ">=0.22.0" },
+    { name = "torch", marker = "extra == 'ml'", specifier = ">=2.13.0" },
+    { name = "wandb", marker = "extra == 'ml'", specifier = ">=0.22.0" },
     { name = "z3-solver", specifier = "==5.0.0.0" },
 ]
+provides-extras = ["ml"]
 
 [[package]]
 name = "certifi"

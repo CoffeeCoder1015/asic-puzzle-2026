@@ -1,17 +1,20 @@
 import argparse
 import importlib
 from pathlib import Path
+import sys
+
+
+ML_ROOT = Path(__file__).resolve().parent
+SRC_ROOT = ML_ROOT.parent
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
 
 from ml_rollout import INPUT_CYCLES, READOUT_CYCLES
 import program
 
 
-ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_REPLAY = (
-    ROOT
-    / "experiments"
-    / "ml_training"
-    / "replay_inputs.txt"
+    ML_ROOT / "outputs" / "replay_inputs.txt"
 )
 
 

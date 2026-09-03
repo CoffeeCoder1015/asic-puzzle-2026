@@ -17,10 +17,8 @@ from ml_rollout import (
 )
 
 
-ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_RESULTS = (
-    ROOT / "experiments" / "ml_training"
-)
+ML_ROOT = Path(__file__).resolve().parent
+DEFAULT_RESULTS = ML_ROOT / "outputs"
 MIN_EDIT_SCALE = 1.0 / INPUT_CYCLES
 MAX_EDIT_SCALE = 0.5
 DEFAULT_EDIT_SCALE = 0.1

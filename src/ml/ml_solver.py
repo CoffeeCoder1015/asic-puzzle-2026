@@ -5,8 +5,9 @@ from pathlib import Path
 import networkx as nx
 
 
-breakdown_path = Path(__file__).parent.parent / "puzzle" / "reversed_puzzle.json"
-cell_classifications = Path(__file__).parent.parent / "cell_classifications.json"
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+breakdown_path = PROJECT_ROOT / "puzzle" / "reversed_puzzle.json"
+cell_classifications = PROJECT_ROOT / "cell_classifications.json"
 
 with breakdown_path.open() as file:
     gds_breakdown = json.load(file)
