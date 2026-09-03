@@ -412,5 +412,5 @@ program = "\n".join([
     "\n".join(module_definition_lines),
     body,
 ])
-with open(Path(__file__).parent / "program.py","w+") as fio:
+with open(Path(__file__).parent / "circuit_model.py", "w+") as fio:
     fio.write(program)

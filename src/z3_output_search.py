@@ -2,7 +2,7 @@ from collections import deque
 
 import z3
 
-from z3_program import call_count, solver
+from z3_circuit_model import call_count, solver
 
 
 input_length = 121

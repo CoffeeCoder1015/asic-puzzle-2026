@@ -1,4 +1,4 @@
-from program import asic
+from circuit_model import asic
 
 I_seq = [1]*121+[0]*11
 for i in range(len(I_seq)):

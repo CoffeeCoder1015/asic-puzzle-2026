@@ -10,7 +10,7 @@ if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
 
 from ml_rollout import INPUT_CYCLES, READOUT_CYCLES
-import program
+import circuit_model
 
 
 DEFAULT_REPLAY = (
@@ -45,7 +45,7 @@ def load_replay_inputs(path: Path) -> list[str]:
 
 
 def decode_output(puzzle_input: str) -> str:
-    circuit = importlib.reload(program)
+    circuit = importlib.reload(circuit_model)
     output_characters = []
     input_sequence = (
         [int(bit) for bit in puzzle_input]

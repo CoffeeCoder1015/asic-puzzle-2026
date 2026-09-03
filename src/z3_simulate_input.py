@@ -1,6 +1,6 @@
 import z3
 
-from z3_program import solver
+from z3_circuit_model import solver
 
 
 I_seq = [1] * 121 + [0] * 11
