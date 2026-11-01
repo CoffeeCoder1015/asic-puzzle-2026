@@ -1,4 +1,8 @@
 .opening { perspective: 1000px; }
+.opening-meta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px 24px; }
+.opening-meta .article-context { margin: 0; }
+.repo-link { text-decoration: none; padding-left: 6px; }
+.repo-link__badge { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--paper); }
 .opening .opening-line { transform-origin: 0 100%; }
 .opening h1 .opening-line { display: block; }
 .opening h1 .opening-title-main { color: var(--ink); }
@@ -11,6 +15,7 @@
   .result-board:hover { box-shadow: 0 15px 45px #0005, 0 0 24px #a4d9bd14; }
 }
 @media print {
+  .repo-link { display: none; }
   .opening .opening-line, .result-board { transform: none !important; opacity: 1 !important; }
   .opening h1 .opening-title-rest { color: var(--muted); text-shadow: none; }
 }

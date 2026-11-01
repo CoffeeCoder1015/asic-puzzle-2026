@@ -1,6 +1,6 @@
 # ASIC puzzle writeup
 
-The website, its assets, and its authoring tools live in this Next.js project. Runtime images and layout data are in `public/figures/` and `public/data/`. The HTML reference and its original runtime are in `archive/html/`, outside `public/` and not served by Next.js.
+The website, its assets, and its authoring tools live in this Next.js project. Runtime images and layout data are in `public/figures/` and `public/data/`.
 
 From this directory, run:
 
@@ -58,10 +58,8 @@ In a debug-enabled build, use `?fps` for the live renderer counter, `?animationP
 
 Capture controls require a visible tab. Finish the entry before using article or postscript sweeps. Save reports locally, then run `node scripts/summarize_animation_profile.mjs capture.json` or `node scripts/summarize_gds_profile.mjs capture.json` from this directory. Keep temporary captures and review reports in the repository's ignored `output/` folder.
 
-While the site is running, compare its plot bytes and exact streams with the HTML reference from the repository root:
+While the site is running, inspect its image hashes, exact input streams, and headings from the repository root:
 
 ```sh
-node writeup/scripts/inspect_writeup.cjs http://127.0.0.1:3001 writeup/archive/html/writeup_final.html
+node writeup/scripts/inspect_writeup.cjs http://127.0.0.1:3001
 ```
-
-The reference uses the old warm-up screenshot, so the first image hash differs from the current puzzle fallback. The three scientific plot hashes and five input streams should match.

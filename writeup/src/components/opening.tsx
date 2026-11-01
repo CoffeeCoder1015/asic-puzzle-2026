@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import { stagger, useAnimate, useReducedMotion } from "motion/react";
+import { Github, ArrowUpRight } from "lucide-react";
+import { Button } from "./ui/button";
 import "./opening.css";
 
 /** The complete title is server rendered; motion adds a finite opening gesture. */
@@ -21,9 +23,20 @@ export function Opening() {
 
   return (
     <header className="opening" ref={scope}>
-      <p className="article-context opening-line">
-        Jane Street ASIC puzzle · A reverse-engineering writeup
-      </p>
+      <div className="opening-meta">
+        <p className="article-context opening-line">
+          Jane Street ASIC puzzle · A reverse-engineering writeup
+        </p>
+        <Button asChild variant="outline" size="sm" className="repo-link">
+          <a href="https://github.com/CoffeeCoder1015/asic-puzzle-2026">
+            <span className="repo-link__badge" aria-hidden="true">
+              <Github />
+            </span>
+            Visit the repo
+            <ArrowUpRight aria-hidden="true" />
+          </a>
+        </Button>
+      </div>
       <h1 id="article-title">
         <span className="opening-line opening-title-main">
           How to reverse engineer an ASIC

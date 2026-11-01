@@ -19,7 +19,7 @@ Before accepting a revision, review all of these together:
 - Composition. Check hierarchy, alignment, type, spacing, color, figures, and motion across the complete article.
 - Communication. Remove captions and labels that repeat the body, describe an obvious visual, or read like visible alt text. Keep operational control names and material qualifications.
 - Interaction. Exercise success, failure, invalid input, boundaries, replay, keyboard focus, and disclosures.
-- Fidelity. Compare the plot bytes, five streams, board positions, fifteen pairs, and recorded outcomes with the archived reference.
+- Fidelity. Preserve the measured plots and compare rendered streams, board positions, fifteen pairs, and recorded outcomes with `src/lib/circuit-data.ts`.
 - Responsive layout. Inspect a wide and narrow browser view. Check overflow, clipped controls, touch targets, and figure text.
 
 References used in this design:
