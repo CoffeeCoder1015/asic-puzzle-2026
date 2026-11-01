@@ -1,0 +1,163 @@
+.gds-viewer {
+  position: relative;
+  width: 100%;
+}
+.gds-viewer__stage {
+  position: relative;
+  height: 510px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 65%, #a4d9bd0b, transparent 65%);
+}
+.gds-viewer__fallback,
+.gds-viewer__canvas {
+  position: absolute !important;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.gds-viewer__fallback {
+  object-fit: contain;
+  visibility: hidden;
+}
+.gds-viewer__canvas {
+  opacity: 0;
+  touch-action: pan-y;
+}
+.gds-viewer canvas {
+  touch-action: pan-y pinch-zoom !important;
+}
+.gds-viewer[data-fallback="true"] .gds-viewer__fallback {
+  visibility: visible;
+}
+.gds-viewer[data-fallback="false"] .gds-viewer__canvas {
+  opacity: 1;
+}
+.gds-viewer__loading {
+  position: absolute;
+  inset: 50% 0 auto;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  animation: layout-loading 0s 150ms both;
+}
+@keyframes layout-loading {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
+.gds-viewer__description {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 12px 0;
+}
+.gds-viewer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 12px;
+}
+.gds-viewer__selection {
+  display: flex;
+  flex-shrink: 0;
+  padding: 3px;
+  border: 1px solid var(--rule);
+  border-radius: 7px;
+}
+.gds-viewer__selection button[aria-pressed="true"] {
+  background: var(--accent);
+  color: var(--paper, #101112);
+}
+.gds-viewer__controls {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  border-top: 1px solid var(--rule);
+  padding-top: 10px;
+}
+.gds-viewer .gds-viewer__replay {
+  grid-column: 2;
+  justify-self: center;
+}
+.gds-viewer__controls[hidden] {
+  display: none;
+}
+.gds-viewer__buttons {
+  display: flex;
+  gap: 4px;
+}
+.gds-viewer__spacing {
+  grid-column: 3;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.gds-viewer__spacing input {
+  accent-color: var(--accent);
+  width: 150px;
+  min-height: 30px;
+}
+@media (max-width: 600px) {
+  .gds-viewer__stage {
+    height: 340px;
+  }
+  .gds-viewer__controls {
+    grid-template-columns: 1fr auto;
+    gap: 10px 8px;
+  }
+  .gds-viewer__buttons {
+    gap: 0;
+  }
+  .gds-viewer__header {
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .gds-viewer__description {
+    margin: 0;
+  }
+  .gds-viewer__replay {
+    justify-self: end;
+  }
+  .gds-viewer__buttons button {
+    width: 44px;
+    height: 44px;
+  }
+  .gds-viewer__spacing {
+    grid-column: 1 / -1;
+    justify-self: stretch;
+    font-size: 12px;
+  }
+  .gds-viewer__spacing input {
+    flex: 1;
+    min-width: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gds-viewer__fallback,
+  .gds-viewer__canvas {
+    transition: none;
+  }
+}
+@media print {
+  .gds-viewer__canvas,
+  .gds-viewer__controls,
+  .gds-viewer__header {
+    display: none;
+  }
+  .gds-viewer .gds-viewer__fallback {
+    opacity: 1;
+    visibility: visible;
+  }
+  .gds-viewer__stage {
+    height: 240pt;
+  }
+}

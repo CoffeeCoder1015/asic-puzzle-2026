@@ -1,0 +1,63 @@
+.board-star {
+  fill: #e1ffec;
+  opacity: 0;
+  filter: drop-shadow(0 0 4px #a4d9b9);
+  pointer-events: none;
+}
+.result-board[data-reveal="marks"] .board-mark {
+  animation: board-mark-reveal 0.55s ease-out both;
+  animation-delay: var(--board-mark-delay);
+}
+.candidate-panel .query-witness .result-board[data-reveal="marks"] .board-mark {
+  animation-name: witness-arrive, board-mark-reveal;
+  animation-duration: 0.5s, 0.55s;
+  animation-delay: 0.55s, var(--board-mark-delay);
+  animation-timing-function: ease, ease-out;
+  animation-fill-mode: both;
+}
+.result-board[data-reveal="stars"] .board-star {
+  animation: board-star-reveal 1.2s ease-out both;
+}
+/* Keep each staggered animation's playhead, including its delay and final frame. */
+svg.result-board[data-motion-running="false"] :is(.board-mark, .board-star) {
+  animation-play-state: paused;
+}
+@keyframes board-mark-reveal {
+  from {
+    opacity: 0.3;
+    filter: brightness(1.8);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+@keyframes board-star-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) rotate(-35deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.65) rotate(20deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .board-stars {
+    visibility: hidden;
+  }
+  .result-board .board-mark {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+  }
+}
+@media print {
+  .board-stars {
+    display: none;
+  }
+}

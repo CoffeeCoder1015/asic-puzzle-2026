@@ -1,0 +1,139 @@
+.clock-scene__field {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 48px 32px 32px;
+  background:
+    radial-gradient(ellipse at 70% 60%, #294a3438, transparent 65%), #141a17;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+}
+.clock-replay {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+}
+.clock-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  min-width: 0;
+}
+.clock-stage > span {
+  font: 11px var(--font-mono, monospace);
+  color: #a5b9ad;
+}
+.clock-stage strong {
+  font-size: 15px;
+  color: #e1ece5;
+  font-weight: 500;
+}
+.clock-stage small,
+.clock-stage code {
+  font-size: 11px;
+  color: #a8b9af;
+}
+.clock-bank,
+.clock-gates {
+  width: 100%;
+  height: 100px;
+  overflow: visible;
+}
+.clock-bank {
+  max-width: 180px;
+}
+.clock-bank path {
+  fill: none;
+  stroke: #a4c7b1;
+  stroke-width: 1;
+}
+.clock-register {
+  fill: #263a2e;
+  stroke: #79a48a;
+}
+.clock-bank--next .clock-register {
+  fill: #6b9d80;
+}
+.clock-bank--next path {
+  stroke: #173c26;
+}
+.clock-wire {
+  stroke: #527461;
+  fill: none;
+}
+.clock-gate {
+  fill: #1c2922;
+  stroke: #c0f5d4;
+  stroke-width: 1.5;
+}
+.clock-bit {
+  fill: #d5ffe3;
+  opacity: 0;
+}
+.clock-travel {
+  fill: none;
+  stroke: #d5ffe3;
+  stroke-width: 3;
+  stroke-dasharray: 0.1 0.9;
+  opacity: 0;
+}
+@media (max-width: 600px) {
+  .clock-replay {
+    width: 44px;
+    height: 44px;
+  }
+  .clock-scene__field {
+    grid-template-columns: 1fr;
+    padding: 44px 20px 28px;
+    gap: 32px;
+  }
+  .clock-stage {
+    width: 100%;
+  }
+  .clock-gates {
+    max-width: 270px;
+  }
+  .clock-stage--gates {
+    position: relative;
+  }
+  .clock-stage--gates:before,
+  .clock-stage--gates:after {
+    content: "";
+    height: 20px;
+    border-left: 1px solid #527461;
+    position: absolute;
+    left: 50%;
+  }
+  .clock-stage--gates:before {
+    top: -26px;
+  }
+  .clock-stage--gates:after {
+    bottom: -26px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clock-bit,
+  .clock-travel {
+    display: none;
+  }
+}
+@media print {
+  .clock-scene__field {
+    background: white;
+  }
+  .clock-stage strong,
+  .clock-stage > span,
+  .clock-stage small,
+  .clock-stage code {
+    color: #203529;
+  }
+  .clock-replay,
+  .clock-bit,
+  .clock-travel {
+    display: none;
+  }
+}

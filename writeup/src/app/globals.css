@@ -1,0 +1,93 @@
+@import "tailwindcss/theme.css";
+@import "tailwindcss/utilities.css";
+@import "./article.css";
+@import "./interactions.css";
+@import "./ambient.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+button,
+input {
+  font-family: inherit;
+}
+
+@layer base {
+  [data-slot="button"] {
+    appearance: none;
+    border: 0 solid transparent;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  [data-slot="button"]:disabled {
+    cursor: default;
+  }
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-primary: var(--accent);
+  --color-primary-foreground: #102017;
+  --color-secondary: #222924;
+  --color-secondary-foreground: var(--ink);
+  --color-muted: #232825;
+  --color-muted-foreground: var(--muted);
+  --color-accent: #303d34;
+  --color-accent-foreground: var(--ink);
+  --color-destructive: var(--negative);
+  --color-border: var(--rule);
+  --color-input: #59665e;
+  --color-ring: var(--accent);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+[data-slot="accordion"] h3 {
+  margin: 0;
+  font-size: inherit;
+}
+[data-slot="accordion-trigger"] {
+  width: 100%;
+  border: 0;
+  padding: 12px 0;
+  background: none;
+  font-weight: 400;
+  color: var(--body);
+}
+[data-slot="accordion-trigger"]:hover {
+  background: none;
+  color: var(--accent);
+}
+[data-slot="accordion-content"][data-state="closed"] {
+  display: none;
+}
+[data-slot="accordion-item"] {
+  border-color: var(--rule);
+}
+
+@media print {
+  [data-slot="accordion-content"][data-state="closed"] {
+    display: block !important;
+    height: auto !important;
+  }
+}

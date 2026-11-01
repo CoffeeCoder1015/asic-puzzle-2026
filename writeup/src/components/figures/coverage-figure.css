@@ -1,0 +1,225 @@
+.coverage-scene__field {
+  background:
+    radial-gradient(ellipse at 50% 80%, #21362b44, transparent 70%), #141a17;
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.coverage-scene__field > svg {
+  display: block;
+  width: 100%;
+  max-height: 650px;
+  height: auto;
+}
+.coverage-scene__input-label,
+.coverage-scene__count,
+.coverage-scene__bits {
+  fill: #b5c6bc;
+  font:
+    12px "Cascadia Code",
+    Consolas,
+    monospace;
+}
+.coverage-scene__count {
+  font-size: 10px;
+  fill: #a8b9af;
+}
+.coverage-scene__bits {
+  fill: #e4f4e9;
+  font-size: 13px;
+}
+.coverage-scene__edges path {
+  stroke: #45554b;
+  stroke-width: 1.2;
+}
+.coverage-scene__edges path.is-reached {
+  stroke: #66937b;
+}
+.coverage-scene__edges path.is-current {
+  stroke: #c0f5d4;
+  stroke-width: 2;
+}
+.coverage-scene__trace {
+  stroke-dasharray: 1;
+}
+.coverage-scene[data-arrivals="ready"] .coverage-scene__trace {
+  animation: coverage-trace 240ms linear var(--arrival-delay) both;
+}
+.coverage-scene__node > rect,
+.coverage-scene__node > path {
+  fill: #1b231f;
+  stroke: #84988a;
+  stroke-width: 1.3;
+}
+.coverage-scene__node.is-reached > rect,
+.coverage-scene__node.is-reached > path {
+  fill: #345744;
+  stroke: #84b398;
+}
+.coverage-scene__node.is-current > rect,
+.coverage-scene__node.is-current > path {
+  fill: #a4d9b9;
+  stroke: #dcffe9;
+  stroke-width: 1.7;
+}
+.coverage-scene__bus .coverage-scene__node > rect {
+  fill: #1b231f;
+}
+.coverage-scene__node > .gate-detail {
+  fill: none;
+  stroke: #84988a;
+}
+.coverage-scene__node.is-reached > .gate-detail {
+  fill: none;
+  stroke: #a0c7af;
+}
+.coverage-scene__node.is-current > .gate-detail {
+  fill: none;
+  stroke: #244c34;
+}
+.coverage-scene[data-arrivals="ready"] .coverage-scene__arrival {
+  animation: coverage-node 420ms ease-out var(--arrival-delay) both;
+}
+@keyframes coverage-trace {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes coverage-node {
+  from {
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+    filter: drop-shadow(0 0 7px #a4d9b9);
+  }
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+.coverage-scene[data-motion="off"] .coverage-scene__trace,
+.coverage-scene[data-motion="off"] .coverage-scene__arrival {
+  animation-play-state: paused;
+}
+.coverage-scene__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px 24px;
+}
+.coverage-scene__controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.coverage-scene__key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: #b5c6bc;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.coverage-scene__key span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.coverage-scene__key i {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #a4d9b9;
+  border: 1px solid #dcffe9;
+}
+.coverage-scene__key span:nth-child(2) i {
+  background: #345744;
+  border-color: #84b398;
+}
+.coverage-scene__key span:last-child i {
+  background: #1b231f;
+  border-color: #84988a;
+}
+@media (max-width: 540px) {
+  .coverage-scene__controls button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .coverage-scene__input-label {
+    font-size: 24px;
+  }
+  .coverage-scene__bits {
+    font-size: 22px;
+  }
+  .coverage-scene__count {
+    font-size: 20px;
+  }
+  .coverage-scene__footer {
+    padding: 8px 16px 20px;
+    gap: 12px;
+  }
+  .coverage-scene__key {
+    gap: 12px;
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .coverage-scene__trace,
+  .coverage-scene__arrival {
+    animation: none !important;
+  }
+}
+@media print {
+  .coverage-scene__field {
+    background: white;
+    border-color: #a0ada5;
+  }
+  .coverage-scene__input-label,
+  .coverage-scene__count,
+  .coverage-scene__bits {
+    fill: #26382d;
+  }
+  .coverage-scene__key {
+    color: #26382d;
+  }
+  .coverage-scene__edges path {
+    stroke: #8c9a92;
+  }
+  .coverage-scene__edges path.is-reached {
+    stroke: #467357;
+  }
+  .coverage-scene__edges path.is-current {
+    stroke: #244b33;
+  }
+  .coverage-scene__node > rect,
+  .coverage-scene__node > path {
+    fill: white;
+    stroke: #73867b;
+  }
+  .coverage-scene__node.is-reached > rect,
+  .coverage-scene__node.is-reached > path {
+    fill: #b7d8c3;
+    stroke: #315c42;
+  }
+  .coverage-scene__node.is-current > rect,
+  .coverage-scene__node.is-current > path {
+    fill: #a0c7af;
+    stroke: #244b33;
+  }
+  .coverage-scene__trace,
+  .coverage-scene__arrival {
+    animation: none !important;
+    opacity: 1;
+    stroke-dashoffset: 0;
+    filter: none;
+  }
+  .coverage-scene__controls {
+    display: none;
+  }
+}

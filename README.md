@@ -26,3 +26,11 @@ You'll find the following files related to the warm-up puzzle:
   connections, corresponding to cell and net names.
 - `warmup/04_final.gds`: The final manufacturable layout file, with many internal names
   removed
+
+### Interactive writeup
+
+Read the [interactive writeup](https://coffeecoder1015.github.io/asic-puzzle-2026/).
+
+The writeup website is a Next.js project in [`writeup/`](writeup/README.md). Run `npm ci` and `npm run dev` from that directory, then open [the local preview](http://127.0.0.1:3001). `npm run build` exports a static site to `writeup/out/`; `npm start` serves that export locally. The Pages workflow deploys pushes to `master` once GitHub Pages is configured to use GitHub Actions.
+
+The [design guide](writeup/DESIGN.md) records the visual language and review criteria. The previous HTML and its runtime are in [`writeup/archive/html/`](writeup/archive/html/writeup_final.html).

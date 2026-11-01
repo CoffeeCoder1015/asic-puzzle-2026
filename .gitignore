@@ -5,3 +5,9 @@ replayed_inputs.vcd
 .pdk/
 wandb/
 src/ml/outputs/
+tmp/
+/output/
+node_modules/
+writeup/.next/
+writeup/tsconfig.tsbuildinfo
+writeup/out/

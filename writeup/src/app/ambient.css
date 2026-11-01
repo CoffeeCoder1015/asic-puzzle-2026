@@ -1,0 +1,63 @@
+body { isolation: isolate; }
+main { position: relative; z-index: 1; }
+
+.ambient-field {
+  --glyph-edge: 26%;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+  mask-image: linear-gradient(90deg, #000 0%, #000 5%, #0008 15%, transparent var(--glyph-edge), transparent calc(100% - var(--glyph-edge)), #0008 85%, #000 95%, #000 100%);
+}
+.ambient-field__glyphs { opacity: .6; }
+.ambient-field__rings { position: absolute; inset: 0; }
+.ambient-field__ring {
+  position: absolute;
+  display: block;
+  width: 540px;
+  height: 540px;
+  border: 1px solid #a4d9bd;
+  border-radius: 50%;
+  opacity: 0;
+  box-shadow: 0 0 30px #a4d9bd0b, inset 0 0 24px #a4d9bd08;
+  animation: ambient-ripple 17s linear infinite;
+  animation-play-state: paused;
+}
+.ambient-field__ring--left { left: -280px; top: 16%; animation-delay: -4s; }
+.ambient-field__ring--right { right: -320px; top: 54%; animation-delay: -12s; animation-duration: 23s; }
+.ambient-field[data-running="true"] .ambient-field__ring { animation-play-state: running; }
+.ambient-motion-toggle[data-slot="button"] {
+  position: fixed;
+  z-index: 5;
+  bottom: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  color: var(--muted);
+  background: #101112e8;
+  border: 1px solid var(--rule);
+  opacity: .7;
+}
+.ambient-motion-toggle[data-slot="button"]:hover,
+.ambient-motion-toggle[data-slot="button"]:focus-visible { opacity: 1; color: var(--accent); }
+@keyframes ambient-ripple {
+  0%, 68% { transform: scale(.35) rotateX(30deg); opacity: 0; }
+  72% { opacity: .18; }
+  100% { transform: scale(1.9) rotateX(30deg); opacity: 0; }
+}
+@media (max-width: 760px) {
+  .ambient-field {
+    --glyph-edge: 11%;
+    mask-image: linear-gradient(90deg, #0009, transparent var(--glyph-edge), transparent calc(100% - var(--glyph-edge)), #0009);
+  }
+  .ambient-field__glyphs { opacity: .4; }
+  .ambient-motion-toggle[data-slot="button"] { bottom: 10px; right: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ambient-field__ring { animation: none; }
+}
+@media print {
+  .ambient-field, .ambient-motion-toggle { display: none !important; }
+}

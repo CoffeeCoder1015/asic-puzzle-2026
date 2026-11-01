@@ -1,0 +1,16 @@
+.opening { perspective: 1000px; }
+.opening .opening-line { transform-origin: 0 100%; }
+.opening h1 .opening-line { display: block; }
+.opening h1 .opening-title-main { color: var(--ink); }
+.opening h1 .opening-title-rest {
+  color: var(--accent);
+  text-shadow: 0 0 65px #a4d9bd14;
+}
+.result-board { transform-style: preserve-3d; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .result-board:hover { box-shadow: 0 15px 45px #0005, 0 0 24px #a4d9bd14; }
+}
+@media print {
+  .opening .opening-line, .result-board { transform: none !important; opacity: 1 !important; }
+  .opening h1 .opening-title-rest { color: var(--muted); text-shadow: none; }
+}
