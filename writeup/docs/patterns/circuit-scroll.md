@@ -5,6 +5,22 @@ for ordinary scrolling. Only an explicit Replay entry action starts a new run.
 The same DOM paragraphs and GdsViewer remain mounted in every phase. The current
 circuitPose stays unchanged. Progress drives both the text timeline and circuit.
 
+## First paint and scene readiness
+
+A small inline script in the root layout marks `html[data-entry-pending]` before
+the article is parsed, only for a motion-enabled viewport at least 600px high,
+at the top without a destination hash. CSS gives that candidate's pending phase
+the same sticky composition as playing. Without this script, the natural article
+remains visible. React owns `data-phase`; the marker never changes React state.
+
+Hydration admits the text timeline as soon as eligibility is known, without
+waiting for geometry or a GPU frame. The same viewer activates during pending or
+playing. It starts noninteractive and renders the current story progress, so a
+late first frame cannot reset the camera or restart a completed introduction.
+Only a ready canvas fades into the reserved space; the differently framed fallback
+image stays reserved for ordinary article/failure presentation. The opening does
+not promise zero network or GPU startup time.
+
 The natural DOM is Opening, intro text through TinyTapeout, then GdsViewer.
 Playing temporarily positions text passages and the constant-size viewer in a
 sticky stage. Four passages introduce the puzzle, the author's Verilog background,
@@ -52,11 +68,14 @@ The sticky implementation's initial admission, release and replay are these
 operations (the component's layout effects supply the before-paint ordering):
 
 ```js
-// Initial admission: natural SSR DOM and eager activation of this same viewer.
+// Parser-time marker reserves sticky CSS before hydration on eligible entry.
+// No marker means natural article flow. Hydration owns the phase afterward.
 supported = !reducedMotion && viewportHeight >= 600;
-activate = supported && phase === "pending";
-if (phase === "pending" && supported && ready)
-  phase = scrollY <= 64 && !deepHash ? "playing" : "complete";
+activate = supported && phase !== "complete";
+if (phase === "pending" && supported) {
+  if (scrollY <= 64 && !deepHash) phase = "playing";
+  else release();
+}
 
 // Release: clean up the sticky timeline before measuring the natural layout.
 releaseTop = viewer.getBoundingClientRect().top;

@@ -28,6 +28,7 @@ export function CircuitOpening({ children }: { children: React.ReactNode }) {
   const anchor = useRef<string | null>(null);
   const [navigation, setNavigation] = useState(0);
   const playing = phase === "playing";
+  const interactive = phase === "complete";
   const onReady = useCallback(() => {
     setReady(true);
     setFailed(false);
@@ -62,7 +63,7 @@ export function CircuitOpening({ children }: { children: React.ReactNode }) {
       release();
     };
     updateSupport();
-    if (window.scrollY > 64) setPhase("complete");
+    if (window.scrollY > 64) release();
     followAnchor();
     preference.addEventListener("change", updateSupport);
     shortViewport.addEventListener("change", updateSupport);
@@ -75,9 +76,10 @@ export function CircuitOpening({ children }: { children: React.ReactNode }) {
   }, [release]);
 
   useLayoutEffect(() => {
-    if (phase !== "pending" || !supported || !ready) return;
-    setPhase(window.scrollY <= 64 ? "playing" : "complete");
-  }, [phase, supported, ready]);
+    if (phase !== "pending" || !supported) return;
+    if (window.scrollY <= 64) setPhase("playing");
+    else release();
+  }, [phase, supported, release]);
 
   useLayoutEffect(() => {
     if (!playing) return;
@@ -204,15 +206,15 @@ export function CircuitOpening({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <section ref={root} className="circuit-opening" data-enhanced={playing} data-interactive={!playing}>
+    <section ref={root} className="circuit-opening" data-phase={phase} data-enhanced={playing} data-interactive={interactive}>
       <div className="circuit-opening__stage">
         <div className="circuit-opening__title"><Opening /></div>
         <div className="circuit-opening__passages">{children}</div>
         <div ref={viewer} className="circuit-opening__viewer">
           <GdsViewer
-            activate={supported && phase === "pending"}
+            activate={supported && !interactive}
             storyProgress={progress}
-            interactive={!playing}
+            interactive={interactive}
             preload={phase === "complete"}
             onSceneReady={onReady}
             onSceneFailure={onFailure}

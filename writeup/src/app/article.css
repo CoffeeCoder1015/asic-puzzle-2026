@@ -17,7 +17,7 @@
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 40px; }
+html { scroll-behavior: smooth; scroll-padding-top: 40px; overflow-y: scroll; }
 body { margin: 0; background: var(--paper); color: var(--body); font-size: 18px; line-height: 1.8; }
 article { width: min(720px, calc(100% - 48px)); margin: auto; padding-bottom: 64px; }
 p { margin: 0 0 24px; }
